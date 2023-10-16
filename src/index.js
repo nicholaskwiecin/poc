@@ -3,11 +3,33 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import PriceModelLibrary from './components/PriceModelLibrary';
+import PriceModelWorkbench from './components/PriceModelWorkbench';
+
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <App />,
+  },
+  {
+    path: '/price-model-library',
+    element: <PriceModelLibrary />,
+  },
+  {
+    path: '/price-model-workbench',
+    element: <PriceModelWorkbench />,
+  }
+])
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router}/>
   </React.StrictMode>
 );
 

@@ -40,7 +40,7 @@ const PriceModelLibrary = () => {
                     {filteredRecords.map((record) => {
                         return (
                             <tr key={record.id}>
-                                <td><a href="/PriceModelLibrary">{record.column1}</a></td>
+                                <td><a href="/price-model-workbench">{record.column1}</a></td>
                                 <td>{record.column2}</td>
                                 <td>{record.column3}</td>
                                 <td>{record.column4}</td>

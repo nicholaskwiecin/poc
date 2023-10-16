@@ -5,19 +5,14 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
+      <nav>
+        <div className="landing-page">
+          <h1>Welcome to POC P and G</h1>
+          <p>This is the landing page of our application.</p>
+          <a href="/price-model-library">Price Model Library</a>
+        </div>
+      </nav>
     </div>
   );
 }

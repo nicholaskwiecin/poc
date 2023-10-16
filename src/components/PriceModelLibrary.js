@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const PriceModelLibrary = () => {
     const [records, setRecords] = useState([
@@ -40,7 +41,7 @@ const PriceModelLibrary = () => {
                     {filteredRecords.map((record) => {
                         return (
                             <tr key={record.id}>
-                                <td><a href="/price-model-workbench">{record.column1}</a></td>
+                                <td><Link to='/price-model-workbench'>{record.column1}</Link></td>
                                 <td>{record.column2}</td>
                                 <td>{record.column3}</td>
                                 <td>{record.column4}</td>

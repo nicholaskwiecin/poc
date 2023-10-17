@@ -15,21 +15,25 @@ import PriceModelLanding from './components/PriceModelLanding';
 const router = createBrowserRouter([
   {
     path: '/',
-    element:<Navigate to="/landing" replace={true} />,
+    element:<App/>,
+    children:[
+      {
+        path: 'landing',
+        element: <PriceModelLanding />,
+      },
+      {
+        path: 'price-model-library',
+        element: <PriceModelLibrary />,
+      },
+      {
+        path: 'price-model-workbench',
+        element: <PriceModelWorkbench />,
+      }
+    ]
   },
-  {
-    path: 'landing',
-    element: <PriceModelLanding />,
-  },
-  {
-    path: 'price-model-library',
-    element: <PriceModelLibrary />,
-  },
-  {
-    path: 'price-model-workbench',
-    element: <PriceModelWorkbench />,
-  }
-])
+],{
+  basename: process.env.PUBLIC_URL ? process.env.PUBLIC_URL : "/",
+})
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -38,7 +42,6 @@ root.render(
     </RouterProvider>
   </React.StrictMode>
 );
-console.log("RELOAD")
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals

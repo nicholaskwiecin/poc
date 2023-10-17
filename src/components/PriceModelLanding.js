@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './PriceModelLanding.css';
+import './PriceModelLanding.scss';
 
 const PriceModelLanding = () => {
   return (

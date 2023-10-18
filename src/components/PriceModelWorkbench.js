@@ -5,6 +5,7 @@ import 'reactflow/dist/style.css';
 
 
 const defaultViewport = { x: 0, y: 0, zoom: .8 };
+const options = { hideAttribution: true };
 const snapGrid = [20, 20];
 const initialNodes = [
   { id: '1', position: { x: 300, y: 0 }, data: { label: 'Total Materials' } },
@@ -39,6 +40,7 @@ const PriceModelWorkbench = () => {
         edges={initialEdges}
         snapGrid={snapGrid}
         snapToGrid={true}
+        proOptions={options}
          />
         </div>
       </section>

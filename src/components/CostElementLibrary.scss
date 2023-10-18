@@ -1,7 +1,15 @@
+@import "../global-styles.scss";
+
 .cost-element-library {
     .category {
         padding: .5rem 1rem .5rem 1rem;
         text-align: center;
-        border: 1px;
+        border: 1px solid;
+    }
+    .element {
+        margin-left: 1rem;
+        padding: .5rem .8rem .5rem .8rem;
+        text-align: center;
+        border: 1px solid;
     }
 }

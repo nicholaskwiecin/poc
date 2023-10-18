@@ -45,7 +45,7 @@ const CostElementLibrary = () => {
       };
     
       return (
-        <aside>
+        <aside className="cost-element-library">
             {
                 costElements.map((category, index) => {
                     return (

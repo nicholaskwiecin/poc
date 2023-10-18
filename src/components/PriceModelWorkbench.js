@@ -1,7 +1,16 @@
-import React from 'react';
-import ReactFlow from 'reactflow';
+import React, { useState, useRef, useCallback } from 'react';
+import ReactFlow, {
+  ReactFlowProvider,
+  addEdge,
+  useNodesState,
+  useEdgesState,
+  Controls
+} from 'reactflow';
 import './PriceModelWorkbench.scss';
 import 'reactflow/dist/style.css';
+import FormulaBar from './FormulaBar';
+import CostElementLibrary from './CostElementLibrary';
+import CostingPanel from './CostingPanel';
 
 
 const defaultViewport = { x: 0, y: 0, zoom: .8 };
@@ -23,39 +32,82 @@ const initialEdges = [
   { id: 'e1-7', source: '1', target: '7' }
 ];
 
+let id = 0;
+const getId = () => `costElement_${id++}`;
+
 const PriceModelWorkbench = () => {
+
+  const reactFlowWrapper = useRef(null);
+  const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
+  const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
+  const [reactFlowInstance, setReactFlowInstance] = useState(null);
+
+  const onConnect = useCallback((params) => setEdges((eds) => addEdge(params, eds)), []);
+
+  const onDragOver = useCallback((event) => {
+    event.preventDefault();
+    event.dataTransfer.dropEffect = 'move';
+  }, []);
+
+  const onDrop = useCallback(
+    (event) => {
+      event.preventDefault();
+
+      const reactFlowBounds = reactFlowWrapper.current.getBoundingClientRect();
+      const elementName = event.dataTransfer.getData('application/reactflow');
+
+      // check if the dropped element is valid
+      if (typeof elementName === 'undefined' || !elementName) {
+        return;
+      }
+
+      const position = reactFlowInstance.project({
+        x: event.clientX - reactFlowBounds.left,
+        y: event.clientY - reactFlowBounds.top,
+      });
+      const newNode = {
+        id: getId(),
+        position,
+        data: { label: elementName },
+      };
+
+      setNodes((nds) => nds.concat(newNode));
+    },
+    [reactFlowInstance]
+  );
+
+
   return (
     <div className="container">
-      <section className="left-panel">
-        <div className="panel-content">
-          <h2>Cost Element Library</h2>
+      <ReactFlowProvider>
+        <div className="reactflow-wrapper center-panel" ref={reactFlowWrapper}>
+          <ReactFlow
+            defaultViewport={defaultViewport}
+            nodes={nodes}
+            edges={edges}
+            onConnect={onConnect}
+            onNodesChange={onNodesChange}
+            onEdgesChange={onEdgesChange}
+            onInit={setReactFlowInstance}
+            onDrop={onDrop}
+            onDragOver={onDragOver}
+            snapGrid={snapGrid}
+            snapToGrid={true}
+            proOptions={options}
+            fitView
+          ><Controls />
+          </ReactFlow>
         </div>
-      </section>
-
-      <section className="center-panel">
-        <div className="panel-content">
-        <ReactFlow 
-        defaultViewport={defaultViewport} 
-        nodes={initialNodes} 
-        edges={initialEdges}
-        snapGrid={snapGrid}
-        snapToGrid={true}
-        proOptions={options}
-         />
+        <div className="left-panel">
+          <CostElementLibrary />
         </div>
-      </section>
-
-      <section className="right-panel">
-        <div className="panel-content">
-          <h2>Costing Panel</h2>
+        <div className="right-panel">
+          <CostingPanel />
         </div>
-      </section>
-
-      <section className="bottom-panel">
-        <div className="panel-content">
-          <h2>Formula Bar</h2>
+        <div className="bottom-panel">
+          <FormulaBar />
         </div>
-      </section>
+      </ReactFlowProvider>
     </div>
   );
 };

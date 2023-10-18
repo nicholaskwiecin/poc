@@ -9,21 +9,11 @@ const PriceModelLibrary = () => {
         { id: 'PM-0000003', description: 'Chem Tech Beauty Care LA', barId: '1234456', barDescription: 'Sasol', spendPool: 'Chemicals/Surfactants/LAB', suppliers: 'SASOL (01523242)', bu: 'Hair Care', regions: 'ALL' }
     ]);
 
-    const [filter, setFilter] = useState('');
-
-    const handleFilterChange = (event) => {
-        setFilter(event.target.value);
-    };
-
-    const filteredRecords = records.filter((record) => {
-        return record.description.toLowerCase().includes(filter.toLowerCase());
-    });
-
     return (
-        <div className="library-container">
+        <section className="library-container">
             <div className="filter-panel">
                 <h2>Filtering Panel</h2>
-                <input type="text" value={filter} onChange={handleFilterChange} placeholder="Filter by name" />
+                <input type="text" placeholder="Filter by name" />
             </div>
             <table className="price-model-table">
                 <thead>
@@ -40,7 +30,7 @@ const PriceModelLibrary = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {filteredRecords.map((record) => {
+                    {records.map((record) => {
                         return (
                             <tr key={record.id}>
                                 <td><Link to='/price-model-workbench'>{record.id}</Link></td>
@@ -57,7 +47,7 @@ const PriceModelLibrary = () => {
                     })}
                 </tbody>
             </table>
-        </div>
+        </section>
     );
 };
 

@@ -7,9 +7,12 @@
         border: 1px solid;
     }
     .element {
-        margin-left: 1rem;
+        margin: .5rem 0rem .5rem 1.5rem;
         padding: .5rem .8rem .5rem .8rem;
         text-align: center;
         border: 1px solid;
+        border-radius: 5px;
+        background-color: $primary-blue;
+        color: $secondary-white;
     }
 }

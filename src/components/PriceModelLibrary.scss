@@ -1,3 +1,5 @@
+@import '../global-styles.scss';
+
 .library-container {
     display: flex;
     flex-direction: column;
@@ -19,25 +21,25 @@
         border-radius: 5px;
         margin-left: 1rem;
         margin-right:1rem;
+        border-color: $primary-blue;
 
         tr:nth-child(even) {
-            background-color: #f2f2f2;
+            background-color: $secondary-white;
         }
 
         tr:hover {
-            background-color: #ddd;
+            background-color: $secondary-grey;
         }
 
         th {
-            background-color: #333;
-            color: white;
+            background-color: $primary-blue-dark;
+            color: $secondary-white;
         }
 
         th,
         td {
             padding: 0.5rem;
             text-align: left;
-            border-bottom: 1px solid #ddd;
         }
     }
 }

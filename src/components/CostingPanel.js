@@ -4,7 +4,7 @@ const CostingPanel = () => {
 
       return (
         <aside>
-          Costing Panel
+         <h2>Costing Panel</h2>
         </aside>
       );
 

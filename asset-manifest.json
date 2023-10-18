@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "https://nicholaskwiecin.github.io/poc/static/css/main.187d43da.css",
-    "main.js": "https://nicholaskwiecin.github.io/poc/static/js/main.8a460079.js",
+    "main.js": "https://nicholaskwiecin.github.io/poc/static/js/main.61dcc2e7.js",
     "static/js/787.d2006f3c.chunk.js": "https://nicholaskwiecin.github.io/poc/static/js/787.d2006f3c.chunk.js",
     "static/media/logo.svg": "https://nicholaskwiecin.github.io/poc/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "https://nicholaskwiecin.github.io/poc/index.html",
     "main.187d43da.css.map": "https://nicholaskwiecin.github.io/poc/static/css/main.187d43da.css.map",
-    "main.8a460079.js.map": "https://nicholaskwiecin.github.io/poc/static/js/main.8a460079.js.map",
+    "main.61dcc2e7.js.map": "https://nicholaskwiecin.github.io/poc/static/js/main.61dcc2e7.js.map",
     "787.d2006f3c.chunk.js.map": "https://nicholaskwiecin.github.io/poc/static/js/787.d2006f3c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.187d43da.css",
-    "static/js/main.8a460079.js"
+    "static/js/main.61dcc2e7.js"
   ]
 }

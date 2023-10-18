@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import './PriceModelLibrary.scss';
 
 const PriceModelLibrary = () => {
     const [records, setRecords] = useState([
-        { id: 1, name: 'Record 1', column1: 'Link to PriceModelLibrary', column2: 'Column 2', column3: 'Column 3', column4: 'Column 4', column5: 'Column 5', column6: 'Column 6', column7: 'Column 7', column8: 'Column 8', column9: 'Column 9' },
-        { id: 2, name: 'Record 2', column1: 'Link to PriceModelLibrary', column2: 'Column 2', column3: 'Column 3', column4: 'Column 4', column5: 'Column 5', column6: 'Column 6', column7: 'Column 7', column8: 'Column 8', column9: 'Column 9' },
-        { id: 3, name: 'Record 3', column1: 'Link to PriceModelLibrary', column2: 'Column 2', column3: 'Column 3', column4: 'Column 4', column5: 'Column 5', column6: 'Column 6', column7: 'Column 7', column8: 'Column 8', column9: 'Column 9' }
+        { id: 'PM-0000001', description: 'Sasol Beauty Care Surfactants Global', barId: '1234456', barDescription: 'Sasol', spendPool: 'Chemicals/Surfactants/LAB', suppliers: 'SASOL (01523242)', bu: 'Hair Care', regions: 'ALL' },
+        { id: 'PM-0000002', description: 'BASF Beauty Care Europe', barId: '1234456', barDescription: 'Sasol', spendPool: 'Chemicals/Surfactants/LAB', suppliers: 'SASOL (01523242)', bu: 'Hair Care', regions: 'ALL' },
+        { id: 'PM-0000003', description: 'Chem Tech Beauty Care LA', barId: '1234456', barDescription: 'Sasol', spendPool: 'Chemicals/Surfactants/LAB', suppliers: 'SASOL (01523242)', bu: 'Hair Care', regions: 'ALL' }
     ]);
 
     const [filter, setFilter] = useState('');
@@ -15,41 +16,42 @@ const PriceModelLibrary = () => {
     };
 
     const filteredRecords = records.filter((record) => {
-        return record.name.toLowerCase().includes(filter.toLowerCase());
+        return record.description.toLowerCase().includes(filter.toLowerCase());
     });
 
     return (
-        <div>
-            <div>
+        <div className="library-container">
+            <div className="filter-panel">
+                <h2>Filtering Panel</h2>
                 <input type="text" value={filter} onChange={handleFilterChange} placeholder="Filter by name" />
             </div>
-            <table>
+            <table className="price-model-table">
                 <thead>
                     <tr>
-                        <th>Link</th>
-                        <th>Column 2</th>
-                        <th>Column 3</th>
-                        <th>Column 4</th>
-                        <th>Column 5</th>
-                        <th>Column 6</th>
-                        <th>Column 7</th>
-                        <th>Column 8</th>
-                        <th>Column 9</th>
+                        <th>ID</th>
+                        <th>Description</th>
+                        <th>Contract / Bar ID</th>
+                        <th>Contract / Bar Description</th>
+                        <th>Spend Pool H/M/L</th>
+                        <th>Supplier(s)</th>
+                        <th>BU</th>
+                        <th>Region(s)</th>
+                        <th>Material Coverage</th>
                     </tr>
                 </thead>
                 <tbody>
                     {filteredRecords.map((record) => {
                         return (
                             <tr key={record.id}>
-                                <td><Link to='/price-model-workbench'>{record.column1}</Link></td>
-                                <td>{record.column2}</td>
-                                <td>{record.column3}</td>
-                                <td>{record.column4}</td>
-                                <td>{record.column5}</td>
-                                <td>{record.column6}</td>
-                                <td>{record.column7}</td>
-                                <td>{record.column8}</td>
-                                <td>{record.column9}</td>
+                                <td><Link to='/price-model-workbench'>{record.id}</Link></td>
+                                <td>{record.description}</td>
+                                <td>{record.barId}</td>
+                                <td>{record.barDescription}</td>
+                                <td>{record.spendPool}</td>
+                                <td>{record.suppliers}</td>
+                                <td>{record.bu}</td>
+                                <td>{record.regions}</td>
+                                <td><Link to='/'>[Click Here]</Link></td>
                             </tr>
                         );
                     })}

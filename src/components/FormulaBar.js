@@ -1,10 +1,12 @@
 import React from 'react';
 
-const FormulaBar = () => {
+const FormulaBar = (selectedFormula) => {
+
+
 
       return (
         <aside>
-          FormulaBar Reference Material
+          FormulaBar Reference Material {JSON.stringify(selectedFormula)}
         </aside>
       );
 

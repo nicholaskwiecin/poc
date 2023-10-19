@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './CostingPanel.scss';
 
-const CostingPanel = () => {
+const CostingPanel = (selectedFormula) => {
     const [vendorFilter, setVendorFilter] = useState('');
     const [materialFilter, setMaterialFilter] = useState('');
     const [livestockFilter, setLivestockFilter] = useState('');

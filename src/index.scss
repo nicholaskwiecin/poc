@@ -1,6 +1,35 @@
+@import 'global-styles.scss';
+
 body {
   margin: 0;
   font-family: 'Montserrat';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+
+
+table {
+  border: 2px solid;
+  border-radius: 5px;
+  border-color: $primary-blue;
+
+  tr:nth-child(even) {
+      background-color: $secondary-grey;
+  }
+
+  tr:hover {
+      background-color: $secondary-grey-dark;
+  }
+
+  th {
+      background-color: $primary-blue;
+      color: $primary-white;
+  }
+
+  th,
+  td {
+      padding: 0.5rem;
+      text-align: left;
+  }
 }

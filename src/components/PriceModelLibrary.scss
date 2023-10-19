@@ -13,34 +13,15 @@
         h2 {
             margin: 0rem;
         }
+
+      
     }
-    
+
     .price-model-table {
         margin-top: 5rem;
-        border: 2px solid;
-        border-radius: 5px;
         margin-left: 1rem;
         margin-right:1rem;
-        border-color: $primary-blue;
-
-        tr:nth-child(even) {
-            background-color: $secondary-white;
-        }
-
-        tr:hover {
-            background-color: $secondary-grey;
-        }
-
-        th {
-            background-color: $primary-blue-dark;
-            color: $secondary-white;
-        }
-
-        th,
-        td {
-            padding: 0.5rem;
-            text-align: left;
-        }
     }
 }
+
 

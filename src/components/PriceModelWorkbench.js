@@ -19,10 +19,53 @@ const options = { hideAttribution: true };
 const snapGrid = [20, 20];
 
 const initialNodes = [
+  { id: '1_category', position: { x: 300, y: 0 }, data: { 
+    label: 'Total Materials',
+    className:'nodrag',
+    type: 'category' 
+  } },
   { id: '1_formula', position: { x: 300, y: 0 }, data: { 
     label: 'Raw Materials',
     type: 'formula_sum' 
   } },
+  { id: '2_formula', position: { x: 300, y: 0 }, data: { 
+    label: 'Packaging',
+    type: 'formula_sum' 
+  } },
+  { id: '1_category', position: { x: 300, y: 0 }, data: { 
+    label: 'Conversion and Fees',
+    className:'nodrag',
+    type: 'category' 
+  } },
+  { id: '3_formula', position: { x: 300, y: 0 }, data: { 
+    label: 'Manufacturing',
+    type: 'formula_sum' 
+  } },
+  { id: '4_formula', position: { x: 300, y: 0 }, data: { 
+    label: 'Labor',
+    type: 'formula_sum' 
+  } },
+  { id: '5_formula', position: { x: 300, y: 0 }, data: { 
+    label: 'Fees',
+    type: 'formula_sum' 
+  } },
+  { id: '1_category', position: { x: 300, y: 0 }, data: { 
+    label: 'Logistics',
+    className:'nodrag',
+    type: 'category' 
+  } },
+  { id: '2_formula', position: { x: 300, y: 0 }, data: { 
+    label: 'Transportation',
+    type: 'formula_sum' 
+  } },
+  { id: '2_formula', position: { x: 300, y: 0 }, data: { 
+    label: 'Warehousing',
+    type: 'formula_sum' 
+  } },
+
+
+
+
   { id: '2_input_materials', position: { x: 0, y: 100 }, data: { label: 'Feedstock 1', type: 'input_materials', value: 50.4 } },
   { id: '3_input_materials', position: { x: 200, y: 100 }, data: { label: 'Feedstock 2', type: 'input_materials', value: 16.6 } },
   { id: '4_input_materials', position: { x: 400, y: 100 }, data: { label: 'Feedstock 3', type: 'input_materials', value: 5 } },

@@ -272,7 +272,7 @@ const PriceModelWorkbench = () => {
         data: { 
           label: `${elementName} ${inputId}`,
           type: `input_${elementName}`,
-          value: 0,
+          value: Math.floor(Math.random()*100),
           vendorId: getVendorID(),
           usage: getUsage(),
           materialID: getMaterialID(),
@@ -310,7 +310,9 @@ const PriceModelWorkbench = () => {
             fitView
           ><Controls />
             <Background />
+            {/* //TODO: Add the context menu back in after fixing the positioning
             {menu && <ContextMenu onClick={onPaneClick} {...menu} />}
+             */}
           </ReactFlow>
         </div>
         <div className="left-panel">

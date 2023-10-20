@@ -49,6 +49,7 @@ const initialNodes = [
     deletable: false,
     data: {
       label: 'Raw Materials',
+      description: 'Raw Material = Sum of (%INPUTS%)',
       type: 'formula_sum'
     }
   },

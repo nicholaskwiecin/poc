@@ -182,14 +182,28 @@ const PriceModelWorkbench = () => {
 
     // If you selected a formula node directly, use that
     if (searchElement.id.includes('formula')) {
-      formulaNode = searchElement;
+      formulaNode = nodes.find((node) => node.id === searchElement.id)
     }
     else {
       // TODO:  Travese up multiple levels in the tree, right now this will only work if you select a child node of the formula node
       // Travese the edges to get a formula_sum type node
-      formulaNode = nodes.find((node) => node.id === edges.find((edge) => edge.target === searchElement.id && edge.source.includes('formula')).source)
+      let searchEdge = edges.find((edge) => edge.target === searchElement.id && edge.source.includes('formula'));
+      
+      // If no edge was found that matches a forumla type node then return
+      if (!searchEdge){
+        return;
+      }
+      
+      // Find the formula node
+      formulaNode = nodes.find((node) => node.id === searchEdge.source)
+
+      // If there is no forumula node found then return
+      if (!formulaNode) {
+        return;
+      }
     }
 
+    // Find all other input nodes for a given formula node
     let inputNodes = [];
     for (let edge of edges.filter((edge) => edge.source === formulaNode.id)) {
       inputNodes.push(nodes.find((node) => edge.target === node.id));
@@ -197,7 +211,7 @@ const PriceModelWorkbench = () => {
 
     console.log({ formulaNode, inputNodes });
     setSelectedFormula({ formulaNode, inputNodes });
-  }, []);
+  }, [nodes, edges]);
 
   const onNodeContextMenu = useCallback(
     (event, node) => {
@@ -264,6 +278,7 @@ const PriceModelWorkbench = () => {
 
   return (
     <div className="container">
+      {JSON.stringify(edges)}
       <ReactFlowProvider>
         <div className="reactflow-wrapper center-panel" ref={reactFlowWrapper}>
           <ReactFlow

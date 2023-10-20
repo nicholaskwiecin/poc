@@ -28,9 +28,11 @@ const FormulaBar = ({ selectedFormula }) => {
   return (
     <aside className='formula-bar'>
       {Object.keys(selectedFormula.formulaNode).length ? <div>
+        <h2>Formula Bar</h2>
         <div className='formula-description'>
           {substituteDescription(selectedFormula.formulaNode.data.description)}
         </div>
+        <h2>Reference Material</h2>
         <div className='formula-calucation'>
           {substituteFormula()}
         </div>

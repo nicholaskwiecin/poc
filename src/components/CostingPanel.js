@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './CostingPanel.scss';
 
-const CostingPanel = ({selectedFormula}) => {
+const CostingPanel = ({selectedFormula,onInputValueChange}) => {
 
     return (
         <aside className='costing-panel'>
@@ -22,15 +22,15 @@ const CostingPanel = ({selectedFormula}) => {
                     </thead>
                     <tbody>
                     {selectedFormula.inputNodes.map((node) =>{
-                            return (
-                                <tr key={node.data.label+'_feedstock_table'}>
-                                    <td>{node.data.label}</td>
-                                    <td>{node.data.vendorId}</td>
-                                    <td>{node.data.value}</td>
-                                    <td>{node.data.unit}</td>
-                                </tr>
-                            )
-                        })}
+                        return (
+                            <tr key={node.data.label+'_feedstock_table'}>
+                                <td>{node.data.label}</td>
+                                <td>{node.data.vendorId}</td>
+                                <td><input onChange={(event)=>onInputValueChange(event,node)} type="number" defaultValue={node.data.value} /></td>
+                                <td>{node.data.unit}</td>
+                            </tr>
+                        )
+                    })}
                     </tbody>
                 </table>
             </div>

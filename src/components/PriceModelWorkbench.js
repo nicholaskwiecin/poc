@@ -173,6 +173,16 @@ const PriceModelWorkbench = () => {
   const [menu, setMenu] = useState(null);
   const [selectedFormula, setSelectedFormula] = useState({formulaNode:{},inputNodes:[]});
 
+  // Change the value of a given input node
+  const onInputValueChange = useCallback((event, node) => {
+    setNodes(nodes.map((mapNode) => {
+      if (mapNode.id === node.id) {
+        mapNode.data.value = event.target.value;
+      }
+      return mapNode;
+    }));
+  });
+
   const onConnect = useCallback((params) => setEdges((eds) => addEdge(params, eds)), []);
 
   const onDragOver = useCallback((event) => {
@@ -272,7 +282,7 @@ const PriceModelWorkbench = () => {
         data: { 
           label: `${elementName} ${inputId}`,
           type: `input_${elementName}`,
-          value: Math.floor(Math.random()*100),
+          value: 0,
           vendorId: getVendorID(),
           usage: getUsage(),
           materialID: getMaterialID(),
@@ -319,7 +329,7 @@ const PriceModelWorkbench = () => {
           <CostElementLibrary />
         </div>
         <div className="right-panel">
-          <CostingPanel selectedFormula={selectedFormula} />
+          <CostingPanel onInputValueChange={onInputValueChange} selectedFormula={selectedFormula} />
         </div>
         <div className="bottom-panel">
           <FormulaBar selectedFormula={selectedFormula} />

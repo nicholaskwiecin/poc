@@ -286,5 +286,57 @@
             "bu": "Hair Care",
             "regions": "ALL"
         }
+    ],
+    "costing_panel_tables" : [
+        {
+            "type": "feedstock",
+            "valueInputLabel": "Cost Per Unit",
+            "columns": [
+                {
+                    "label": "Vendor ID",
+                    "type": "Integer"
+                },
+                {
+                    "label": "Unit of Measure",
+                    "type": "Enum",
+                    "values": ["kg"]
+                },
+                {
+                    "label": "Vendor ID",
+                    "type": "Integer"
+                }
+            ]
+        },
+        {
+            "type": "fees",
+            "valueInputLabel": "Amount",
+            "columns": [
+            ]
+        },
+        {
+            "type": "equipment",
+            "valueInputLabel": "Cost",
+            "columns": [
+            ]
+        },
+        {
+            "type": "energy",
+            "valueInputLabel": "Watts",
+            "columns": [
+            ]
+        },
+        {
+            "type": "lane",
+            "valueInputLabel": "Value",
+            "columns": [
+            ]
+        },
+        {
+            "type": "warehousing",
+            "valueInputLabel": "Value",
+            "columns": [
+            ]
+        }
+
     ]
 }

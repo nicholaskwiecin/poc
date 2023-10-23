@@ -11,6 +11,7 @@ import PriceModelLibrary from './components/PriceModelLibrary';
 import PriceModelWorkbench from './components/PriceModelWorkbench';
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import PriceModelLanding from './components/PriceModelLanding';
+import Login from './components/Login';
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
+        element: <Login />,
+      },
+      {
+        path: 'landing/:userType',
         element: <PriceModelLanding />,
       },
       {

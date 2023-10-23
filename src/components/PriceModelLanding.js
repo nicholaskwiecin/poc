@@ -15,28 +15,28 @@ const PriceModelLanding = () => {
         userType === 'admin' ?
           <div className="nav-cards">
             <div className="nav-card">
-              <Link to='/my-actions'>Missing Reference Data</Link>
+              <Link to='/not-implemented'>Missing Reference Data</Link>
             </div>
             <div className="nav-card">
-              <Link to='/price-model-library'>Cost Element Maintenance</Link>
+              <Link to='/not-implemented'>Cost Element Maintenance</Link>
             </div>
             <div className="nav-card">
-              <Link to='/price-executions'>Price Maintenance</Link>
+              <Link to='/not-implemented'>Price Maintenance</Link>
             </div>
           </div>
           :
           <div className="nav-cards">
             <div className="nav-card">
-              <Link to='/my-actions'>My Actions</Link>
+              <Link to='/not-implemented'>My Actions</Link>
             </div>
             <div className="nav-card">
               <Link to='/price-model-library'>Price Model Library</Link>
             </div>
             <div className="nav-card">
-              <Link to='/price-executions'>Price Executions</Link>
+              <Link to='/not-implemented'>Price Executions</Link>
             </div>
             <div className="nav-card">
-              <Link to='/price-maintenance'>Price Maintenance</Link>
+              <Link to='/not-implemented'>Price Maintenance</Link>
             </div>
           </div>
       }

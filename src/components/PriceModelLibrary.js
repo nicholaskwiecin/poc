@@ -41,7 +41,7 @@ const PriceModelLibrary = () => {
                                 <td>{record.suppliers}</td>
                                 <td>{record.bu}</td>
                                 <td>{record.regions}</td>
-                                <td><Link to='/'>[Click Here]</Link></td>
+                                <td><Link to='/not-implemented'>[Click Here]</Link></td>
                             </tr>
                         );
                     })}

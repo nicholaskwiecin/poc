@@ -12,6 +12,7 @@ import PriceModelWorkbench from './components/PriceModelWorkbench';
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import PriceModelLanding from './components/PriceModelLanding';
 import Login from './components/Login';
+import NotImplemented from './components/NotImplemented';
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
       {
         path: 'price-model-workbench',
         element: <PriceModelWorkbench />,
+      },
+      {
+        path:'not-implemented',
+        element: <NotImplemented />,
       }
     ]
   },

@@ -225,10 +225,12 @@
             "category": "Materials",
             "elements": [
                 {
-                    "name": "Feedstock"
+                    "label": "Feedstock",
+                    "id":"feedstock"
                 },
                 {
-                    "name": "Fees"
+                    "label": "Fees",
+                    "id": "fees"
                 }
             ]
         },
@@ -236,10 +238,12 @@
             "category": "Conversion",
             "elements": [
                 {
-                    "name": "Equipment"
+                    "label": "Equipment",
+                    "id":"equipment"
                 },
                 {
-                    "name": "Energy"
+                    "label": "Energy",
+                    "id":"energy"
                 }
             ]
         },
@@ -247,10 +251,12 @@
             "category": "Logistics",
             "elements": [
                 {
-                    "name": "Lane"
+                    "label": "Lane",
+                    "id":"lane"
                 },
                 {
-                    "name": "Warehousing"
+                    "label": "Warehousing",
+                    "id":"warehousing"
                 }
             ]
         }

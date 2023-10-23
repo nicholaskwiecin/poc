@@ -6,8 +6,8 @@ const CostElementLibrary = () => {
 
     const costElements = database.price_model_cost_element_library;
 
-    const onDragStart = (event, elementName) => {
-        event.dataTransfer.setData('application/reactflow', elementName);
+    const onDragStart = (event, element) => {
+        event.dataTransfer.setData('application/reactflow', JSON.stringify(element));
         event.dataTransfer.effectAllowed = 'move';
       };
     
@@ -22,7 +22,7 @@ const CostElementLibrary = () => {
                             {
                                 category.elements.map((element, index) => {
                                     return (
-                                        <div key={index} className="element" onDragStart={(event) => onDragStart(event, element.name)} draggable>{element.name}</div>
+                                        <div key={index} className="element" onDragStart={(event) => onDragStart(event, element)} draggable>{element.label}</div>
                                     )
                                 })
                             }

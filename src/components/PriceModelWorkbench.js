@@ -92,6 +92,7 @@ const PriceModelWorkbench = () => {
       const pane = reactFlowWrapper.current.getBoundingClientRect();
 
       // TODO: Fix the menu positioning
+      // TODO: Add rename to this context menu??
       setMenu({
         id: node.id,
         top: event.clientY < pane.height - 200 && event.clientY,
@@ -111,11 +112,13 @@ const PriceModelWorkbench = () => {
       event.preventDefault();
 
       const reactFlowBounds = reactFlowWrapper.current.getBoundingClientRect();
-      const elementName = event.dataTransfer.getData('application/reactflow');
+
+      // Get the element information from the dropped event using the dataTransfer key
+      // NOTE: We have to convert to and from JSON as the setData won't accept an object
+      const element = JSON.parse(event.dataTransfer.getData('application/reactflow'));
 
       // check if the dropped element is valid
-      // TODO: Implement other element types, right now we only support Feedstock elements
-      if (typeof elementName === 'undefined' || !elementName || elementName !== 'Feedstock') {
+      if (typeof element === 'undefined' || !element) {
         return;
       }
 
@@ -125,11 +128,11 @@ const PriceModelWorkbench = () => {
       });
       const inputId = getId();
       const newNode = {
-        id: `${inputId}_input_${elementName}`,
+        id: `${inputId}_input_${element.id}`,
         position,
         data: { 
-          label: `${elementName} ${inputId}`,
-          type: `input_${elementName}`,
+          label: `${element.label} ${inputId}`,
+          type: `input_${element.id}`,
           value: 0,
           vendorId: getVendorID(),
           usage: getUsage(),

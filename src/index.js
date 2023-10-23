@@ -45,7 +45,6 @@ const router = createBrowserRouter([
   basename: process.env.REACT_APP_RELATIVE_PATH ? process.env.REACT_APP_RELATIVE_PATH : '/',
 })
 
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>

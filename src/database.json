@@ -1,0 +1,290 @@
+{
+    "price_model_template": {
+        "initial_nodes": [
+            {
+                "id": "1_header",
+                "position": {
+                    "x": 0,
+                    "y": -50
+                },
+                "type": "input",
+                "draggable": false,
+                "deletable": false,
+                "selectable": false,
+                "data": {
+                    "label": "Price Model Header / Total Invoice Price",
+                    "type": "header"
+                }
+            },
+            {
+                "id": "1_category",
+                "position": {
+                    "x": -400,
+                    "y": 100
+                },
+                "draggable": false,
+                "deletable": false,
+                "selectable": false,
+                "data": {
+                    "label": "Total Materials",
+                    "type": "category"
+                }
+            },
+            {
+                "id": "1_formula",
+                "position": {
+                    "x": -500,
+                    "y": 200
+                },
+                "draggable": false,
+                "deletable": false,
+                "data": {
+                    "label": "Raw Materials",
+                    "description": "Raw Material = Sum of (%INPUTS%)",
+                    "type": "formula_sum"
+                }
+            },
+            {
+                "id": "2_formula",
+                "position": {
+                    "x": -300,
+                    "y": 200
+                },
+                "draggable": false,
+                "deletable": false,
+                "selectable": false,
+                "data": {
+                    "label": "Packaging",
+                    "type": "formula_sum"
+                }
+            },
+            {
+                "id": "2_category",
+                "position": {
+                    "x": 0,
+                    "y": 100
+                },
+                "draggable": false,
+                "deletable": false,
+                "selectable": false,
+                "data": {
+                    "label": "Conversion and Fees",
+                    "type": "category"
+                }
+            },
+            {
+                "id": "3_formula",
+                "position": {
+                    "x": -150,
+                    "y": 200
+                },
+                "draggable": false,
+                "deletable": false,
+                "selectable": false,
+                "data": {
+                    "label": "Manufacturing",
+                    "type": "formula_sum"
+                }
+            },
+            {
+                "id": "4_formula",
+                "position": {
+                    "x": 0,
+                    "y": 200
+                },
+                "draggable": false,
+                "deletable": false,
+                "selectable": false,
+                "data": {
+                    "label": "Labor",
+                    "type": "formula_sum"
+                }
+            },
+            {
+                "id": "5_formula",
+                "position": {
+                    "x": 150,
+                    "y": 200
+                },
+                "draggable": false,
+                "deletable": false,
+                "selectable": false,
+                "data": {
+                    "label": "Fees",
+                    "type": "formula_sum"
+                }
+            },
+            {
+                "id": "3_category",
+                "position": {
+                    "x": 400,
+                    "y": 100
+                },
+                "draggable": false,
+                "deletable": false,
+                "selectable": false,
+                "data": {
+                    "label": "Logistics",
+                    "type": "category"
+                }
+            },
+            {
+                "id": "6_formula",
+                "position": {
+                    "x": 500,
+                    "y": 200
+                },
+                "draggable": false,
+                "deletable": false,
+                "selectable": false,
+                "data": {
+                    "label": "Transportation",
+                    "type": "formula_sum"
+                }
+            },
+            {
+                "id": "7_formula",
+                "position": {
+                    "x": 300,
+                    "y": 200
+                },
+                "draggable": false,
+                "deletable": false,
+                "selectable": false,
+                "data": {
+                    "label": "Warehousing",
+                    "type": "formula_sum"
+                }
+            }
+        ],
+        "initial_edges": [
+            {
+                "id": "h1-1",
+                "source": "1_header",
+                "deletable": false,
+                "target": "1_category"
+            },
+            {
+                "id": "h1-2",
+                "source": "1_header",
+                "deletable": false,
+                "target": "2_category"
+            },
+            {
+                "id": "h1-3",
+                "source": "1_header",
+                "deletable": false,
+                "target": "3_category"
+            },
+            {
+                "id": "c1-1",
+                "source": "1_category",
+                "deletable": false,
+                "target": "1_formula"
+            },
+            {
+                "id": "c1-2",
+                "source": "1_category",
+                "deletable": false,
+                "target": "2_formula"
+            },
+            {
+                "id": "c2-3",
+                "source": "2_category",
+                "deletable": false,
+                "target": "3_formula"
+            },
+            {
+                "id": "c2-4",
+                "source": "2_category",
+                "deletable": false,
+                "target": "4_formula"
+            },
+            {
+                "id": "c2-5",
+                "source": "2_category",
+                "deletable": false,
+                "target": "5_formula"
+            },
+            {
+                "id": "c3-6",
+                "source": "3_category",
+                "deletable": false,
+                "target": "6_formula"
+            },
+            {
+                "id": "c3-7",
+                "source": "3_category",
+                "deletable": false,
+                "target": "7_formula"
+            }
+        ]
+    },
+    "price_model_cost_element_library": [
+        {
+            "category": "Materials",
+            "elements": [
+                {
+                    "name": "Feedstock"
+                },
+                {
+                    "name": "Fees"
+                }
+            ]
+        },
+        {
+            "category": "Conversion",
+            "elements": [
+                {
+                    "name": "Equipment"
+                },
+                {
+                    "name": "Energy"
+                }
+            ]
+        },
+        {
+            "category": "Logistics",
+            "elements": [
+                {
+                    "name": "Lane"
+                },
+                {
+                    "name": "Warehousing"
+                }
+            ]
+        }
+    ],
+    "price_models": [
+        {
+            "id": "PM-0000001",
+            "description": "Sasol Beauty Care Surfactants Global",
+            "barId": "1234456",
+            "barDescription": "Sasol",
+            "spendPool": "Chemicals/Surfactants/LAB",
+            "suppliers": "SASOL (01523242)",
+            "bu": "Hair Care",
+            "regions": "ALL"
+        },
+        {
+            "id": "PM-0000002",
+            "description": "BASF Beauty Care Europe",
+            "barId": "1234456",
+            "barDescription": "Sasol",
+            "spendPool": "Chemicals/Surfactants/LAB",
+            "suppliers": "SASOL (01523242)",
+            "bu": "Hair Care",
+            "regions": "ALL"
+        },
+        {
+            "id": "PM-0000003",
+            "description": "Chem Tech Beauty Care LA",
+            "barId": "1234456",
+            "barDescription": "Sasol",
+            "spendPool": "Chemicals/Surfactants/LAB",
+            "suppliers": "SASOL (01523242)",
+            "bu": "Hair Care",
+            "regions": "ALL"
+        }
+    ]
+}

@@ -1,43 +1,10 @@
 import React from "react";
 import './CostElementLibrary.scss';
+import database from '../database.json';
 
 const CostElementLibrary = () => {
 
-    const costElements = [
-        {
-            category: "Materials",
-            elements: [
-                {
-                    name: "Feedstock"
-                },
-                {
-                    name: "Fees"
-                }
-            ]
-        },
-        {
-            category:"Conversion",
-            elements:[
-                {
-                    name: "Equipment",
-                },
-                {
-                    name: "Energy",
-                }
-            ]
-        },
-        {
-            category:"Logistics",
-            elements:[
-                {
-                    name: "Lane",
-                },
-                {
-                    name: "Warehousing",
-                }
-            ]
-        }
-    ]
+    const costElements = database.price_model_cost_element_library;
 
     const onDragStart = (event, elementName) => {
         event.dataTransfer.setData('application/reactflow', elementName);

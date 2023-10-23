@@ -66,27 +66,12 @@ const PriceModelWorkbench = () => {
     let searchElement = elements.nodes[0]
     let formulaNode;
 
-    // If you selected a formula node directly, use that
+    // If you selected a formula node directly, use that else return
     if (searchElement.id.includes('formula')) {
       formulaNode = nodes.find((node) => node.id === searchElement.id)
     }
     else {
-      // TODO:  Travese up multiple levels in the tree, right now this will only work if you select a child node of the formula node
-      // Travese the edges to get a formula_sum type node
-      let searchEdge = edges.find((edge) => edge.target === searchElement.id && edge.source.includes('formula'));
-      
-      // If no edge was found that matches a forumla type node then return
-      if (!searchEdge){
-        return;
-      }
-      
-      // Find the formula node
-      formulaNode = nodes.find((node) => node.id === searchEdge.source)
-
-      // If there is no formula node found then return
-      if (!formulaNode) {
-        return;
-      }
+      return;
     }
 
     // Find all other input nodes for a given formula node

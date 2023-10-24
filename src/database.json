@@ -226,11 +226,31 @@
             "elements": [
                 {
                     "label": "Feedstock",
-                    "id":"feedstock"
+                    "id":"feedstock",
+                    "child_inputs": [
+                        {
+                            "label": "Scrap",
+                            "id": "scrap"
+                        },
+                        {
+                            "label": "Inbound Fees",
+                            "id": "inbound_fees"
+                        },
+                        {
+                            "label": "Inbound Logistics",
+                            "id": "inbound_logistics"
+                        }
+                    ]
                 },
                 {
                     "label": "Fees",
-                    "id": "fees"
+                    "id": "fees",
+                    "child_inputs": [
+                        {
+                            "label": "Sample",
+                            "id": "sample"
+                        }
+                    ]
                 }
             ]
         },
@@ -239,11 +259,27 @@
             "elements": [
                 {
                     "label": "Equipment",
-                    "id":"equipment"
+                    "id":"equipment",
+                    "child_inputs": [
+                        {
+                            "label": "Amortization",
+                            "id": "amortization"
+                        },
+                        {
+                            "label": "Energy",
+                            "id": "energy"
+                        }
+                    ]
                 },
                 {
                     "label": "Energy",
-                    "id":"energy"
+                    "id":"energy",
+                    "child_inputs": [
+                        {
+                            "label": "Sample",
+                            "id": "sample"
+                        }
+                    ]
                 }
             ]
         },
@@ -252,11 +288,23 @@
             "elements": [
                 {
                     "label": "Lane",
-                    "id":"lane"
+                    "id":"lane",
+                    "child_inputs": [
+                        {
+                            "label": "Sample",
+                            "id": "sample"
+                        }
+                    ]
                 },
                 {
                     "label": "Warehousing",
-                    "id":"warehousing"
+                    "id":"warehousing",
+                    "child_inputs": [
+                        {
+                            "label": "Sample",
+                            "id": "sample"
+                        }
+                    ]
                 }
             ]
         }

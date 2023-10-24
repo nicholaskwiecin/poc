@@ -1,4 +1,4 @@
-import React, { useState, useRef, useCallback } from 'react';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
 import ReactFlow, {
   ReactFlowProvider,
   addEdge,
@@ -83,22 +83,26 @@ const PriceModelWorkbench = () => {
   }, [nodes, edges]);
 
 
-  // FIXME: This should use a better method to listen to the event rather than on the body of the document
-  // This should be done via a custom event listener or a ref passed down to each child node
-  // This also will leak memory in the number of event listeners that are created
-  // This is a temporary solution to get the rename functionality working
-  document.body.addEventListener('nodeRename', function (event) {
-    onRenameNode(event.detail.label, event.detail.nodeId);
-  });
 
-  const onRenameNode = useCallback((label, nodeId) => {
+
+  const onRenameNode = (event) => {
+    console.log(event);
     setNodes(nodes.map((node) => {
-      if (node.id === nodeId) {
-        node.data.label = label;
+      if (node.id === event.detail.nodeId) {
+        node.data.label = event.detail.label;
       }
       return node;
     }));
-  }, [nodes, edges]);
+  };
+
+  // FIXME: This should use a better method to listen to the event rather than on the window
+  // This should be done via a custom event listener or a ref passed down to each child node
+  // This is a temporary solution to get the rename functionality working
+  useEffect(() => {
+    window.addEventListener('nodeRename',onRenameNode);
+    return () => { window.removeEventListener('nodeRename', onRenameNode) }
+  }, [nodes, edges])
+
 
   const onDrop = useCallback(
     (event) => {
@@ -146,12 +150,12 @@ const PriceModelWorkbench = () => {
           id: `${inputHash}_input_${element.id}_${child.id}`,
           type: 'cost_element',
           position: {
-            x: position.x + 50,
+            x: position.x + 100,
             y: position.y + ((index+1) * 50)
           },
           data: {
             label: `${child.label}`,
-            type: `input_${child.id}`,
+            type: `input_child_${child.id}`,
             value: 0,
           },
         });

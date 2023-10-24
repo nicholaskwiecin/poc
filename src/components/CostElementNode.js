@@ -13,9 +13,9 @@ const CostElementNode = (({ data }) => {
   const onKeyDown = (event) => {
     if (event.key === 'Enter') {
 
-      // FIXME: This should use a better method to dispatch the event rather than on the body of the document
-      // This should be done via a custome event listener or a ref passed down from the parent
-      document.body.dispatchEvent(new CustomEvent("nodeRename",{ detail: { nodeId: nodeId, label: event.target.value }}));
+      // FIXME: This should use a better method to dispatch the event rather than on the window
+      // This should be done via a custom event listener or a ref passed down from the parent
+      window.dispatchEvent(new CustomEvent("nodeRename",{ detail: { nodeId: nodeId, label: event.target.value }}));
       setIsRenaming(false);
     }
     else if (event.key === 'Escape') {
@@ -42,18 +42,22 @@ const CostElementNode = (({ data }) => {
       </NodeToolbar>
       <Handle
         type="target"
-        position={Position.Top}
+        position={data.type.includes('input_child') ? Position.Left : Position.Top}
       />
       {
         isRenaming ?
           <input autoFocus className="nodrag rename-input" type="text" onBlur={onRenameBlur} onKeyDown={onKeyDown} defaultValue={data.label} />
           : data.label
       }
-
-      <Handle
-        type="source"
-        position={Position.Bottom}
-      />
+{
+  data.type.includes('input_child') ? <></> 
+  :  
+  <Handle
+  type="source"
+  position={Position.Bottom}
+/>
+}
+    
     </>
   );
 });

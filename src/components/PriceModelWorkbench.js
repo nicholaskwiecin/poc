@@ -24,9 +24,9 @@ const nodeTypes = {
 
 let id = 1;
 const getId = () => id++;
-const getVendorID = () => Math.floor(Math.random()*100000000);
-const getMaterialID = () => Math.floor(Math.random()*100000000);
-const getUsage = () => Math.floor(Math.random()*100);
+const getVendorID = () => Math.floor(Math.random() * 100000000);
+const getMaterialID = () => Math.floor(Math.random() * 100000000);
+const getUsage = () => Math.floor(Math.random() * 100);
 
 
 const PriceModelWorkbench = () => {
@@ -36,8 +36,7 @@ const PriceModelWorkbench = () => {
   const [nodes, setNodes, onNodesChange] = useNodesState(database.price_model_template.initial_nodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState(database.price_model_template.initial_edges);
   const [reactFlowInstance, setReactFlowInstance] = useState(null);
-  const [menu, setMenu] = useState(null);
-  const [selectedFormula, setSelectedFormula] = useState({formulaNode:{},inputNodes:[]});
+  const [selectedFormula, setSelectedFormula] = useState({ formulaNode: {}, inputNodes: [] });
 
   // Change the value of a given input node
   const onInputValueChange = useCallback((event, node) => {
@@ -59,7 +58,7 @@ const PriceModelWorkbench = () => {
   const onSelectionChange = useCallback((elements) => {
     // Return if no nodes selected
     if (!elements.nodes.length) {
-      setSelectedFormula({ formulaNode:{}, inputNodes:[] });
+      setSelectedFormula({ formulaNode: {}, inputNodes: [] });
       return;
     }
 
@@ -83,9 +82,23 @@ const PriceModelWorkbench = () => {
     setSelectedFormula({ formulaNode, inputNodes });
   }, [nodes, edges]);
 
-  const onRenameNode = useCallback((label,nodeId) => {
-    console.log(label);
+
+  // FIXME: This should use a better method to listen to the event rather than on the body of the document
+  // This should be done via a custom event listener or a ref passed down to each child node
+  // This also will leak memory in the number of event listeners that are created
+  // This is a temporary solution to get the rename functionality working
+  document.body.addEventListener('nodeRename', function (event) {
+    onRenameNode(event.detail.label, event.detail.nodeId);
   });
+
+  const onRenameNode = useCallback((label, nodeId) => {
+    setNodes(nodes.map((node) => {
+      if (node.id === nodeId) {
+        node.data.label = label;
+      }
+      return node;
+    }));
+  }, [nodes, edges]);
 
   const onDrop = useCallback(
     (event) => {
@@ -111,8 +124,7 @@ const PriceModelWorkbench = () => {
         id: `${inputId}_input_${element.id}`,
         type: 'cost_element',
         position,
-        data: { 
-          onRenameNode,
+        data: {
           label: `${element.label} ${inputId}`,
           type: `input_${element.id}`,
           value: 0,
@@ -121,7 +133,7 @@ const PriceModelWorkbench = () => {
           materialID: getMaterialID(),
           unit: 'KG',
           usageUnit: 'Percent',
-         },
+        },
       };
 
       setNodes((nds) => nds.concat(newNode));

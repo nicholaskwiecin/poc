@@ -1,0 +1,29 @@
+@import '../global-styles.scss';
+.button-toolbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 2rem;
+
+    button {
+        background: transparent;
+        border: none;
+        padding: 0rem;
+    }
+    
+    .rename-button {
+        color: $secondary-blue-dark;
+        display: flex;
+        svg {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+    }
+
+
+}
+
+.rename-input {
+    width: 5rem;
+}

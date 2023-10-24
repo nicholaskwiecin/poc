@@ -12,7 +12,6 @@ import 'reactflow/dist/style.css';
 import FormulaBar from './FormulaBar';
 import CostElementLibrary from './CostElementLibrary';
 import CostingPanel from './CostingPanel';
-import ContextMenu from './ContextMenu';
 import database from '../database.json';
 import CostElementNode from './CostElementNode';
 
@@ -40,7 +39,6 @@ const PriceModelWorkbench = () => {
   const [menu, setMenu] = useState(null);
   const [selectedFormula, setSelectedFormula] = useState({formulaNode:{},inputNodes:[]});
 
-  console.log(nodes)
   // Change the value of a given input node
   const onInputValueChange = useCallback((event, node) => {
     setNodes(nodes.map((mapNode) => {
@@ -59,8 +57,6 @@ const PriceModelWorkbench = () => {
   }, []);
 
   const onSelectionChange = useCallback((elements) => {
-
-
     // Return if no nodes selected
     if (!elements.nodes.length) {
       setSelectedFormula({ formulaNode:{}, inputNodes:[] });
@@ -87,37 +83,8 @@ const PriceModelWorkbench = () => {
     setSelectedFormula({ formulaNode, inputNodes });
   }, [nodes, edges]);
 
-  const onNodeContextMenu = useCallback(
-    (event, node) => {
-      // Prevent native context menu from showing
-      event.preventDefault();
-
-      // Calculate position of the context menu. We want to make sure it
-      // doesn't get positioned off-screen.
-      const pane = reactFlowWrapper.current.getBoundingClientRect();
-
-      // TODO: Fix the menu positioning
-      // TODO: Add rename to this context menu??
-      setMenu({
-        id: node.id,
-        top: event.clientY < pane.height - 200 && event.clientY,
-        left: event.clientX < pane.width - 200 && event.clientX,
-        right: event.clientX >= pane.width - 200 && pane.width - event.clientX,
-        bottom: event.clientY >= pane.height - 200 && pane.height - event.clientY,
-      });
-    },
-    [setMenu]
-  );
-
-  // Close the context menu if it's open whenever the window is clicked.
-  const onPaneClick = useCallback(() => setMenu(null), [setMenu]);
-
   const onRenameNode = useCallback((label,nodeId) => {
     console.log(label);
-  });
-
-  const onDeleteNode = useCallback((nodeId) => {
-    console.log(nodeId);
   });
 
   const onDrop = useCallback(
@@ -146,7 +113,6 @@ const PriceModelWorkbench = () => {
         position,
         data: { 
           onRenameNode,
-          onDeleteNode,
           label: `${element.label} ${inputId}`,
           type: `input_${element.id}`,
           value: 0,
@@ -179,8 +145,6 @@ const PriceModelWorkbench = () => {
             onDrop={onDrop}
             onDragOver={onDragOver}
             onSelectionChange={onSelectionChange}
-            onPaneClick={onPaneClick}
-            onNodeContextMenu={onNodeContextMenu}
             snapGrid={snapGrid}
             snapToGrid={true}
             proOptions={options}
@@ -188,7 +152,6 @@ const PriceModelWorkbench = () => {
             fitView
           ><Controls />
             <Background />
-            {menu && <ContextMenu onClick={onPaneClick} {...menu} />}
           </ReactFlow>
         </div>
         <div className="left-panel">

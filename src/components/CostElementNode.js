@@ -1,5 +1,8 @@
-import React, { memo, useState, useRef,useEffect } from 'react';
-import { Handle, Position, NodeToolbar, useUpdateNodeInternals, useNodeId, useNodes } from 'reactflow';
+import React, { useState} from 'react';
+import { Handle, Position, NodeToolbar, useNodeId } from 'reactflow';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSquarePen } from '@fortawesome/free-solid-svg-icons'
+import './CostElementNode.scss';
 
 const CostElementNode = (({ data }) => {
 
@@ -9,7 +12,7 @@ const CostElementNode = (({ data }) => {
 
   const onKeyDown = (event) => {
     if (event.key === 'Enter') {
-   //   data.onRenameNode(nodeId, event.target.value);
+      data.onRenameNode(nodeId, event.target.value);
       setIsRenaming(false);
     }
     else if (event.key === 'Escape') {
@@ -18,40 +21,32 @@ const CostElementNode = (({ data }) => {
     }
   }
 
-  const onRenameBlur = () => { 
+  const onRenameBlur = () => {
     setIsRenaming(false);
     setRenameValue(data.label);
   }
 
-
-  const onDelete = (event) => {
-    data.onDeleteNode(nodeId);
-    console.log(event.target.value);
-    console.log(nodeId)
-  };
-
   const onRename = () => {
     setIsRenaming(true);
-   }
+  }
 
 
   return (
     <>
       <NodeToolbar isVisible={data.toolbarVisible} position={data.toolbarPosition}>
-        <button onClick={onDelete}>Delete</button>
-        <button onClick={onRename}>Rename</button>
+        <div className='button-toolbar'>
+          {/* Add a delete button here and implement in the Price Model Workbench */}
+          <button className='rename-button' label="Rename" onClick={onRename}><FontAwesomeIcon icon={faSquarePen} /></button>
+        </div>
       </NodeToolbar>
       <Handle
         type="target"
         position={Position.Top}
       />
       {
-      isRenaming ?
-       <input autoFocus className="nodrag" type="text" onBlur={onRenameBlur} onKeyDown={onKeyDown} defaultValue={renameValue} /> 
-       : 
-      <div>
-        {data.label}
-      </div>
+        isRenaming ?
+          <input autoFocus className="nodrag rename-input" type="text" onBlur={onRenameBlur} onKeyDown={onKeyDown} defaultValue={renameValue} />
+          : data.label
       }
 
       <Handle

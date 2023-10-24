@@ -2,7 +2,6 @@ import './App.scss';
 import { Link, Outlet, Navigate } from "react-router-dom";
 import React from 'react';
 
-
 function App() {
 
 

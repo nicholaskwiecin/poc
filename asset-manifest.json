@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "https://nicholaskwiecin.github.io/poc/static/css/main.89c126e1.css",
-    "main.js": "https://nicholaskwiecin.github.io/poc/static/js/main.fb2cc1dc.js",
+    "main.css": "https://nicholaskwiecin.github.io/poc/static/css/main.bebfbf6c.css",
+    "main.js": "https://nicholaskwiecin.github.io/poc/static/js/main.f9427cb9.js",
     "static/js/787.d2006f3c.chunk.js": "https://nicholaskwiecin.github.io/poc/static/js/787.d2006f3c.chunk.js",
     "static/media/Montserrat-ExtraBold.ttf": "https://nicholaskwiecin.github.io/poc/static/media/Montserrat-ExtraBold.6c8b198832c88c649faa.ttf",
     "static/media/Montserrat-Bold.ttf": "https://nicholaskwiecin.github.io/poc/static/media/Montserrat-Bold.50f0257aa1e905f4bfaf.ttf",
@@ -9,12 +9,12 @@
     "static/media/Montserrat-Medium.ttf": "https://nicholaskwiecin.github.io/poc/static/media/Montserrat-Medium.b8c6753baa964ccac1ba.ttf",
     "static/media/Montserrat-Regular.ttf": "https://nicholaskwiecin.github.io/poc/static/media/Montserrat-Regular.24785cc015b27a3e964b.ttf",
     "index.html": "https://nicholaskwiecin.github.io/poc/index.html",
-    "main.89c126e1.css.map": "https://nicholaskwiecin.github.io/poc/static/css/main.89c126e1.css.map",
-    "main.fb2cc1dc.js.map": "https://nicholaskwiecin.github.io/poc/static/js/main.fb2cc1dc.js.map",
+    "main.bebfbf6c.css.map": "https://nicholaskwiecin.github.io/poc/static/css/main.bebfbf6c.css.map",
+    "main.f9427cb9.js.map": "https://nicholaskwiecin.github.io/poc/static/js/main.f9427cb9.js.map",
     "787.d2006f3c.chunk.js.map": "https://nicholaskwiecin.github.io/poc/static/js/787.d2006f3c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.89c126e1.css",
-    "static/js/main.fb2cc1dc.js"
+    "static/css/main.bebfbf6c.css",
+    "static/js/main.f9427cb9.js"
   ]
 }

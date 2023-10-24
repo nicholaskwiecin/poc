@@ -23,8 +23,8 @@ const nodeTypes = {
 };
 
 let id = 1;
-const getId = () => id++;
-const getVendorID = () => Math.floor(Math.random() * 100000000);
+const getHash = () => (Math.random() + 1).toString(36).substring(7);
+const getRandomID = () => Math.floor(Math.random() * 100000000);
 const getMaterialID = () => Math.floor(Math.random() * 100000000);
 const getUsage = () => Math.floor(Math.random() * 100);
 
@@ -119,24 +119,55 @@ const PriceModelWorkbench = () => {
         x: event.clientX - reactFlowBounds.left,
         y: event.clientY - reactFlowBounds.top,
       });
-      const inputId = getId();
-      const newNode = {
-        id: `${inputId}_input_${element.id}`,
+      const newNodes = [];
+      const newEdges = [];
+      const inputHash = getHash();
+
+      // Generate the cost element parent element
+      newNodes.push({
+        id: `${inputHash}_input_${element.id}`,
         type: 'cost_element',
         position,
         data: {
-          label: `${element.label} ${inputId}`,
+          label: `${element.label}`,
           type: `input_${element.id}`,
           value: 0,
-          vendorId: getVendorID(),
+          vendorId: getRandomID(),
           usage: getUsage(),
-          materialID: getMaterialID(),
+          materialID: getRandomID(),
           unit: 'KG',
           usageUnit: 'Percent',
         },
-      };
+      })
 
-      setNodes((nds) => nds.concat(newNode));
+      // Add child inputs to the cost element
+      for (const [index,child] of element.child_inputs.entries()) {
+        newNodes.push({
+          id: `${inputHash}_input_${element.id}_${child.id}`,
+          type: 'cost_element',
+          position: {
+            x: position.x + 50,
+            y: position.y + ((index+1) * 50)
+          },
+          data: {
+            label: `${child.label}`,
+            type: `input_${child.id}`,
+            value: 0,
+          },
+        });
+        // Add the edges to connect the to the parent element
+        newEdges.push({
+          id: `${inputHash}_input_${element.id}-${inputHash}_input_${element.id}_${child.id}`,
+          "source": `${inputHash}_input_${element.id}`,
+          "deletable": false,
+          "target": `${inputHash}_input_${element.id}_${child.id}`
+         })
+      }
+
+      
+
+      setNodes((nds) => nds.concat(newNodes));
+      setEdges((eds) => eds.concat(newEdges));
     },
     [reactFlowInstance]
   );

@@ -14,10 +14,14 @@ import CostElementLibrary from './CostElementLibrary';
 import CostingPanel from './CostingPanel';
 import ContextMenu from './ContextMenu';
 import database from '../database.json';
+import CostElementNode from './CostElementNode';
 
 const defaultViewport = { x: 0, y: 0, zoom: .8 };
 const options = { hideAttribution: true };
 const snapGrid = [20, 20];
+const nodeTypes = {
+  cost_element: CostElementNode,
+};
 
 let id = 1;
 const getId = () => id++;
@@ -36,6 +40,7 @@ const PriceModelWorkbench = () => {
   const [menu, setMenu] = useState(null);
   const [selectedFormula, setSelectedFormula] = useState({formulaNode:{},inputNodes:[]});
 
+  console.log(nodes)
   // Change the value of a given input node
   const onInputValueChange = useCallback((event, node) => {
     setNodes(nodes.map((mapNode) => {
@@ -107,6 +112,14 @@ const PriceModelWorkbench = () => {
   // Close the context menu if it's open whenever the window is clicked.
   const onPaneClick = useCallback(() => setMenu(null), [setMenu]);
 
+  const onRenameNode = useCallback((label,nodeId) => {
+    console.log(label);
+  });
+
+  const onDeleteNode = useCallback((nodeId) => {
+    console.log(nodeId);
+  });
+
   const onDrop = useCallback(
     (event) => {
       event.preventDefault();
@@ -129,8 +142,11 @@ const PriceModelWorkbench = () => {
       const inputId = getId();
       const newNode = {
         id: `${inputId}_input_${element.id}`,
+        type: 'cost_element',
         position,
         data: { 
+          onRenameNode,
+          onDeleteNode,
           label: `${element.label} ${inputId}`,
           type: `input_${element.id}`,
           value: 0,
@@ -168,12 +184,11 @@ const PriceModelWorkbench = () => {
             snapGrid={snapGrid}
             snapToGrid={true}
             proOptions={options}
+            nodeTypes={nodeTypes}
             fitView
           ><Controls />
             <Background />
-            {/* //TODO: Add the context menu back in after fixing the positioning
             {menu && <ContextMenu onClick={onPaneClick} {...menu} />}
-             */}
           </ReactFlow>
         </div>
         <div className="left-panel">

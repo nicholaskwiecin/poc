@@ -1,0 +1,120 @@
+@import '../global-styles.scss';
+
+.login-background {
+    background: #F2F2F2FD;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.login-panel {
+    background: $primary-white;
+    color: #8C8C8C;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 500px;
+    height: 580px;
+    padding: 20px;
+    box-shadow: 3px 5px 12px #00000059;
+    border-color: rgba(222, 222, 222, 1);
+    border-radius: 5px;
+    font-size: 14px;
+
+    #p-and-g-logo {
+        width: 85px;
+        height: 85px;
+        margin-top: 25px;
+    }
+
+    .login-header {
+        color: $secondary-black;
+    }
+
+    .login-panel-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        height: 100%;
+        width: 60%;
+
+        & > div {
+            margin: 12px 0px
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        label {
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"] {
+            width: 98%;
+            font-size: 14px;
+            border-color: #c2c2c2;
+            border-width: 1px;
+            background-color:  #f9f9f9;
+        }
+
+        button, 
+        input[type="text"], 
+        .login-user-type select {
+            height: 48px;
+            border-radius: 5px;
+            border-style: solid;
+        }
+
+        .login-user-type {
+            width: 100%;
+
+            select {
+                width: 100%;
+                background-color:  #f9f9f9;
+                border-color: #c2c2c2;
+                font-size: 14px;
+            }
+        }
+
+        .login-options {
+            font-size: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            
+            label {
+                display: inline;
+                margin: 0;
+            }
+        }
+    
+        .login-button {
+            background-color: $primary-blue-light;
+            color: white;
+            height: 40px;
+            width: 100%;
+            font-size: 16px;
+            border-color: $primary-blue-light;
+
+            .lock-icon {
+                color: rgba(255, 255, 255, 0.5);
+                display: inline;
+                position: relative;
+                left: -100px;
+                top: 0;
+            }
+        }
+
+        .login-sign-up {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}

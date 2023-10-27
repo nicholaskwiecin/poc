@@ -38,6 +38,7 @@
                 },
                 "draggable": false,
                 "deletable": false,
+                "selectable": true,
                 "data": {
                     "label": "Raw Materials",
                     "description": "Raw Material = Sum of (%INPUTS%)",
@@ -52,9 +53,10 @@
                 },
                 "draggable": false,
                 "deletable": false,
-                "selectable": false,
+                "selectable": true,
                 "data": {
                     "label": "Packaging",
+                    "description": "Raw Material = Sum of (%INPUTS%)",
                     "type": "formula_sum"
                 }
             },
@@ -80,9 +82,10 @@
                 },
                 "draggable": false,
                 "deletable": false,
-                "selectable": false,
+                "selectable": true,
                 "data": {
                     "label": "Manufacturing",
+                    "description": "Raw Material = Sum of (%INPUTS%)",
                     "type": "formula_sum"
                 }
             },
@@ -94,9 +97,10 @@
                 },
                 "draggable": false,
                 "deletable": false,
-                "selectable": false,
+                "selectable": true,
                 "data": {
                     "label": "Labor",
+                    "description": "Raw Material = Sum of (%INPUTS%)",
                     "type": "formula_sum"
                 }
             },
@@ -108,9 +112,10 @@
                 },
                 "draggable": false,
                 "deletable": false,
-                "selectable": false,
+                "selectable": true,
                 "data": {
                     "label": "Fees",
+                    "description": "Raw Material = Sum of (%INPUTS%)",
                     "type": "formula_sum"
                 }
             },
@@ -136,9 +141,10 @@
                 },
                 "draggable": false,
                 "deletable": false,
-                "selectable": false,
+                "selectable": true,
                 "data": {
                     "label": "Transportation",
+                    "description": "Raw Material = Sum of (%INPUTS%)",
                     "type": "formula_sum"
                 }
             },
@@ -150,9 +156,10 @@
                 },
                 "draggable": false,
                 "deletable": false,
-                "selectable": false,
+                "selectable": true,
                 "data": {
                     "label": "Warehousing",
+                    "description": "Raw Material = Sum of (%INPUTS%)",
                     "type": "formula_sum"
                 }
             }

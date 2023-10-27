@@ -39,10 +39,10 @@ const PriceModelWorkbench = () => {
   const [selectedFormula, setSelectedFormula] = useState({ formulaNode: {}, inputNodes: [] });
 
   // Change the value of a given input node
-  const onInputValueChange = useCallback((event, node) => {
+  const onInputValueChange = useCallback((event, node,key) => {
     setNodes(nodes.map((mapNode) => {
       if (mapNode.id === node.id) {
-        mapNode.data.value = event.target.value;
+        mapNode.data[key] = event.target.value;
       }
       return mapNode;
     }));
@@ -135,9 +135,9 @@ const PriceModelWorkbench = () => {
         data: {
           label: `${element.label}`,
           type: `input_${element.id}`,
-          value: 0,
-          vendorId: getRandomID(),
-          usage: getUsage(),
+          costPerUnit: 0,
+          vendorId: 0,
+          usage: 0,
           materialID: getRandomID(),
           unit: 'KG',
           usageUnit: 'Percent',
@@ -156,7 +156,7 @@ const PriceModelWorkbench = () => {
           data: {
             label: `${child.label}`,
             type: `input_child_${child.id}`,
-            value: 0,
+            costPerUnit: 0,
           },
         });
         // Add the edges to connect the to the parent element

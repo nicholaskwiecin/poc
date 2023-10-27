@@ -14,8 +14,8 @@ const FormulaBar = ({ selectedFormula }) => {
     // TODO: Support other type of formula nodes
     if (selectedFormula.formulaNode.data.type === 'formula_sum') {
       let summation = selectedFormula.inputNodes.reduce((accumulator, currentValue,index) => {
-        accumulator.value += parseInt(currentValue.data.value);
-        accumulator.descriptorText += `${currentValue.data.label}(${currentValue.data.value})${selectedFormula.inputNodes.length - 1 === index ? '' :', '}`
+        accumulator.value += parseInt(currentValue.data.costPerUnit);
+        accumulator.descriptorText += `${currentValue.data.label}(${currentValue.data.costPerUnit})${selectedFormula.inputNodes.length - 1 === index ? '' :', '}`
         return accumulator;
       },{value: 0, descriptorText:'('})
       return `${selectedFormula.formulaNode.data.label} Cost (${summation.value}) = Sum of ${summation.descriptorText})`;

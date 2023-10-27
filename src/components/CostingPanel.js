@@ -25,8 +25,8 @@ const CostingPanel = ({selectedFormula,onInputValueChange}) => {
                         return (
                             <tr key={node.data.label+'_feedstock_table'}>
                                 <td>{node.data.label}</td>
-                                <td>{node.data.vendorId}</td>
-                                <td><input onChange={(event)=>onInputValueChange(event,node)} type="number" defaultValue={node.data.value} /></td>
+                                <td><input onChange={(event)=>onInputValueChange(event,node,'vendorId')} type="number" defaultValue={node.data.vendorId} /></td>
+                                <td><input onChange={(event)=>onInputValueChange(event,node,'costPerUnit')} type="number" defaultValue={node.data.costPerUnit} /></td>
                                 <td>{node.data.unit}</td>
                             </tr>
                         )
@@ -50,7 +50,7 @@ const CostingPanel = ({selectedFormula,onInputValueChange}) => {
                                 <tr key={node.data.label+'_material_table'}>
                                     <td>{node.data.materialID}</td>
                                     <td>{node.data.label}</td>
-                                    <td>{node.data.usage}</td>
+                                    <td><input onChange={(event)=>onInputValueChange(event,node,'usage')} type="number" defaultValue={node.data.usage} /></td>
                                     <td>{node.data.usageUnit}</td>
                                 </tr>
                             )

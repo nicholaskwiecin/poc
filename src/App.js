@@ -1,20 +1,17 @@
-import './App.scss';
-import { Link, Outlet, Navigate } from "react-router-dom";
 import React from 'react';
+import { Outlet } from "react-router-dom";
+import './App.scss';
+import Header from "./components/Header.js";
 
-function App() {
-
-
-
-
+const App = () => {
   return (
     <div className="App">
-      <header className="App-header">
-      </header>
+      <Header />
       <main>
-        < Outlet />
+        <Outlet />
       </main>
-      <footer></footer>
+      <footer>
+      </footer>
     </div>
   );
 }

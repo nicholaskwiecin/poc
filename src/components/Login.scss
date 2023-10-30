@@ -27,7 +27,7 @@
     #p-and-g-logo {
         width: 85px;
         height: 85px;
-        margin-top: 25px;
+        margin-top: 35px;
     }
 
     .login-header {
@@ -40,6 +40,8 @@
         justify-content: space-evenly;
         height: 100%;
         width: 60%;
+        z-index: 2;
+        margin-bottom: -190px;
 
         & > div {
             margin: 12px 0px
@@ -87,9 +89,14 @@
             justify-content: space-between;
             align-items: center;
             margin-bottom: 15px;
+
+            span {
+                display: flex;
+                align-items: center;
+            }
             
             label {
-                display: inline;
+                display: flex;
                 margin: 0;
             }
         }
@@ -101,6 +108,12 @@
             width: 100%;
             font-size: 16px;
             border-color: $primary-blue-light;
+
+            &:hover {
+                cursor: pointer;
+                background-color: $primary-blue;
+                border-color: $primary-blue;
+            }
 
             .lock-icon {
                 color: rgba(255, 255, 255, 0.5);
@@ -115,6 +128,14 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            margin-top: -5px;
         }
+    }
+
+    #panel-background {
+        top: -11px;
+        position: relative;
+        opacity: 25%;
+        width: 108%;
     }
 }

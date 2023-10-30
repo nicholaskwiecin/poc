@@ -3,16 +3,20 @@ import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 import './NotImplemented.scss';
+import logo from '../images/P_G_Logo_RGB.svg';
 
-function NotImplemented() {
+const NotImplemented = () => {
     const navigate = useNavigate();
     const goBack = () => {
         navigate(-1);
     }
     return (
-        <div>
-            <button onClick={goBack}><FontAwesomeIcon className="fa-lg" icon={faArrowLeft}></FontAwesomeIcon></button>
-            <p>This functionality has not been implemented as part of this Proof of Concept</p>
+        <div className="not-implemented">
+            <button className="back-arrow" onClick={goBack}><FontAwesomeIcon className="fa-lg" icon={faArrowLeft}></FontAwesomeIcon></button>
+            <div className="container">
+                <img src={logo} id="p-and-g-logo" alt="P&G logo"></img>
+                <p>This functionality has not been implemented as part of this Proof of Concept</p>
+            </div>
         </div>
     );
 }

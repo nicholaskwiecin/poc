@@ -10,17 +10,57 @@
         padding: 1rem;
         border: 2px solid;
         border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
         h2 {
-            margin: 0rem;
+            margin-top: 0rem;
         }
 
-      
+        .filters {
+            display: flex;
+            flex-direction: row;
+
+            & > div {
+                margin: 0 20px;
+                display: flex;
+                flex-direction: column;
+            }
+
+            label {
+                margin-right: 10px;
+                margin-bottom: 5px;
+
+                svg {
+                    margin-right: 5px;
+                }
+            }
+        }
     }
 
     .price-model-table {
         margin-top: 5rem;
         margin-left: 1rem;
-        margin-right:1rem;
+        margin-right: 1rem;
+    }
+
+    #compare-button {
+        background-color: $primary-blue-light;
+        color: white;
+        font-size: 16px;
+        height: 40px;
+        margin-top: 20px;
+        margin-left: 1rem;
+        border-radius: 5px;
+        border-style: solid;
+        border-color: $primary-blue-light;
+
+        &:hover {
+            cursor: pointer;
+            background-color: $primary-blue;
+            border-color: $primary-blue;
+        }
     }
 }
 

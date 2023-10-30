@@ -19,4 +19,29 @@
     input {
         width: 5rem;
     }
+
+    .filtering {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+
+        & > div {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 10px;
+        }
+
+        label {
+            margin-right: 10px;
+            margin-bottom: 5px;
+
+            svg {
+                margin-right: 5px;
+            }
+        }
+
+        input {
+            width: 10rem;
+        }
+    }
 }

@@ -8,19 +8,66 @@
     .filter-panel {
         margin-top: 3rem;
         padding: 1rem;
-        border: 2px solid;
+        border: 2px solid $primary-blue;
         border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
         h2 {
-            margin: 0rem;
+            margin-top: 0rem;
         }
 
-      
+        .filters {
+            display: flex;
+            flex-direction: row;
+
+            & > div {
+                margin: 0 20px;
+                display: flex;
+                flex-direction: column;
+            }
+
+            label {
+                margin-right: 10px;
+                margin-bottom: 5px;
+
+                svg {
+                    margin-right: 5px;
+                }
+            }
+        }
     }
 
     .price-model-table {
         margin-top: 5rem;
         margin-left: 1rem;
-        margin-right:1rem;
+        margin-right: 1rem;
+    }
+
+    #compare-button {
+        color: white;
+        font-size: 16px;
+        height: 40px;
+        margin-top: 20px;
+        margin-left: 1rem;
+        border-radius: 5px;
+        border-style: solid;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    .active-button {
+        background-color: $primary-blue;
+        border-color: $primary-blue;
+    }
+
+    .inactive-button {
+        background-color: gray;
+        border-color: gray;
+        cursor: not-allowed;
     }
 }
 

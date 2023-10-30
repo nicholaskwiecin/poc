@@ -1,5 +1,7 @@
+@import '../global-styles.scss';
+
 .nav-wrapper {
-   
+   padding: 0 10px;
 }
 
 .nav-header {
@@ -14,7 +16,38 @@
     flex: 1;
     margin: 0 10px;
     padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    border: 1px solid $primary-blue;
+    border-radius: 20px;
     cursor: pointer;
+    position: relative;
+
+    a {
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    &:hover {
+        background-color: $primary-blue;
+
+        a {
+            color: white !important;
+        }
+    }
+}
+
+#my-actions::after,
+#missing-data::after {
+    content: '1';
+    width: 30px;
+    height: 30px;
+    background-color: darkred;
+    color: white;
+    font-weight: bold;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: -12px;
+    right: -10px;
 }

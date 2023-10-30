@@ -7,31 +7,35 @@ $secondary-grey: #f2f7ff;
 $secondary-grey-dark: #d6dadf;
 
 @font-face {
-    font-family: 'Montserrat';
-    src: url('fonts/Montserrat-Bold.ttf') format('truetype');
-    font-weight: bold;
+  font-family: 'Montserrat';
+  src: url('fonts/Montserrat-Bold.ttf') format('truetype');
+  font-weight: bold;
 }
 
 @font-face {
-    font-family: 'Montserrat';
-    src: url('fonts/Montserrat-ExtraBold.ttf') format('truetype');
-    font-weight: 800;
+  font-family: 'Montserrat';
+  src: url('fonts/Montserrat-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
 }
 
-  @font-face {
-    font-family: 'Montserrat';
-    src: url('fonts/Montserrat-Medium.ttf') format('truetype');
-    font-weight: 500;
-  }
+@font-face {
+  font-family: 'Montserrat';
+  src: url('fonts/Montserrat-Medium.ttf') format('truetype');
+  font-weight: 500;
+}
 
-  @font-face {
-    font-family: 'Montserrat';
-    src: url('fonts/Montserrat-Regular.ttf') format('truetype');
-    font-weight: normal;
-  }
+@font-face {
+  font-family: 'Montserrat';
+  src: url('fonts/Montserrat-Regular.ttf') format('truetype');
+  font-weight: normal;
+}
 
-  @font-face {
-    font-family: 'Montserrat';
-    src: url('fonts/Montserrat-SemiBold.ttf') format('truetype');
-    font-weight: 600;
+@font-face {
+  font-family: 'Montserrat';
+  src: url('fonts/Montserrat-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+}
+
+h1, h2 {
+  color: $primary-blue;
 }

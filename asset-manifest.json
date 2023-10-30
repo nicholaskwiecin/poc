@@ -1,21 +1,24 @@
 {
   "files": {
-    "main.css": "https://nicholaskwiecin.github.io/poc/static/css/main.06592831.css",
-    "main.js": "https://nicholaskwiecin.github.io/poc/static/js/main.a77244bf.js",
+    "main.css": "https://nicholaskwiecin.github.io/poc/static/css/main.6233a46d.css",
+    "main.js": "https://nicholaskwiecin.github.io/poc/static/js/main.52a32f57.js",
     "static/js/787.d2006f3c.chunk.js": "https://nicholaskwiecin.github.io/poc/static/js/787.d2006f3c.chunk.js",
     "static/media/Montserrat-ExtraBold.ttf": "https://nicholaskwiecin.github.io/poc/static/media/Montserrat-ExtraBold.6c8b198832c88c649faa.ttf",
     "static/media/Montserrat-Bold.ttf": "https://nicholaskwiecin.github.io/poc/static/media/Montserrat-Bold.50f0257aa1e905f4bfaf.ttf",
     "static/media/Montserrat-SemiBold.ttf": "https://nicholaskwiecin.github.io/poc/static/media/Montserrat-SemiBold.93b37a465fc4ec0d0415.ttf",
     "static/media/Montserrat-Medium.ttf": "https://nicholaskwiecin.github.io/poc/static/media/Montserrat-Medium.b8c6753baa964ccac1ba.ttf",
     "static/media/Montserrat-Regular.ttf": "https://nicholaskwiecin.github.io/poc/static/media/Montserrat-Regular.24785cc015b27a3e964b.ttf",
-    "static/media/P_G_Logo_RGB.svg": "https://nicholaskwiecin.github.io/poc/static/media/P_G_Logo_RGB.818457af2471a3ebbe1f443176b31ffc.svg",
+    "static/media/header-background.png": "https://nicholaskwiecin.github.io/poc/static/media/header-background.a904a03a4f473d0854fe.png",
+    "static/media/login-panel-background.png": "https://nicholaskwiecin.github.io/poc/static/media/login-panel-background.755c57d355a2f8176e07.png",
+    "static/media/header-logo.png": "https://nicholaskwiecin.github.io/poc/static/media/header-logo.ba6f34bc95b315c0c0a1.png",
+    "static/media/P_G_Logo_RGB.svg": "https://nicholaskwiecin.github.io/poc/static/media/P_G_Logo_RGB.222ec4cd01b8a74a9338bee2a11f71b5.svg",
     "index.html": "https://nicholaskwiecin.github.io/poc/index.html",
-    "main.06592831.css.map": "https://nicholaskwiecin.github.io/poc/static/css/main.06592831.css.map",
-    "main.a77244bf.js.map": "https://nicholaskwiecin.github.io/poc/static/js/main.a77244bf.js.map",
+    "main.6233a46d.css.map": "https://nicholaskwiecin.github.io/poc/static/css/main.6233a46d.css.map",
+    "main.52a32f57.js.map": "https://nicholaskwiecin.github.io/poc/static/js/main.52a32f57.js.map",
     "787.d2006f3c.chunk.js.map": "https://nicholaskwiecin.github.io/poc/static/js/787.d2006f3c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.06592831.css",
-    "static/js/main.a77244bf.js"
+    "static/css/main.6233a46d.css",
+    "static/js/main.52a32f57.js"
   ]
 }

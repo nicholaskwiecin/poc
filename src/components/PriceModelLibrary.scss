@@ -8,7 +8,7 @@
     .filter-panel {
         margin-top: 3rem;
         padding: 1rem;
-        border: 2px solid;
+        border: 2px solid $primary-blue;
         border-radius: 5px;
         display: flex;
         flex-direction: column;
@@ -46,7 +46,6 @@
     }
 
     #compare-button {
-        background-color: $primary-blue-light;
         color: white;
         font-size: 16px;
         height: 40px;
@@ -54,13 +53,21 @@
         margin-left: 1rem;
         border-radius: 5px;
         border-style: solid;
-        border-color: $primary-blue-light;
 
         &:hover {
             cursor: pointer;
-            background-color: $primary-blue;
-            border-color: $primary-blue;
         }
+    }
+
+    .active-button {
+        background-color: $primary-blue;
+        border-color: $primary-blue;
+    }
+
+    .inactive-button {
+        background-color: gray;
+        border-color: gray;
+        cursor: not-allowed;
     }
 }
 

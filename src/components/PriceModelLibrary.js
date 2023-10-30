@@ -22,10 +22,9 @@ const PriceModelLibrary = () => {
         <section className="library-container">
             <div className="filter-panel">
                 <h2>Filter Panel</h2>
-                {/* <input type="text" placeholder="Filter by name" /> */}
                 <div className="filters">
                     <div className="just-mine">
-                        <label for="just-my-filter">
+                        <label htmlFor="just-my-filter">
                             <FontAwesomeIcon icon={faSliders} className="sliders-icon" />
                             Just Mine
                         </label>
@@ -116,8 +115,9 @@ const PriceModelLibrary = () => {
                     </tbody>
                 </table>
                 <div>
-                    {checkedCount > 1 && 
-                    <button id="compare-button">Compare Selected Models</button>}
+                    <button id="compare-button" className={checkedCount > 1 ? 'active-button' : 'inactive-button'}>
+                        Compare Selected Models
+                    </button>
                 </div>
             </div>
         </section>

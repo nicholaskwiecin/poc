@@ -7,7 +7,7 @@ import logo from '../images/P_G_Logo_RGB.svg';
 import background from '../images/login-panel-background.png';
 
 const Login = () => {
-    const [selectedOption, setSelectedOption] = useState('admin');
+    const [selectedOption, setSelectedOption] = useState('buyer');
     const navigate = useNavigate();
 
     const handleOptionChange = (event) => {
@@ -21,23 +21,23 @@ const Login = () => {
     return (
         <div className="login-background">
             <div className="login-panel">
-                <img src={logo} id="p-and-g-logo"></img>
+                <img src={logo} id="p-and-g-logo" alt="P&G logo"></img>
                 <h1 className="login-header">Login</h1>
                 <form onSubmit={handleLogin} className="login-panel-content">
                     <div className="login-user-type">
                         <label htmlFor="user-type">Please select user type:</label>
                         <select id="user-type" value={selectedOption} onChange={handleOptionChange}>
-                            <option value="admin">Business Admin</option>
                             <option value="buyer">Buyer</option>
+                            <option value="admin">Business Admin</option>
                         </select>
                     </div>
                     <div className="login-user-email">
                         <label htmlFor="user-email">Email</label>
-                        <input type="text" id="user-email"></input>
+                        <input type="text" id="user-email" defaultValue="Test.User@example.com"></input>
                     </div>
                     <div className="login-user-password">
                         <label htmlFor="user-password">Password</label>
-                        <input type="text" id="user-password"></input>
+                        <input type="text" id="user-password" defaultValue="**********"></input>
                     </div>
                     <div className="login-options">   
                         <span>
@@ -56,7 +56,7 @@ const Login = () => {
                         <p>Don't have an account?</p>&nbsp;<a href="#">Sign Up</a>
                     </div>
                 </form>
-                <img src={background} id="panel-background"></img>
+                <img src={background} id="panel-background" alt="background image"></img>
             </div>
         </div>
     );

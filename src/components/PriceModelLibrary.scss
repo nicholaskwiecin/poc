@@ -38,11 +38,10 @@
             }
         }
     }
-
-    .price-model-table {
-        margin-top: 5rem;
+    .table-wrapper{
         margin-left: 1rem;
         margin-right: 1rem;
+        margin-top: 5rem;
     }
 
     #compare-button {
@@ -50,7 +49,6 @@
         font-size: 16px;
         height: 40px;
         margin-top: 20px;
-        margin-left: 1rem;
         border-radius: 5px;
         border-style: solid;
 
@@ -69,6 +67,12 @@
         border-color: gray;
         cursor: not-allowed;
     }
+
+    .circle-question {
+        align-self: flex-start;
+        margin-bottom: 1rem;
+    }
 }
+
 
 

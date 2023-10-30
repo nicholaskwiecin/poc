@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './PriceModelLibrary.scss';
 import database from '../database.json'
+import ModalPopUp from './ModalPopUp';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCircleQuestion } from '@fortawesome/free-solid-svg-icons'
 import { faSliders, faFilter } from '@fortawesome/free-solid-svg-icons'
 
 const PriceModelLibrary = () => {
@@ -77,7 +79,18 @@ const PriceModelLibrary = () => {
                     </div>
                 </div>
             </div>
+
             <div className="table-wrapper">
+            <div className="circle-question">
+                <ModalPopUp trigger={<FontAwesomeIcon className="fa-lg" icon={faCircleQuestion} />}>
+                    <h1 className="title">
+                        Text in a modal
+                    </h1>
+                    <p className="body">
+                        Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+                    </p>
+                </ModalPopUp>
+            </div>
                 <table className="price-model-table">
                     <thead>
                         <tr>
@@ -120,6 +133,7 @@ const PriceModelLibrary = () => {
                     </button>
                 </div>
             </div>
+
         </section>
     );
 };

@@ -12,6 +12,11 @@ const PriceModelLibrary = () => {
     const [checkedCount, setCheckedCount] = useState(0);
     const navigate = useNavigate();
     // const goToComparePage = navigate("/not-implemented");
+
+    const goToNewModelPage = () => {
+        navigate("/price-model-workbench");
+    };
+
     const handleCheckboxChange = (event) => {
         if (event.target.checked) {
             setCheckedCount(checkedCount + 1);
@@ -113,7 +118,7 @@ const PriceModelLibrary = () => {
                                     <td className="compare">
                                         <input type="checkbox" onChange={ev => handleCheckboxChange(ev)} />
                                     </td>
-                                    <td><Link to='/price-model-workbench'>{record.id}</Link></td>
+                                    <td><Link to='/price-model-workbench/1'>{record.id}</Link></td>
                                     <td>{record.description}</td>
                                     <td>{record.barId}</td>
                                     <td>{record.barDescription}</td>
@@ -130,6 +135,9 @@ const PriceModelLibrary = () => {
                 <div>
                     <button id="compare-button" className={checkedCount > 1 ? 'active-button' : 'inactive-button'}>
                         Compare Selected Models
+                    </button>
+                    <button id="add-button" className={'active-button'} onClick={goToNewModelPage}>
+                        Add New Model
                     </button>
                 </div>
             </div>

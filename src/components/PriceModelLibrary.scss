@@ -44,17 +44,23 @@
         margin-top: 5rem;
     }
 
-    #compare-button {
+    button {
         color: white;
-        font-size: 16px;
-        height: 40px;
         margin-top: 20px;
+        height: 40px;
+        font-size: 16px;
         border-radius: 5px;
         border-style: solid;
-
         &:hover {
             cursor: pointer;
         }
+    }
+
+    #compare-button {
+    }
+
+    #add-button {
+        margin-left: 20px;
     }
 
     .active-button {

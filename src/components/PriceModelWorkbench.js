@@ -14,6 +14,7 @@ import CostElementLibrary from './CostElementLibrary';
 import CostingPanel from './CostingPanel';
 import database from '../database.json';
 import CostElementNode from './CostElementNode';
+import { useNavigate, useParams } from 'react-router-dom';
 
 const defaultViewport = { x: 0, y: 0, zoom: .8 };
 const options = { hideAttribution: true };
@@ -29,14 +30,20 @@ const getMaterialID = () => Math.floor(Math.random() * 100000000);
 const getUsage = () => Math.floor(Math.random() * 100);
 
 
-const PriceModelWorkbench = () => {
-
-
+const PriceModelWorkbench = (props) => {
   const reactFlowWrapper = useRef(null);
-  const [nodes, setNodes, onNodesChange] = useNodesState(database.price_model_template.initial_nodes);
-  const [edges, setEdges, onEdgesChange] = useEdgesState(database.price_model_template.initial_edges);
+  const params = useParams();
+
+  let priceModel = database.price_model_template;
+  if (params.id) {
+    priceModel = database.price_model_1;
+  }
+
+  const [nodes, setNodes, onNodesChange] = useNodesState(priceModel.initial_nodes);
+  const [edges, setEdges, onEdgesChange] = useEdgesState(priceModel.initial_edges);
   const [reactFlowInstance, setReactFlowInstance] = useState(null);
   const [selectedFormula, setSelectedFormula] = useState({ formulaNode: {}, inputNodes: [] });
+
 
   // Change the value of a given input node
   const onInputValueChange = useCallback((event, node,key) => {

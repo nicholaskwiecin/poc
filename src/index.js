@@ -36,6 +36,10 @@ const router = createBrowserRouter([
         element: <PriceModelWorkbench />,
       },
       {
+        path: 'price-model-workbench/:id',
+        element: <PriceModelWorkbench />,
+      },
+      {
         path:'not-implemented',
         element: <NotImplemented />,
       }

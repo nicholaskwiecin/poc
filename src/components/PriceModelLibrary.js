@@ -6,16 +6,22 @@ import ModalPopUp from './ModalPopUp';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircleQuestion } from '@fortawesome/free-solid-svg-icons'
 import { faSliders, faFilter } from '@fortawesome/free-solid-svg-icons'
+import {useLocation, useParams} from 'react-router-dom'
+
+
 
 const PriceModelLibrary = () => {
+
+
     const [records, setRecords] = useState(database.price_models);
+
     const [checkedCount, setCheckedCount] = useState(0);
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
     // const goToComparePage = navigate("/not-implemented");
 
-    const goToNewModelPage = () => {
-        navigate("/price-model-workbench");
-    };
+    let location = useLocation();
+
+
 
     const handleCheckboxChange = (event) => {
         if (event.target.checked) {
@@ -24,6 +30,9 @@ const PriceModelLibrary = () => {
             setCheckedCount(checkedCount - 1);
         }
     };
+
+
+
 
     return (
         <section className="library-container">
@@ -99,7 +108,7 @@ const PriceModelLibrary = () => {
                 <table className="price-model-table">
                     <thead>
                         <tr>
-                            <th>Compare</th>
+                            <th>Select</th>
                             <th>ID</th>
                             <th>Description</th>
                             <th>Contract / Bar ID</th>
@@ -136,9 +145,16 @@ const PriceModelLibrary = () => {
                     <button id="compare-button" className={checkedCount > 1 ? 'active-button' : 'inactive-button'}>
                         Compare Selected Models
                     </button>
-                    <button id="add-button" className={'active-button'} onClick={goToNewModelPage}>
-                        Add New Model
-                    </button>
+                    <Link to='/price-model-workbench' state={{records: records}}>
+                        <button id="add-button" className={'active-button'} >
+                            Add New Model
+                        </button>
+                    </Link>
+                    <Link to='/price-model-workbench/1' state={{records: records}}>
+                        <button id="duplicate-button" className={checkedCount == 1 ? 'active-button' : 'inactive-button'}>
+                            Duplicate Selected Model
+                        </button>
+                    </Link>
                 </div>
             </div>
 

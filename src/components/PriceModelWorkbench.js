@@ -14,7 +14,9 @@ import CostElementLibrary from './CostElementLibrary';
 import CostingPanel from './CostingPanel';
 import database from '../database.json';
 import CostElementNode from './CostElementNode';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams, useLocation} from 'react-router-dom';
+import { Link } from 'react-router-dom';
+
 
 const defaultViewport = { x: 0, y: 0, zoom: .8 };
 const options = { hideAttribution: true };
@@ -34,19 +36,40 @@ const PriceModelWorkbench = (props) => {
   const reactFlowWrapper = useRef(null);
   const params = useParams();
 
+  const location = useLocation();
+
+  const onSave = () => {
+    if (!location.state) {
+      return;
+    }
+    const newRecord = {
+        id: "PM-000000" + (location.state.records.length + 1),
+        description: title,
+        barId: '1234456',
+        barDescription: 'Sasol',
+        spendPool: 'Chemicals/Surfactants/LAB',
+        suppliers: 'SASOL (01523242)',
+        bu: 'Hair Care',
+        regions: 'ALL'
+    };
+    location.state.records.push(newRecord);
+  }
+
+
   let priceModel = database.price_model_template;
   if (params.id) {
     priceModel = database.price_model_1;
   }
+
+  let [title, setTitle] = React.useState("New Price Model");
 
   const [nodes, setNodes, onNodesChange] = useNodesState(priceModel.initial_nodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState(priceModel.initial_edges);
   const [reactFlowInstance, setReactFlowInstance] = useState(null);
   const [selectedFormula, setSelectedFormula] = useState({ formulaNode: {}, inputNodes: [] });
 
-
   // Change the value of a given input node
-  const onInputValueChange = useCallback((event, node,key) => {
+  const onInputValueChange = useCallback((event, node, key) => {
     setNodes(nodes.map((mapNode) => {
       if (mapNode.id === node.id) {
         mapNode.data[key] = event.target.value;
@@ -106,7 +129,7 @@ const PriceModelWorkbench = (props) => {
   // This should be done via a custom event listener or a ref passed down to each child node
   // This is a temporary solution to get the rename functionality working
   useEffect(() => {
-    window.addEventListener('nodeRename',onRenameNode);
+    window.addEventListener('nodeRename', onRenameNode);
     return () => { window.removeEventListener('nodeRename', onRenameNode) }
   }, [nodes, edges])
 
@@ -152,13 +175,13 @@ const PriceModelWorkbench = (props) => {
       })
 
       // Add child inputs to the cost element
-      for (const [index,child] of element.child_inputs.entries()) {
+      for (const [index, child] of element.child_inputs.entries()) {
         newNodes.push({
           id: `${inputHash}_input_${element.id}_${child.id}`,
           type: 'cost_element',
           position: {
             x: position.x + 100,
-            y: position.y + ((index+1) * 50)
+            y: position.y + ((index + 1) * 50)
           },
           data: {
             label: `${child.label}`,
@@ -172,10 +195,10 @@ const PriceModelWorkbench = (props) => {
           "source": `${inputHash}_input_${element.id}`,
           "deletable": false,
           "target": `${inputHash}_input_${element.id}_${child.id}`
-         })
+        })
       }
 
-      
+
 
       setNodes((nds) => nds.concat(newNodes));
       setEdges((eds) => eds.concat(newEdges));
@@ -188,6 +211,8 @@ const PriceModelWorkbench = (props) => {
     <div className="container">
       <ReactFlowProvider>
         <div className="reactflow-wrapper center-panel" ref={reactFlowWrapper}>
+          <input value={title} onChange={event => { setTitle(event.target.value); }}>
+          </input>
           <ReactFlow
             defaultViewport={defaultViewport}
             nodes={nodes}
@@ -216,6 +241,16 @@ const PriceModelWorkbench = (props) => {
         </div>
         <div className="bottom-panel">
           <FormulaBar selectedFormula={selectedFormula} />
+          {/* <Link to={{
+            path: "/price-model-library",
+            state: {test: "test"}}} id="save-button" >
+            <button className="active-button">Save</button>
+          </Link> */}
+          <Link to= "/price-model-library"
+           id="save-button">
+            <button className="active-button" onClick={onSave}>Save</button>
+          </Link>
+
         </div>
       </ReactFlowProvider>
     </div>

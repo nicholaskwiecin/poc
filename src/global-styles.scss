@@ -39,3 +39,26 @@ $secondary-grey-dark: #d6dadf;
 h1, h2 {
   color: $primary-blue;
 }
+
+button {
+    color: white;
+    margin-top: 20px;
+    height: 40px;
+    font-size: 16px;
+    border-radius: 5px;
+    border-style: solid;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.active-button {
+    background-color: $primary-blue;
+    border-color: $primary-blue;
+}
+
+.inactive-button {
+    background-color: gray;
+    border-color: gray;
+    cursor: not-allowed;
+}

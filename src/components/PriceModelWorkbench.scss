@@ -37,12 +37,21 @@
         padding: 1rem;
         grid-area: right-panel;
     }
+.bottom-panel {
+    padding: 1rem;
+    grid-area: bottom-panel;
+    display: flex;
 
-    .bottom-panel {
-        padding: 1rem;
-        grid-area: bottom-panel;
+    #save-button {
+        margin-left: auto;
     }
+}
 
+input {
+    z-index: 5;
+    margin-top: 1rem;
+    margin-left: 1rem;
+}
 .react-flow__node {
     text-align: center;
     border: 1px solid;

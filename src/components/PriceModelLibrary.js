@@ -6,21 +6,22 @@ import ModalPopUp from './ModalPopUp';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircleQuestion } from '@fortawesome/free-solid-svg-icons'
 import { faSliders, faFilter } from '@fortawesome/free-solid-svg-icons'
+import {useLocation, useParams} from 'react-router-dom'
+
+
 
 const PriceModelLibrary = () => {
+
+
     const [records, setRecords] = useState(database.price_models);
+
     const [checkedCount, setCheckedCount] = useState(0);
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
     // const goToComparePage = navigate("/not-implemented");
 
-    const goToNewModelPage = (isDuplicate) => {
-        if (isDuplicate) {
-            navigate("/price-model-workbench/1");
-        }
-        else {
-            navigate("/price-model-workbench");
-        }
-    };
+    let location = useLocation();
+
+
 
     const handleCheckboxChange = (event) => {
         if (event.target.checked) {
@@ -29,6 +30,9 @@ const PriceModelLibrary = () => {
             setCheckedCount(checkedCount - 1);
         }
     };
+
+
+
 
     return (
         <section className="library-container">
@@ -141,7 +145,7 @@ const PriceModelLibrary = () => {
                     <button id="compare-button" className={checkedCount > 1 ? 'active-button' : 'inactive-button'}>
                         Compare Selected Models
                     </button>
-                    <Link to='/price-model-workbench'>
+                    <Link to='/price-model-workbench' state={{records: records}}>
                         <button id="add-button" className={'active-button'} >
                             Add New Model
                         </button>

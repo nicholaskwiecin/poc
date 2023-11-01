@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './PriceModelLanding.scss';
-import { useParams } from 'react-router';
+import { useParams} from 'react-router';
 
 const PriceModelLanding = () => {
   const { userType } = useParams();
+
 
   return (
     <div className='nav-wrapper'>

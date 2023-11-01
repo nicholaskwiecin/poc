@@ -13,6 +13,11 @@
         margin-top: 3px;
     }
 
+    a {
+        z-index: 1;
+        cursor: pointer;
+    }
+
     .user-menu {
         z-index: 1;
         padding-right: 10px;

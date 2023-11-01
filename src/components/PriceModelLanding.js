@@ -10,6 +10,8 @@ const PriceModelLanding = () => {
     <div className='nav-wrapper'>
       <h1 className='nav-header'>{userType === 'admin' ? 'Business Admin Portal' : 'Buyers Portal'}</h1>
       {userType === 'admin' ?
+      <>
+      <h2>Welcome to the Business Admin Portal</h2>
       <div className="nav-cards">
         <div className="nav-card" id="missing-data">
           <Link to='/not-implemented'>Missing Reference Data</Link>
@@ -21,7 +23,10 @@ const PriceModelLanding = () => {
           <Link to='/not-implemented'>Price Maintenance</Link>
         </div>
       </div>
+      </>
       :
+      <>
+      <h2>Welcome to the Buyers Portal</h2>
       <div className="nav-cards">
         <div className="nav-card" id="my-actions">
           <Link to='/not-implemented'>My Actions</Link>
@@ -36,6 +41,7 @@ const PriceModelLanding = () => {
           <Link to='/not-implemented'>Price Maintenance</Link>
         </div>
       </div>
+      </>
       }
     </div>
   );

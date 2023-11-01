@@ -13,8 +13,13 @@ const PriceModelLibrary = () => {
     const navigate = useNavigate();
     // const goToComparePage = navigate("/not-implemented");
 
-    const goToNewModelPage = () => {
-        navigate("/price-model-workbench");
+    const goToNewModelPage = (isDuplicate) => {
+        if (isDuplicate) {
+            navigate("/price-model-workbench/1");
+        }
+        else {
+            navigate("/price-model-workbench");
+        }
     };
 
     const handleCheckboxChange = (event) => {
@@ -99,7 +104,7 @@ const PriceModelLibrary = () => {
                 <table className="price-model-table">
                     <thead>
                         <tr>
-                            <th>Compare</th>
+                            <th>Select</th>
                             <th>ID</th>
                             <th>Description</th>
                             <th>Contract / Bar ID</th>
@@ -136,9 +141,16 @@ const PriceModelLibrary = () => {
                     <button id="compare-button" className={checkedCount > 1 ? 'active-button' : 'inactive-button'}>
                         Compare Selected Models
                     </button>
-                    <button id="add-button" className={'active-button'} onClick={goToNewModelPage}>
-                        Add New Model
-                    </button>
+                    <Link to='/price-model-workbench'>
+                        <button id="add-button" className={'active-button'} >
+                            Add New Model
+                        </button>
+                    </Link>
+                    <Link to='/price-model-workbench/1'>
+                        <button id="duplicate-button" className={checkedCount == 1 ? 'active-button' : 'inactive-button'}>
+                            Duplicate Selected Model
+                        </button>
+                    </Link>
                 </div>
             </div>
 

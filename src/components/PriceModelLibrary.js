@@ -150,7 +150,7 @@ const PriceModelLibrary = () => {
                             Add New Model
                         </button>
                     </Link>
-                    <Link to='/price-model-workbench/1'>
+                    <Link to='/price-model-workbench/1' state={{records: records}}>
                         <button id="duplicate-button" className={checkedCount == 1 ? 'active-button' : 'inactive-button'}>
                             Duplicate Selected Model
                         </button>

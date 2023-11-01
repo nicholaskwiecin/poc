@@ -2,6 +2,7 @@ import React from 'react';
 import { Outlet } from "react-router-dom";
 import './App.scss';
 import Header from "./components/Header.js";
+import Footer from "./components/Footer.js";
 
 const App = () => {
   return (
@@ -10,8 +11,7 @@ const App = () => {
       <main>
         <Outlet />
       </main>
-      <footer>
-      </footer>
+      <Footer />
     </div>
   );
 }

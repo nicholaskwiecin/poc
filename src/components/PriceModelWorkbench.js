@@ -40,9 +40,15 @@ const PriceModelWorkbench = (props) => {
 
   const onSave = (nodes, edges) => {
     if (!location.state) {
-      //indicates edit case, not add
+      //indicates edit case
+      if (params.id) {
+        const match = database.price_model_prefabs.find(price_model => price_model.id === params.id);
+        match.initial_nodes = nodes;
+        match.initial_edges = edges;
+      }
       return;
     }
+    //add new
     const id = "PM-000000" + (location.state.records.length + 1);
 
     const newRecord = {

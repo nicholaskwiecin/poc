@@ -217,8 +217,7 @@ const PriceModelWorkbench = (props) => {
     <div className="container">
       <ReactFlowProvider>
         <div className="reactflow-wrapper center-panel" ref={reactFlowWrapper}>
-          <input value={title} onChange={event => { setTitle(event.target.value); }}>
-          </input>
+          <input value={title} id="description-input" onChange={event => { setTitle(event.target.value); }}/>
           <ReactFlow
             defaultViewport={defaultViewport}
             nodes={nodes}

@@ -1,25 +1,19 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './PriceModelLibrary.scss';
 import database from '../database.json'
 import ModalPopUp from './ModalPopUp';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCircleQuestion } from '@fortawesome/free-solid-svg-icons'
-import { faSliders, faFilter } from '@fortawesome/free-solid-svg-icons'
-import {useLocation, useParams} from 'react-router-dom'
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircleQuestion } from '@fortawesome/free-solid-svg-icons';
+import { faSliders, faFilter, faSquareArrowUpRight } from '@fortawesome/free-solid-svg-icons';
 
 
 const PriceModelLibrary = () => {
-
-
     const [records, setRecords] = useState(database.price_model_records);
     const [selectedRecordIds, setSelectedRecords] = useState([]);
 
     // const navigate = useNavigate();
     // const goToComparePage = navigate("/not-implemented");
-
-    let location = useLocation();
 
     const handleCheckboxChange = (event, id) => {
         console.log("check event");
@@ -92,12 +86,11 @@ const PriceModelLibrary = () => {
 
             <div className="table-wrapper">
             <div className="circle-question">
-                <ModalPopUp trigger={<FontAwesomeIcon className="fa-lg" icon={faCircleQuestion} />}>
-                    <h1 className="title">
-                        Text in a modal
-                    </h1>
+                <ModalPopUp trigger={<FontAwesomeIcon className="fa-lg info-icon" icon={faCircleQuestion} />}>
+                    <h1 className="title">FAQs</h1>
                     <p className="body">
-                        Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+                        To compare or copy a model, use the checkboxes in the first column to select.<br /><br />
+                        Note that this is a prototype, so any added or modified models will not persist across sessions.
                     </p>
                 </ModalPopUp>
             </div>
@@ -131,7 +124,7 @@ const PriceModelLibrary = () => {
                                     <td>{record.suppliers}</td>
                                     <td>{record.bu}</td>
                                     <td>{record.regions}</td>
-                                    <td><Link to='/not-implemented'>[Click Here]</Link></td>
+                                    <td><Link to='/not-implemented'>Click Here&nbsp;<FontAwesomeIcon icon={faSquareArrowUpRight} /></Link></td>
                                 </tr>
                             );
                         })}
@@ -147,7 +140,7 @@ const PriceModelLibrary = () => {
                         </button>
                     </Link>
                     <Link to={'/price-model-workbench/' + selectedRecordIds[0]} state={{records: records, isAdd: true}}>
-                        <button id="duplicate-button" className={selectedRecordIds.length == 1 ? 'active-button' : 'inactive-button'}>
+                        <button id="duplicate-button" className={selectedRecordIds.length === 1 ? 'active-button' : 'inactive-button'}>
                             Duplicate Selected Model
                         </button>
                     </Link>
@@ -156,5 +149,4 @@ const PriceModelLibrary = () => {
         </section>
     );
 };
-
 export default PriceModelLibrary;

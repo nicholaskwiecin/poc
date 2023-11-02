@@ -14,7 +14,7 @@ import CostElementLibrary from './CostElementLibrary';
 import CostingPanel from './CostingPanel';
 import database from '../database.json';
 import CostElementNode from './CostElementNode';
-import {useParams, useLocation} from 'react-router-dom';
+import { useParams, useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 
@@ -27,14 +27,13 @@ const nodeTypes = {
 
 const getHash = () => (Math.random() + 1).toString(36).substring(7);
 const getRandomID = () => Math.floor(Math.random() * 100000000);
-const getMaterialID = () => Math.floor(Math.random() * 100000000);
-const getUsage = () => Math.floor(Math.random() * 100);
+// const getMaterialID = () => Math.floor(Math.random() * 100000000);
+// const getUsage = () => Math.floor(Math.random() * 100);
 
 
-const PriceModelWorkbench = (props) => {
+const PriceModelWorkbench = () => {
   const reactFlowWrapper = useRef(null);
   const params = useParams();
-
   const location = useLocation();
 
   let priceModel;
@@ -44,7 +43,7 @@ const PriceModelWorkbench = (props) => {
     priceModel = database.price_model_template;
   }
 
-  const id = params.id && location.state.isDuplicate == false ? params.id : "PM-000000" + (location.state.records.length + 1);
+  const id = params.id && location.state.isDuplicate === false ? params.id : "PM-000000" + (location.state.records.length + 1);
 
   const record = database.price_model_records.find(record => record.id === params.id);
   let [title, setTitle] = React.useState(record ? record.description : "New Price Model");
@@ -130,8 +129,6 @@ const PriceModelWorkbench = (props) => {
   }, [nodes, edges]);
 
 
-
-
   const onRenameNode = (event) => {
     console.log(event);
     setNodes(nodes.map((node) => {
@@ -148,7 +145,7 @@ const PriceModelWorkbench = (props) => {
   useEffect(() => {
     window.addEventListener('nodeRename', onRenameNode);
     return () => { window.removeEventListener('nodeRename', onRenameNode) }
-  }, [nodes, edges])
+  }, [nodes, edges]);
 
 
   const onDrop = useCallback(
@@ -189,7 +186,7 @@ const PriceModelWorkbench = (props) => {
           unit: 'KG',
           usageUnit: 'Percent',
         },
-      })
+      });
 
       // Add child inputs to the cost element
       for (const [index, child] of element.child_inputs.entries()) {
@@ -212,10 +209,8 @@ const PriceModelWorkbench = (props) => {
           "source": `${inputHash}_input_${element.id}`,
           "deletable": false,
           "target": `${inputHash}_input_${element.id}_${child.id}`
-        })
+        });
       }
-
-
 
       setNodes((nds) => nds.concat(newNodes));
       setEdges((eds) => eds.concat(newEdges));
@@ -228,7 +223,11 @@ const PriceModelWorkbench = (props) => {
     <div className="container">
       <ReactFlowProvider>
         <div className="reactflow-wrapper center-panel" ref={reactFlowWrapper}>
-          <input value={title} id="description-input" onChange={event => { setTitle(event.target.value); }}/>
+          <div class="top-bar">
+            <span><input id="description-input" value={title} onChange={event => { setTitle(event.target.value); }}></input></span>
+            <span className="page-title"><h2>Price Model Workbench</h2></span>
+            <span className="spacer"></span>
+          </div>
           <ReactFlow
             defaultViewport={defaultViewport}
             nodes={nodes}
@@ -245,7 +244,8 @@ const PriceModelWorkbench = (props) => {
             proOptions={options}
             nodeTypes={nodeTypes}
             fitView
-          ><Controls />
+          >
+			      <Controls />
             <Background />
           </ReactFlow>
         </div>
@@ -262,11 +262,14 @@ const PriceModelWorkbench = (props) => {
             state: {test: "test"}}} id="save-button" >
             <button className="active-button">Save</button>
           </Link> */}
-          <Link to= "/price-model-library"
-           id="save-button">
-            <button className="active-button" onClick={() => onSave(nodes, edges)}>Save</button>
-          </Link>
-
+          <div class="action-buttons">
+            <Link to="/price-model-library" id="save-button">
+              <button className="active-button" onClick={onSave(nodes, edges)}>Save</button>
+            </Link>
+            <Link to="/linear-pricing-model" id="price-model-button">
+              <button className="active-button">Linear Pricing Model</button>
+            </Link>
+          </div>
         </div>
       </ReactFlowProvider>
     </div>

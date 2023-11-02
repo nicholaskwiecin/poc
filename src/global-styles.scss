@@ -40,6 +40,11 @@ h1, h2 {
   color: $primary-blue;
 }
 
+a {
+  text-decoration: none;
+  font-weight: bold;
+}
+
 button {
     color: white;
     margin-top: 20px;
@@ -47,6 +52,7 @@ button {
     font-size: 16px;
     border-radius: 5px;
     border-style: solid;
+    
     &:hover {
         cursor: pointer;
     }
@@ -55,6 +61,11 @@ button {
 .active-button {
     background-color: $primary-blue;
     border-color: $primary-blue;
+
+    &:hover {
+      background-color: $secondary-blue-dark;
+      border-color: $secondary-blue-dark;
+    }
 }
 
 .inactive-button {

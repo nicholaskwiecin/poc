@@ -14,7 +14,7 @@ import CostElementLibrary from './CostElementLibrary';
 import CostingPanel from './CostingPanel';
 import database from '../database.json';
 import CostElementNode from './CostElementNode';
-import { useNavigate, useParams, useLocation} from 'react-router-dom';
+import {useParams, useLocation} from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 
@@ -25,7 +25,6 @@ const nodeTypes = {
   cost_element: CostElementNode,
 };
 
-let id = 1;
 const getHash = () => (Math.random() + 1).toString(36).substring(7);
 const getRandomID = () => Math.floor(Math.random() * 100000000);
 const getMaterialID = () => Math.floor(Math.random() * 100000000);
@@ -38,12 +37,28 @@ const PriceModelWorkbench = (props) => {
 
   const location = useLocation();
 
-  const onSave = () => {
-    if (!location.state) {
-      return;
-    }
+  let priceModel;
+  if (params.id) {
+    priceModel = database.price_model_graphs.find(graph => graph.id === params.id);
+  } else {
+    priceModel = database.price_model_template;
+  }
+
+  const id = params.id && location.state.isDuplicate == false ? params.id : "PM-000000" + (location.state.records.length + 1);
+
+  const record = database.price_model_records.find(record => record.id === params.id);
+  let [title, setTitle] = React.useState(record ? record.description : "New Price Model");
+
+  const saveEditModel = (nodes, edges) => {
+    const model = database.price_model_graphs.find(graph => graph.id === params.id);
+    model.initial_nodes = nodes;
+    model.initial_edges = edges;
+    record.description = title;
+  }
+
+  const saveNewModel = (nodes, edges) => {
     const newRecord = {
-        id: "PM-000000" + (location.state.records.length + 1),
+        id: id,
         description: title,
         barId: '1234456',
         barDescription: 'Sasol',
@@ -53,15 +68,17 @@ const PriceModelWorkbench = (props) => {
         regions: 'ALL'
     };
     location.state.records.push(newRecord);
+    database.price_model_graphs.push({ id: id, initial_nodes: nodes, initial_edges: edges });
   }
 
-
-  let priceModel = database.price_model_template;
-  if (params.id) {
-    priceModel = database.price_model_1;
+  const onSave = (nodes, edges) => {
+    if (location.state.isAdd) {
+      saveNewModel(nodes, edges);
+    }
+    else {
+      saveEditModel(nodes, edges);
+    }
   }
-
-  let [title, setTitle] = React.useState("New Price Model");
 
   const [nodes, setNodes, onNodesChange] = useNodesState(priceModel.initial_nodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState(priceModel.initial_edges);
@@ -211,8 +228,7 @@ const PriceModelWorkbench = (props) => {
     <div className="container">
       <ReactFlowProvider>
         <div className="reactflow-wrapper center-panel" ref={reactFlowWrapper}>
-          <input value={title} onChange={event => { setTitle(event.target.value); }}>
-          </input>
+          <input value={title} id="description-input" onChange={event => { setTitle(event.target.value); }}/>
           <ReactFlow
             defaultViewport={defaultViewport}
             nodes={nodes}
@@ -248,7 +264,7 @@ const PriceModelWorkbench = (props) => {
           </Link> */}
           <Link to= "/price-model-library"
            id="save-button">
-            <button className="active-button" onClick={onSave}>Save</button>
+            <button className="active-button" onClick={() => onSave(nodes, edges)}>Save</button>
           </Link>
 
         </div>

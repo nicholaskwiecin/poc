@@ -1,11 +1,31 @@
 @import '../global-styles.scss';
 
-.global-footer {
-    width: 100%;
+#global-footer {
+    width: 101%;
     height: 48px;
     color: white;
     background-color: $primary-blue;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+
+    .copyright {
+        padding-left: 20px;
+    }
+
+    .links {
+        padding-right: 20px;
+
+        a, a:visited {
+            color: white;
+        }
+
+        a {
+            margin-left: 25px;
+
+            &:hover {
+                color: $primary-blue-light;
+            }
+        }
+    }
 }

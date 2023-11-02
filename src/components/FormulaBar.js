@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 const FormulaBar = ({ selectedFormula }) => {
 
   const substituteDescription = (description) => {
@@ -10,7 +11,6 @@ const FormulaBar = ({ selectedFormula }) => {
   }
 
   const substituteFormula = (description) => {
-
     // TODO: Support other type of formula nodes
     if (selectedFormula.formulaNode.data.type === 'formula_sum') {
       let summation = selectedFormula.inputNodes.reduce((accumulator, currentValue,index) => {
@@ -27,7 +27,8 @@ const FormulaBar = ({ selectedFormula }) => {
 
   return (
     <aside className='formula-bar'>
-      {Object.keys(selectedFormula.formulaNode).length ? <div>
+      {Object.keys(selectedFormula.formulaNode).length ? 
+      <div>
         <h2>Formula Bar</h2>
         <div className='formula-description'>
           {substituteDescription(selectedFormula.formulaNode.data.description)}
@@ -36,9 +37,10 @@ const FormulaBar = ({ selectedFormula }) => {
         <div className='formula-calucation'>
           {substituteFormula()}
         </div>
-      </div> : <div className='no-selection-message'>No Formula Selected</div>}
+      </div> 
+      : 
+      <div className='no-selection-message'><i>No Formula Selected</i></div>}
     </aside>
   );
-
 }
 export default FormulaBar;

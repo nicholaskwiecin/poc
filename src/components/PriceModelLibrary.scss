@@ -38,6 +38,7 @@
             }
         }
     }
+
     .table-wrapper{
         margin-left: 1rem;
         margin-right: 1rem;
@@ -47,13 +48,42 @@
     #compare-button {
     }
 
-    #add-button, #duplicate-button{
+    button {
+        color: white;
+        margin-top: 20px;
+        height: 40px;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 5px;
+        border-style: solid;
+        padding: 0 10px;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    #add-button, #duplicate-button {
         margin-left: 20px;
     }
 
     .circle-question {
         align-self: flex-start;
         margin-bottom: 1rem;
+        color: $primary-blue;
+
+        .info-icon:hover {
+            color: $secondary-blue-dark;
+            cursor: pointer;
+        }
+    }
+
+    .compare {
+        text-align: center;
+
+        input {
+            cursor: pointer;
+        }
     }
 }
 

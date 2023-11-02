@@ -6,12 +6,15 @@ import reportWebVitals from './reportWebVitals';
 import {
   createBrowserRouter,
   RouterProvider,
+  useLocation,
 } from 'react-router-dom';
 import PriceModelLibrary from './components/PriceModelLibrary';
 import PriceModelWorkbench from './components/PriceModelWorkbench';
 import PriceModelLanding from './components/PriceModelLanding';
 import Login from './components/Login';
 import NotImplemented from './components/NotImplemented';
+import LinearPricingModel from './components/LinearPricingModel';
+
 
 const router = createBrowserRouter([
   {
@@ -39,6 +42,10 @@ const router = createBrowserRouter([
         element: <PriceModelWorkbench />,
       },
       {
+        path: 'linear-pricing-model',
+        element: <LinearPricingModel />
+      },
+      {
         path:'not-implemented',
         element: <NotImplemented />,
       }
@@ -46,7 +53,7 @@ const router = createBrowserRouter([
   },
 ], {
   basename: process.env.REACT_APP_RELATIVE_PATH ? process.env.REACT_APP_RELATIVE_PATH : '/',
-})
+});
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

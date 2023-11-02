@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUserCircle, faBell, faGear, faQuestion } from '@fortawesome/free-solid-svg-icons'
 
 const Header = () => (
-    <header className="global-header">
+    <header id="global-header">
         <Link to='landing/buyer'>
             <img src={logo} id="header-logo" alt="P&G logo"></img>
         </Link>

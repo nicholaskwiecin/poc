@@ -13,7 +13,7 @@ import {useLocation, useParams} from 'react-router-dom'
 const PriceModelLibrary = () => {
 
 
-    const [records, setRecords] = useState(database.price_models);
+    const [records, setRecords] = useState(database.price_model_records);
     const [selectedRecordIds, setSelectedRecords] = useState([]);
 
     // const navigate = useNavigate();
@@ -123,7 +123,7 @@ const PriceModelLibrary = () => {
                                     <td className="compare">
                                         <input type="checkbox" onChange={ev => handleCheckboxChange(ev, record.id)} />
                                     </td>
-                                    <td><Link to={'/price-model-workbench/' + record.id}>{record.id}</Link></td>
+                                    <td><Link to={'/price-model-workbench/' + record.id} state={{records: records, isAdd: false}}>{record.id}</Link></td>
                                     <td>{record.description}</td>
                                     <td>{record.barId}</td>
                                     <td>{record.barDescription}</td>
@@ -141,12 +141,12 @@ const PriceModelLibrary = () => {
                     <button id="compare-button" className={selectedRecordIds.length > 1 ? 'active-button' : 'inactive-button'}>
                         Compare Selected Models
                     </button>
-                    <Link to='/price-model-workbench' state={{records: records}}>
+                    <Link to='/price-model-workbench' state={{records: records, isAdd: true}}>
                         <button id="add-button" className={'active-button'} >
                             Add New Model
                         </button>
                     </Link>
-                    <Link to={'/price-model-workbench/' + selectedRecordIds[0]} state={{records: records}}>
+                    <Link to={'/price-model-workbench/' + selectedRecordIds[0]} state={{records: records, isAdd: true}}>
                         <button id="duplicate-button" className={selectedRecordIds.length == 1 ? 'active-button' : 'inactive-button'}>
                             Duplicate Selected Model
                         </button>

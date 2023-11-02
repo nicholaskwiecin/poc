@@ -1,5 +1,5 @@
 {
-    "price_model_prefabs": [
+    "price_model_graphs": [
         {
             "id": "PM-0000001",
             "initial_nodes": [
@@ -1895,7 +1895,7 @@
             ]
         }
     ],
-    "price_models": [
+    "price_model_records": [
         {
             "id": "PM-0000001",
             "description": "Sasol Beauty Care Surfactants Global",

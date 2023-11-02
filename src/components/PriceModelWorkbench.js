@@ -14,7 +14,7 @@ import CostElementLibrary from './CostElementLibrary';
 import CostingPanel from './CostingPanel';
 import database from '../database.json';
 import CostElementNode from './CostElementNode';
-import { useNavigate, useParams, useLocation} from 'react-router-dom';
+import {useParams, useLocation} from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 
@@ -25,7 +25,6 @@ const nodeTypes = {
   cost_element: CostElementNode,
 };
 
-let id = 1;
 const getHash = () => (Math.random() + 1).toString(36).substring(7);
 const getRandomID = () => Math.floor(Math.random() * 100000000);
 const getMaterialID = () => Math.floor(Math.random() * 100000000);
@@ -38,19 +37,26 @@ const PriceModelWorkbench = (props) => {
 
   const location = useLocation();
 
-  const onSave = (nodes, edges) => {
-    if (!location.state) {
-      //indicates edit case
-      if (params.id) {
-        const match = database.price_model_prefabs.find(price_model => price_model.id === params.id);
-        match.initial_nodes = nodes;
-        match.initial_edges = edges;
-      }
-      return;
-    }
-    //add new
-    const id = "PM-000000" + (location.state.records.length + 1);
+  let priceModel;
+  if (params.id) {
+    priceModel = database.price_model_graphs.find(graph => graph.id === params.id);
+  } else {
+    priceModel = database.price_model_template;
+  }
 
+  const id = params.id && location.state.isDuplicate == false ? params.id : "PM-000000" + (location.state.records.length + 1);
+
+  const record = database.price_model_records.find(record => record.id === params.id);
+  let [title, setTitle] = React.useState(record ? record.description : "New Price Model");
+
+  const saveEditModel = (nodes, edges) => {
+    const model = database.price_model_graphs.find(graph => graph.id === params.id);
+    model.initial_nodes = nodes;
+    model.initial_edges = edges;
+    record.description = title;
+  }
+
+  const saveNewModel = (nodes, edges) => {
     const newRecord = {
         id: id,
         description: title,
@@ -62,18 +68,17 @@ const PriceModelWorkbench = (props) => {
         regions: 'ALL'
     };
     location.state.records.push(newRecord);
-    database.price_model_prefabs.push({ id: id, initial_nodes: nodes, initial_edges: edges });
+    database.price_model_graphs.push({ id: id, initial_nodes: nodes, initial_edges: edges });
   }
 
-
-  let priceModel = database.price_model_template;
-  if (params.id) {
-    const match = database.price_model_prefabs.find(price_model => price_model.id === params.id);
-    priceModel = match;
+  const onSave = (nodes, edges) => {
+    if (location.state.isAdd) {
+      saveNewModel(nodes, edges);
+    }
+    else {
+      saveEditModel(nodes, edges);
+    }
   }
-
-  const rowModel = database.price_models.find(price_model => price_model.id === params.id);
-  let [title, setTitle] = React.useState(rowModel ? rowModel.description : "New Price Model");
 
   const [nodes, setNodes, onNodesChange] = useNodesState(priceModel.initial_nodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState(priceModel.initial_edges);

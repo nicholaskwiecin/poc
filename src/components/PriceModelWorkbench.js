@@ -40,7 +40,7 @@ const PriceModelWorkbench = (props) => {
 
   const onSave = (nodes, edges) => {
     if (!location.state) {
-      //indicates the price model being saved is a selected prefab (no update for this case currently)
+      //indicates edit case, not add
       return;
     }
     const id = "PM-000000" + (location.state.records.length + 1);
@@ -62,11 +62,12 @@ const PriceModelWorkbench = (props) => {
 
   let priceModel = database.price_model_template;
   if (params.id) {
-    const match = database.price_model_prefabs.find(data_model => data_model.id === params.id);
+    const match = database.price_model_prefabs.find(price_model => price_model.id === params.id);
     priceModel = match;
   }
 
-  let [title, setTitle] = React.useState("New Price Model");
+  const rowModel = database.price_models.find(price_model => price_model.id === params.id);
+  let [title, setTitle] = React.useState(rowModel ? rowModel.description : "New Price Model");
 
   const [nodes, setNodes, onNodesChange] = useNodesState(priceModel.initial_nodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState(priceModel.initial_edges);

@@ -43,7 +43,7 @@ const PriceModelWorkbench = () => {
     priceModel = database.price_model_template;
   }
 
-  const id = params.id && location.state.isDuplicate == false ? params.id : "PM-000000" + (location.state.records.length + 1);
+  const id = params.id && location.state.isDuplicate === false ? params.id : "PM-000000" + (location.state.records.length + 1);
 
   const record = database.price_model_records.find(record => record.id === params.id);
   let [title, setTitle] = React.useState(record ? record.description : "New Price Model");

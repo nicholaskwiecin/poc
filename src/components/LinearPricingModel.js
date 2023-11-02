@@ -5,7 +5,7 @@ import database from '../database.json';
 
 
 const LinearPricingModel = () => {
-    const [records, ] = useState(database.price_models);
+    const [records, ] = useState(database.price_model_records);
 
     return (
         <section className="library-container">

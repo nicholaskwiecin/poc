@@ -14,25 +14,21 @@ const PriceModelLibrary = () => {
 
 
     const [records, setRecords] = useState(database.price_models);
+    const [selectedRecordIds, setSelectedRecords] = useState([]);
 
-    const [checkedCount, setCheckedCount] = useState(0);
     // const navigate = useNavigate();
     // const goToComparePage = navigate("/not-implemented");
 
     let location = useLocation();
 
-
-
-    const handleCheckboxChange = (event) => {
+    const handleCheckboxChange = (event, id) => {
+        console.log("check event");
         if (event.target.checked) {
-            setCheckedCount(checkedCount + 1);
+            setSelectedRecords([... selectedRecordIds, id]);
         } else {
-            setCheckedCount(checkedCount - 1);
+            setSelectedRecords(selectedRecordIds.filter((recordId) => recordId !== id));
         }
     };
-
-
-
 
     return (
         <section className="library-container">
@@ -125,9 +121,9 @@ const PriceModelLibrary = () => {
                             return (
                                 <tr key={record.id}>
                                     <td className="compare">
-                                        <input type="checkbox" onChange={ev => handleCheckboxChange(ev)} />
+                                        <input type="checkbox" onChange={ev => handleCheckboxChange(ev, record.id)} />
                                     </td>
-                                    <td><Link to='/price-model-workbench/1'>{record.id}</Link></td>
+                                    <td><Link to={'/price-model-workbench/' + record.id}>{record.id}</Link></td>
                                     <td>{record.description}</td>
                                     <td>{record.barId}</td>
                                     <td>{record.barDescription}</td>
@@ -142,7 +138,7 @@ const PriceModelLibrary = () => {
                     </tbody>
                 </table>
                 <div>
-                    <button id="compare-button" className={checkedCount > 1 ? 'active-button' : 'inactive-button'}>
+                    <button id="compare-button" className={selectedRecordIds.length > 1 ? 'active-button' : 'inactive-button'}>
                         Compare Selected Models
                     </button>
                     <Link to='/price-model-workbench' state={{records: records}}>
@@ -150,14 +146,13 @@ const PriceModelLibrary = () => {
                             Add New Model
                         </button>
                     </Link>
-                    <Link to='/price-model-workbench/1' state={{records: records}}>
-                        <button id="duplicate-button" className={checkedCount == 1 ? 'active-button' : 'inactive-button'}>
+                    <Link to={'/price-model-workbench/' + selectedRecordIds[0]} state={{records: records}}>
+                        <button id="duplicate-button" className={selectedRecordIds.length == 1 ? 'active-button' : 'inactive-button'}>
                             Duplicate Selected Model
                         </button>
                     </Link>
                 </div>
             </div>
-
         </section>
     );
 };

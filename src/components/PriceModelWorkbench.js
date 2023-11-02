@@ -38,12 +38,15 @@ const PriceModelWorkbench = (props) => {
 
   const location = useLocation();
 
-  const onSave = () => {
+  const onSave = (nodes, edges) => {
     if (!location.state) {
+      //indicates the price model being saved is a selected prefab (no update for this case currently)
       return;
     }
+    const id = "PM-000000" + (location.state.records.length + 1);
+
     const newRecord = {
-        id: "PM-000000" + (location.state.records.length + 1),
+        id: id,
         description: title,
         barId: '1234456',
         barDescription: 'Sasol',
@@ -53,12 +56,14 @@ const PriceModelWorkbench = (props) => {
         regions: 'ALL'
     };
     location.state.records.push(newRecord);
+    database.price_model_prefabs.push({ id: id, initial_nodes: nodes, initial_edges: edges });
   }
 
 
   let priceModel = database.price_model_template;
   if (params.id) {
-    priceModel = database.price_model_1;
+    const match = database.price_model_prefabs.find(data_model => data_model.id === params.id);
+    priceModel = match;
   }
 
   let [title, setTitle] = React.useState("New Price Model");
@@ -248,7 +253,7 @@ const PriceModelWorkbench = (props) => {
           </Link> */}
           <Link to= "/price-model-library"
            id="save-button">
-            <button className="active-button" onClick={onSave}>Save</button>
+            <button className="active-button" onClick={() => onSave(nodes, edges)}>Save</button>
           </Link>
 
         </div>

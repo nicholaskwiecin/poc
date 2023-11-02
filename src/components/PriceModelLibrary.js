@@ -9,14 +9,22 @@ import { faSliders, faFilter, faSquareArrowUpRight } from '@fortawesome/free-sol
 
 
 const PriceModelLibrary = () => {
-    const [records, ] = useState(database.price_models);
-    const [checkedCount, setCheckedCount] = useState(0);
 
-    const handleCheckboxChange = (event) => {
+
+    const [records, setRecords] = useState(database.price_model_records);
+    const [selectedRecordIds, setSelectedRecords] = useState([]);
+
+    // const navigate = useNavigate();
+    // const goToComparePage = navigate("/not-implemented");
+
+    let location = useLocation();
+
+    const handleCheckboxChange = (event, id) => {
+        console.log("check event");
         if (event.target.checked) {
-            setCheckedCount(checkedCount + 1);
+            setSelectedRecords([... selectedRecordIds, id]);
         } else {
-            setCheckedCount(checkedCount - 1);
+            setSelectedRecords(selectedRecordIds.filter((recordId) => recordId !== id));
         }
     };
 
@@ -110,9 +118,9 @@ const PriceModelLibrary = () => {
                             return (
                                 <tr key={record.id}>
                                     <td className="compare">
-                                        <input type="checkbox" onChange={ev => handleCheckboxChange(ev)} />
+                                        <input type="checkbox" onChange={ev => handleCheckboxChange(ev, record.id)} />
                                     </td>
-                                    <td><Link to='/price-model-workbench/1'>{record.id}</Link></td>
+                                    <td><Link to={'/price-model-workbench/' + record.id} state={{records: records, isAdd: false}}>{record.id}</Link></td>
                                     <td>{record.description}</td>
                                     <td>{record.barId}</td>
                                     <td>{record.barDescription}</td>
@@ -127,16 +135,16 @@ const PriceModelLibrary = () => {
                     </tbody>
                 </table>
                 <div>
-                    <button id="compare-button" className={checkedCount > 1 ? 'active-button' : 'inactive-button'}>
+                    <button id="compare-button" className={selectedRecordIds.length > 1 ? 'active-button' : 'inactive-button'}>
                         Compare Selected Models
                     </button>
-                    <Link to='/price-model-workbench' state={{records: records}}>
+                    <Link to='/price-model-workbench' state={{records: records, isAdd: true}}>
                         <button id="add-button" className={'active-button'} >
                             Add New Model
                         </button>
                     </Link>
-                    <Link to='/price-model-workbench/1' state={{records: records}}>
-                        <button id="duplicate-button" className={checkedCount === 1 ? 'active-button' : 'inactive-button'}>
+                    <Link to={'/price-model-workbench/' + selectedRecordIds[0]} state={{records: records, isAdd: true}}>
+                        <button id="duplicate-button" className={selectedRecordIds.length === 1 ? 'active-button' : 'inactive-button'}>
                             Duplicate Selected Model
                         </button>
                     </Link>

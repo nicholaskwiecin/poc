@@ -55,7 +55,7 @@ const CostingPanel = ({selectedFormula,onInputValueChange}) => (
                 <table>
                     <thead>
                         <tr>
-                            <th>ID</th>
+                            <th>Name</th>
                             <th>Vendor ID</th>
                             <th>Cost Per Unit</th>
                             <th>Unit of Measure</th>
@@ -77,8 +77,8 @@ const CostingPanel = ({selectedFormula,onInputValueChange}) => (
                 <table>
                     <thead>
                         <tr>
-                            <th>Material ID</th>
                             <th>ID</th>
+                            <th>Name</th>
                             <th>Usage</th>
                             <th>Unit</th>
                         </tr>

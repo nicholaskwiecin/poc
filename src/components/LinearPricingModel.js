@@ -1,46 +1,1377 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import './LinearPricingModel.scss';
-import database from '../database.json';
 
 
 const LinearPricingModel = () => {
-    const [records, ] = useState(database.price_model_records);
 
     return (
-        <section className="library-container">
+        <section className="linear-pricing-model">
             <h1>Linear Pricing Model</h1>
             <div className="table-wrapper">
-                <table className="price-model-table">
+                <table>
                     <thead>
                         <tr>
-                            <th>ID</th>
-                            <th>Description</th>
-                            <th>Contract / Bar ID</th>
-                            <th>Contract / Bar Description</th>
-                            <th>Spend Pool H/M/L</th>
-                            <th>Supplier(s)</th>
-                            <th>BU</th>
-                            <th>Region(s)</th>
-                            <th>Material Coverage</th>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td>Output</td>
+                            <td>Output</td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td></td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td>Formula</td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td></td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td></td>
+                            <td>Formula</td>
+                            <td>Formula</td>
+                            <td>Formula</td>
+                            <td>Formula</td>
+                            <td>Formula</td>
+                            <td>Formula</td>
+                            <td>Formula</td>
+                            <td></td>
+                            <td>Output</td>
+                            <td>Output</td>
+                            <td>Output</td>
+                            <td>Output</td>
+                            <td>Output</td>
+                            <td>Output</td>
+                            <td>Output</td>
+                            <td>Output</td>
+                            <td>Output</td>
+                            <td>Output</td>
+                            <td>Output</td>
+                            <td>Output</td>
+                            <td>Output</td>
+                            <td>Output</td>
+                            <td>Output</td>
+                            <td>Output</td>
+                            <td>Output</td>
+                            <td>Output</td>
+                        </tr>
+                        <tr>
+                            <td>GCAS #</td>
+                            <td>SAP Material Description</td>
+                            <td>Invoice Price</td>
+                            <td>Total price w/o discount</td>
+                            <td>Final Price Currency</td>
+                            <td>Unit of measure</td>
+                            <td>SA #</td>
+                            <td>SA Line</td>
+                            <td>MPMP</td>
+                            <td>Transport Mode</td>
+                            <td>Origin Country</td>
+                            <td>Origin City</td>
+                            <td>Origin Port</td>
+                            <td>Destination Country</td>
+                            <td>Destination City</td>
+                            <td>Destination Port</td>
+                            <td>Equipment Type</td>
+                            <td></td>
+                            <td>P&G Plant Name</td>
+                            <td>Inner Length mm</td>
+                            <td>Inner Width mm</td>
+                            <td>Inner Depth mm</td>
+                            <td>Type of case</td>
+                            <td>Substrate outside</td>
+                            <td>Substrate inside</td>
+                            <td>BCT Newton</td>
+                            <td>Est. Volume/yr Munits</td>
+                            <td>Frequency of production run (weeks)</td>
+                            <td>Run Size Quantity</td>
+                            <td>Printing technology </td>
+                            <td>Number of colors outside</td>
+                            <td>Number of colors inside</td>
+                            <td>Printing Feature 1</td>
+                            <td>Coverage Feature 1</td>
+                            <td>Printing Feature 2</td>
+                            <td>Coverage Feature 2</td>
+                            <td>Fluting type coefficient 1</td>
+                            <td>Fluting type coefficient 2</td>
+                            <td></td>
+                            <td>Supplier Production Site</td>
+                            <td>Number of box per sheet</td>
+                            <td>Manufacturing process</td>
+                            <td>Pallets (Yes / No)</td>
+                            <td>Drop Trailers (Yes / No)</td>
+                            <td>Warehousing (Yes / No)</td>
+                            <td>Special or Double Dunnage (Yes / No)</td>
+                            <td>Type 1</td>
+                            <td>Grammage 1</td>
+                            <td>Type 2</td>
+                            <td> Grammage 2</td>
+                            <td>Type 3</td>
+                            <td>Grammage 3</td>
+                            <td>Type 4</td>
+                            <td>Grammage 4</td>
+                            <td>Type 5</td>
+                            <td>Grammage 5</td>
+                            <td></td>
+                            <td>Blank Sheet Length mm</td>
+                            <td>Blank Sheet Width mm</td>
+                            <td>Fluting Type</td>
+                            <td>Scrap Rate %</td>
+                            <td>Surface</td>
+                            <td>Paper source country</td>
+                            <td>Composition</td>
+                            <td></td>
+                            <td>Board 1 (Currency/sqm)</td>
+                            <td>Board 2 (Currency/sqm)</td>
+                            <td>Board 3 (Currency/sqm)</td>
+                            <td>Board 4 (Currency/sqm)</td>
+                            <td>Board 5 (Currency/sqm)</td>
+                            <td>Scrap Cost</td>
+                            <td>Total Paper Costs</td>
+                            <td>Total Printing Costs</td>
+                            <td>Total Conversion Costs</td>
+                            <td>Set-up cost</td>
+                            <td>Total Manufacturing Costs</td>
+                            <td>Logistics Costs</td>
+                            <td>Transport Costs</td>
+                            <td>Total Transport & Logistics Costs</td>
+                            <td>YoY Discount</td>
+                            <td>Additional Discount</td>
+                            <td>FX Rate (Raw Mat / Local =)</td>
+                            <td>Raw Material Currency</td>
                         </tr>
                     </thead>
                     <tbody>
-                        {records.map((record) => {
-                            return (
-                                <tr key={record.id}>
-                                    <td><Link to='/price-model-workbench/1'>{record.id}</Link></td>
-                                    <td>{record.description}</td>
-                                    <td>{record.barId}</td>
-                                    <td>{record.barDescription}</td>
-                                    <td>{record.spendPool}</td>
-                                    <td>{record.suppliers}</td>
-                                    <td>{record.bu}</td>
-                                    <td>{record.regions}</td>
-                                    <td><Link to='/not-implemented'>Click Here</Link></td>
-                                </tr>
-                            );
-                        })}
+                        <tr>
+                            <td>90000442</td>
+                            <td>Corrugate Material 1</td>
+                            <td>684.40</td>
+                            <td>716.10</td>
+                            <td>EUR</td>
+                            <td>1000EA</td>
+                            <td>5500066049</td>
+                            <td>00010</td>
+                            <td>00034983</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>AMIENS</td>
+                            <td>378</td>
+                            <td>190</td>
+                            <td>367</td>
+                            <td>AC </td>
+                            <td>White</td>
+                            <td>White</td>
+                            <td>3000</td>
+                            <td> 960 </td>
+                            <td> 48 </td>
+                            <td>20.00</td>
+                            <td>Flexo</td>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>Silver</td>
+                            <td>10%</td>
+                            <td>Glossy</td>
+                            <td>10%</td>
+                            <td>B</td>
+                            <td>E</td>
+                            <td></td>
+                            <td>Supplier X Location A</td>
+                            <td>1</td>
+                            <td>Inliner</td>
+                            <td>Yes</td>
+                            <td>No</td>
+                            <td>Yes</td>
+                            <td>No</td>
+                            <td>WTLC</td>
+                            <td>120</td>
+                            <td>FL</td>
+                            <td>90</td>
+                            <td>FL</td>
+                            <td>90</td>
+                            <td>FL</td>
+                            <td>90</td>
+                            <td>FL</td>
+                            <td>120</td>
+                            <td></td>
+                            <td>1183</td>
+                            <td>570</td>
+                            <td>BE</td>
+                            <td>8%</td>
+                            <td>0.67</td>
+                            <td>France</td>
+                            <td>WTLC 120 / FL 90 / FL 90 / FL 90 / FL 120</td>
+                            <td></td>
+                            <td>65.9</td>
+                            <td>47.3</td>
+                            <td>35.0</td>
+                            <td>44.2</td>
+                            <td>46.7</td>
+                            <td>19.1</td>
+                            <td>174.2</td>
+                            <td>232.0</td>
+                            <td>216.5</td>
+                            <td>4.4</td>
+                            <td>452.8</td>
+                            <td>30.3</td>
+                            <td>58.8</td>
+                            <td>89.1</td>
+                            <td>2.97%</td>
+                            <td>1.50%</td>
+                            <td>1</td>
+                            <td>EUR</td>
+                        </tr>
+                        <tr>
+                            <td>90000443</td>
+                            <td>Corrugate Material 2</td>
+                            <td>494.29</td>
+                            <td>517.17</td>
+                            <td>EUR</td>
+                            <td>1000EA</td>
+                            <td>5500066049</td>
+                            <td>00010</td>
+                            <td>00034984</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>AMIENS</td>
+                            <td>378</td>
+                            <td>190</td>
+                            <td>367</td>
+                            <td>AC </td>
+                            <td>White</td>
+                            <td>White</td>
+                            <td>3000</td>
+                            <td> 960 </td>
+                            <td> 48 </td>
+                            <td>20.00</td>
+                            <td>Flexo</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>N/A - No Feature</td>
+                            <td></td>
+                            <td>N/A - No Feature</td>
+                            <td></td>
+                            <td>B</td>
+                            <td>E</td>
+                            <td></td>
+                            <td>Supplier X Location A</td>
+                            <td>1</td>
+                            <td>Inliner</td>
+                            <td>Yes</td>
+                            <td>No</td>
+                            <td>Yes</td>
+                            <td>No</td>
+                            <td>WTLC</td>
+                            <td>120</td>
+                            <td>FL</td>
+                            <td>90</td>
+                            <td>FL</td>
+                            <td>90</td>
+                            <td>FL</td>
+                            <td>90</td>
+                            <td>FL</td>
+                            <td>120</td>
+                            <td></td>
+                            <td>1183</td>
+                            <td>570</td>
+                            <td>BE</td>
+                            <td>8%</td>
+                            <td>0.67</td>
+                            <td>France</td>
+                            <td>WTLC 120 / FL 90 / FL 90 / FL 90 / FL 120</td>
+                            <td></td>
+                            <td>65.9</td>
+                            <td>47.3</td>
+                            <td>35.0</td>
+                            <td>44.2</td>
+                            <td>46.7</td>
+                            <td>19.1</td>
+                            <td>174.2</td>
+                            <td>33.0</td>
+                            <td>216.5</td>
+                            <td>4.4</td>
+                            <td>253.9</td>
+                            <td>30.3</td>
+                            <td>58.8</td>
+                            <td>89.1</td>
+                            <td>2.97%</td>
+                            <td>1.50%</td>
+                            <td>1</td>
+                            <td>EUR</td>
+                        </tr>
+                        <tr>
+                            <td>90000444</td>
+                            <td>Corrugate Material 3</td>
+                            <td>494.29</td>
+                            <td>517.17</td>
+                            <td>EUR</td>
+                            <td>1000EA</td>
+                            <td>5500066049</td>
+                            <td>00020</td>
+                            <td>00034985</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>AMIENS</td>
+                            <td>378</td>
+                            <td>190</td>
+                            <td>367</td>
+                            <td>AC </td>
+                            <td>White</td>
+                            <td>White</td>
+                            <td>3000</td>
+                            <td> 960 </td>
+                            <td> 48 </td>
+                            <td>20.00</td>
+                            <td>Flexo</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>N/A - No Feature</td>
+                            <td></td>
+                            <td>N/A - No Feature</td>
+                            <td></td>
+                            <td>B</td>
+                            <td>E</td>
+                            <td></td>
+                            <td>Supplier X Location A</td>
+                            <td>1</td>
+                            <td>Inliner</td>
+                            <td>Yes</td>
+                            <td>No</td>
+                            <td>Yes</td>
+                            <td>No</td>
+                            <td>WTLC</td>
+                            <td>120</td>
+                            <td>FL</td>
+                            <td>90</td>
+                            <td>FL</td>
+                            <td>90</td>
+                            <td>FL</td>
+                            <td>90</td>
+                            <td>FL</td>
+                            <td>120</td>
+                            <td></td>
+                            <td>1183</td>
+                            <td>570</td>
+                            <td>BE</td>
+                            <td>8%</td>
+                            <td>0.67</td>
+                            <td>France</td>
+                            <td>WTLC 120 / FL 90 / FL 90 / FL 90 / FL 120</td>
+                            <td></td>
+                            <td>65.9</td>
+                            <td>47.3</td>
+                            <td>35.0</td>
+                            <td>44.2</td>
+                            <td>46.7</td>
+                            <td>19.1</td>
+                            <td>174.2</td>
+                            <td>33.0</td>
+                            <td>216.5</td>
+                            <td>4.4</td>
+                            <td>253.9</td>
+                            <td>30.3</td>
+                            <td>58.8</td>
+                            <td>89.1</td>
+                            <td>2.97%</td>
+                            <td>1.50%</td>
+                            <td>1</td>
+                            <td>EUR</td>
+                        </tr>
+                        <tr>
+                            <td>90000445</td>
+                            <td>Corrugate Material 4</td>
+                            <td>494.29</td>
+                            <td>517.17</td>
+                            <td>EUR</td>
+                            <td>1000EA</td>
+                            <td>5500066049</td>
+                            <td>00030</td>
+                            <td>00034986</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>AMIENS</td>
+                            <td>378</td>
+                            <td>190</td>
+                            <td>367</td>
+                            <td>AC </td>
+                            <td>White</td>
+                            <td>White</td>
+                            <td>3000</td>
+                            <td> 960 </td>
+                            <td> 48 </td>
+                            <td>20.00</td>
+                            <td>Flexo</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>N/A - No Feature</td>
+                            <td></td>
+                            <td>N/A - No Feature</td>
+                            <td></td>
+                            <td>B</td>
+                            <td>E</td>
+                            <td></td>
+                            <td>Supplier X Location A</td>
+                            <td>1</td>
+                            <td>Inliner</td>
+                            <td>Yes</td>
+                            <td>No</td>
+                            <td>Yes</td>
+                            <td>No</td>
+                            <td>WTLC</td>
+                            <td>120</td>
+                            <td>FL</td>
+                            <td>90</td>
+                            <td>FL</td>
+                            <td>90</td>
+                            <td>FL</td>
+                            <td>90</td>
+                            <td>FL</td>
+                            <td>120</td>
+                            <td></td>
+                            <td>1183</td>
+                            <td>570</td>
+                            <td>BE</td>
+                            <td>8%</td>
+                            <td>0.67</td>
+                            <td>France</td>
+                            <td>WTLC 120 / FL 90 / FL 90 / FL 90 / FL 120</td>
+                            <td></td>
+                            <td>65.9</td>
+                            <td>47.3</td>
+                            <td>35.0</td>
+                            <td>44.2</td>
+                            <td>46.7</td>
+                            <td>19.1</td>
+                            <td>174.2</td>
+                            <td>33.0</td>
+                            <td>216.5</td>
+                            <td>4.4</td>
+                            <td>253.9</td>
+                            <td>30.3</td>
+                            <td>58.8</td>
+                            <td>89.1</td>
+                            <td>2.97%</td>
+                            <td>1.50%</td>
+                            <td>1</td>
+                            <td>EUR</td>
+                        </tr>
+                        <tr>
+                            <td>90000446</td>
+                            <td>Corrugate Material 5</td>
+                            <td>494.29</td>
+                            <td>517.17</td>
+                            <td>EUR</td>
+                            <td>1000EA</td>
+                            <td>5500066049</td>
+                            <td>00040</td>
+                            <td>00034987</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>AMIENS</td>
+                            <td>378</td>
+                            <td>190</td>
+                            <td>367</td>
+                            <td>AC </td>
+                            <td>White</td>
+                            <td>White</td>
+                            <td>3000</td>
+                            <td> 960 </td>
+                            <td> 48 </td>
+                            <td>20.00</td>
+                            <td>Flexo</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>N/A - No Feature</td>
+                            <td></td>
+                            <td>N/A - No Feature</td>
+                            <td></td>
+                            <td>B</td>
+                            <td>E</td>
+                            <td></td>
+                            <td>Supplier X Location A</td>
+                            <td>1</td>
+                            <td>Inliner</td>
+                            <td>Yes</td>
+                            <td>No</td>
+                            <td>Yes</td>
+                            <td>No</td>
+                            <td>WTLC</td>
+                            <td>120</td>
+                            <td>FL</td>
+                            <td>90</td>
+                            <td>FL</td>
+                            <td>90</td>
+                            <td>FL</td>
+                            <td>90</td>
+                            <td>FL</td>
+                            <td>120</td>
+                            <td></td>
+                            <td>1183</td>
+                            <td>570</td>
+                            <td>BE</td>
+                            <td>8%</td>
+                            <td>0.67</td>
+                            <td>France</td>
+                            <td>WTLC 120 / FL 90 / FL 90 / FL 90 / FL 120</td>
+                            <td></td>
+                            <td>65.9</td>
+                            <td>47.3</td>
+                            <td>35.0</td>
+                            <td>44.2</td>
+                            <td>46.7</td>
+                            <td>19.1</td>
+                            <td>174.2</td>
+                            <td>33.0</td>
+                            <td>216.5</td>
+                            <td>4.4</td>
+                            <td>253.9</td>
+                            <td>30.3</td>
+                            <td>58.8</td>
+                            <td>89.1</td>
+                            <td>2.97%</td>
+                            <td>1.50%</td>
+                            <td>1</td>
+                            <td>EUR</td>
+                        </tr>
+                        <tr>
+                            <td>90000447</td>
+                            <td>Corrugate Material 6</td>
+                            <td>494.29</td>
+                            <td>517.17</td>
+                            <td>EUR</td>
+                            <td>1000EA</td>
+                            <td>5500066049</td>
+                            <td>00050</td>
+                            <td>00034988</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>AMIENS</td>
+                            <td>378</td>
+                            <td>190</td>
+                            <td>367</td>
+                            <td>AC </td>
+                            <td>White</td>
+                            <td>White</td>
+                            <td>3000</td>
+                            <td> 960 </td>
+                            <td> 48 </td>
+                            <td>20.00</td>
+                            <td>Flexo</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>N/A - No Feature</td>
+                            <td></td>
+                            <td>N/A - No Feature</td>
+                            <td></td>
+                            <td>B</td>
+                            <td>E</td>
+                            <td></td>
+                            <td>Supplier X Location A</td>
+                            <td>1</td>
+                            <td>Inliner</td>
+                            <td>Yes</td>
+                            <td>No</td>
+                            <td>Yes</td>
+                            <td>No</td>
+                            <td>WTLC</td>
+                            <td>120</td>
+                            <td>FL</td>
+                            <td>90</td>
+                            <td>FL</td>
+                            <td>90</td>
+                            <td>FL</td>
+                            <td>90</td>
+                            <td>FL</td>
+                            <td>120</td>
+                            <td></td>
+                            <td>1183</td>
+                            <td>570</td>
+                            <td>BE</td>
+                            <td>8%</td>
+                            <td>0.67</td>
+                            <td>France</td>
+                            <td>WTLC 120 / FL 90 / FL 90 / FL 90 / FL 120</td>
+                            <td></td>
+                            <td>65.9</td>
+                            <td>47.3</td>
+                            <td>35.0</td>
+                            <td>44.2</td>
+                            <td>46.7</td>
+                            <td>19.1</td>
+                            <td>174.2</td>
+                            <td>33.0</td>
+                            <td>216.5</td>
+                            <td>4.4</td>
+                            <td>253.9</td>
+                            <td>30.3</td>
+                            <td>58.8</td>
+                            <td>89.1</td>
+                            <td>2.97%</td>
+                            <td>1.50%</td>
+                            <td>1</td>
+                            <td>EUR</td>
+                        </tr>
+                        <tr>
+                            <td>90000448</td>
+                            <td>Corrugate Material 7</td>
+                            <td>494.29</td>
+                            <td>517.17</td>
+                            <td>EUR</td>
+                            <td>1000EA</td>
+                            <td>5500066049</td>
+                            <td>00060</td>
+                            <td>00034989</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>AMIENS</td>
+                            <td>378</td>
+                            <td>190</td>
+                            <td>367</td>
+                            <td>AC </td>
+                            <td>White</td>
+                            <td>White</td>
+                            <td>3000</td>
+                            <td> 960 </td>
+                            <td> 48 </td>
+                            <td>20.00</td>
+                            <td>Flexo</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>N/A - No Feature</td>
+                            <td></td>
+                            <td>N/A - No Feature</td>
+                            <td></td>
+                            <td>B</td>
+                            <td>E</td>
+                            <td></td>
+                            <td>Supplier X Location A</td>
+                            <td>1</td>
+                            <td>Inliner</td>
+                            <td>Yes</td>
+                            <td>No</td>
+                            <td>Yes</td>
+                            <td>No</td>
+                            <td>WTLC</td>
+                            <td>120</td>
+                            <td>FL</td>
+                            <td>90</td>
+                            <td>FL</td>
+                            <td>90</td>
+                            <td>FL</td>
+                            <td>90</td>
+                            <td>FL</td>
+                            <td>120</td>
+                            <td></td>
+                            <td>1183</td>
+                            <td>570</td>
+                            <td>BE</td>
+                            <td>8%</td>
+                            <td>0.67</td>
+                            <td>France</td>
+                            <td>WTLC 120 / FL 90 / FL 90 / FL 90 / FL 120</td>
+                            <td></td>
+                            <td>65.9</td>
+                            <td>47.3</td>
+                            <td>35.0</td>
+                            <td>44.2</td>
+                            <td>46.7</td>
+                            <td>19.1</td>
+                            <td>174.2</td>
+                            <td>33.0</td>
+                            <td>216.5</td>
+                            <td>4.4</td>
+                            <td>253.9</td>
+                            <td>30.3</td>
+                            <td>58.8</td>
+                            <td>89.1</td>
+                            <td>2.97%</td>
+                            <td>1.50%</td>
+                            <td>1</td>
+                            <td>EUR</td>
+                        </tr>
+                        <tr>
+                            <td>90000449</td>
+                            <td>Corrugate Material 8</td>
+                            <td>494.29</td>
+                            <td>517.17</td>
+                            <td>EUR</td>
+                            <td>1000EA</td>
+                            <td>5500066049</td>
+                            <td>00070</td>
+                            <td>00034990</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>AMIENS</td>
+                            <td>378</td>
+                            <td>190</td>
+                            <td>367</td>
+                            <td>AC </td>
+                            <td>White</td>
+                            <td>White</td>
+                            <td>3000</td>
+                            <td> 960 </td>
+                            <td> 48 </td>
+                            <td>20.00</td>
+                            <td>Flexo</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>N/A - No Feature</td>
+                            <td></td>
+                            <td>N/A - No Feature</td>
+                            <td></td>
+                            <td>B</td>
+                            <td>E</td>
+                            <td></td>
+                            <td>Supplier X Location A</td>
+                            <td>1</td>
+                            <td>Inliner</td>
+                            <td>Yes</td>
+                            <td>No</td>
+                            <td>Yes</td>
+                            <td>No</td>
+                            <td>WTLC</td>
+                            <td>120</td>
+                            <td>FL</td>
+                            <td>90</td>
+                            <td>FL</td>
+                            <td>90</td>
+                            <td>FL</td>
+                            <td>90</td>
+                            <td>FL</td>
+                            <td>120</td>
+                            <td></td>
+                            <td>1183</td>
+                            <td>570</td>
+                            <td>BE</td>
+                            <td>8%</td>
+                            <td>0.67</td>
+                            <td>France</td>
+                            <td>WTLC 120 / FL 90 / FL 90 / FL 90 / FL 120</td>
+                            <td></td>
+                            <td>65.9</td>
+                            <td>47.3</td>
+                            <td>35.0</td>
+                            <td>44.2</td>
+                            <td>46.7</td>
+                            <td>19.1</td>
+                            <td>174.2</td>
+                            <td>33.0</td>
+                            <td>216.5</td>
+                            <td>4.4</td>
+                            <td>253.9</td>
+                            <td>30.3</td>
+                            <td>58.8</td>
+                            <td>89.1</td>
+                            <td>2.97%</td>
+                            <td>1.50%</td>
+                            <td>1</td>
+                            <td>EUR</td>
+                        </tr>
+                        <tr>
+                            <td>90000450</td>
+                            <td>Corrugate Material 9</td>
+                            <td>494.29</td>
+                            <td>517.17</td>
+                            <td>EUR</td>
+                            <td>1000EA</td>
+                            <td>5500066049</td>
+                            <td>00080</td>
+                            <td>00034991</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>AMIENS</td>
+                            <td>378</td>
+                            <td>190</td>
+                            <td>367</td>
+                            <td>AC </td>
+                            <td>White</td>
+                            <td>White</td>
+                            <td>3000</td>
+                            <td> 960 </td>
+                            <td> 48 </td>
+                            <td>20.00</td>
+                            <td>Flexo</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>N/A - No Feature</td>
+                            <td></td>
+                            <td>N/A - No Feature</td>
+                            <td></td>
+                            <td>B</td>
+                            <td>E</td>
+                            <td></td>
+                            <td>Supplier X Location A</td>
+                            <td>1</td>
+                            <td>Inliner</td>
+                            <td>Yes</td>
+                            <td>No</td>
+                            <td>Yes</td>
+                            <td>No</td>
+                            <td>WTLC</td>
+                            <td>120</td>
+                            <td>FL</td>
+                            <td>90</td>
+                            <td>FL</td>
+                            <td>90</td>
+                            <td>FL</td>
+                            <td>90</td>
+                            <td>FL</td>
+                            <td>120</td>
+                            <td></td>
+                            <td>1183</td>
+                            <td>570</td>
+                            <td>BE</td>
+                            <td>8%</td>
+                            <td>0.67</td>
+                            <td>France</td>
+                            <td>WTLC 120 / FL 90 / FL 90 / FL 90 / FL 120</td>
+                            <td></td>
+                            <td>65.9</td>
+                            <td>47.3</td>
+                            <td>35.0</td>
+                            <td>44.2</td>
+                            <td>46.7</td>
+                            <td>19.1</td>
+                            <td>174.2</td>
+                            <td>33.0</td>
+                            <td>216.5</td>
+                            <td>4.4</td>
+                            <td>253.9</td>
+                            <td>30.3</td>
+                            <td>58.8</td>
+                            <td>89.1</td>
+                            <td>2.97%</td>
+                            <td>1.50%</td>
+                            <td>1</td>
+                            <td>EUR</td>
+                        </tr>
+                        <tr>
+                            <td>90000451</td>
+                            <td>Corrugate Material 10</td>
+                            <td>494.29</td>
+                            <td>517.17</td>
+                            <td>EUR</td>
+                            <td>1000EA</td>
+                            <td>5500066049</td>
+                            <td>00090</td>
+                            <td>00034992</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>AMIENS</td>
+                            <td>378</td>
+                            <td>190</td>
+                            <td>367</td>
+                            <td>AC </td>
+                            <td>White</td>
+                            <td>White</td>
+                            <td>3000</td>
+                            <td> 960 </td>
+                            <td> 48 </td>
+                            <td>20.00</td>
+                            <td>Flexo</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>N/A - No Feature</td>
+                            <td></td>
+                            <td>N/A - No Feature</td>
+                            <td></td>
+                            <td>B</td>
+                            <td>E</td>
+                            <td></td>
+                            <td>Supplier X Location A</td>
+                            <td>1</td>
+                            <td>Inliner</td>
+                            <td>Yes</td>
+                            <td>No</td>
+                            <td>Yes</td>
+                            <td>No</td>
+                            <td>WTLC</td>
+                            <td>120</td>
+                            <td>FL</td>
+                            <td>90</td>
+                            <td>FL</td>
+                            <td>90</td>
+                            <td>FL</td>
+                            <td>90</td>
+                            <td>FL</td>
+                            <td>120</td>
+                            <td></td>
+                            <td>1183</td>
+                            <td>570</td>
+                            <td>BE</td>
+                            <td>8%</td>
+                            <td>0.67</td>
+                            <td>France</td>
+                            <td>WTLC 120 / FL 90 / FL 90 / FL 90 / FL 120</td>
+                            <td></td>
+                            <td>65.9</td>
+                            <td>47.3</td>
+                            <td>35.0</td>
+                            <td>44.2</td>
+                            <td>46.7</td>
+                            <td>19.1</td>
+                            <td>174.2</td>
+                            <td>33.0</td>
+                            <td>216.5</td>
+                            <td>4.4</td>
+                            <td>253.9</td>
+                            <td>30.3</td>
+                            <td>58.8</td>
+                            <td>89.1</td>
+                            <td>2.97%</td>
+                            <td>1.50%</td>
+                            <td>1</td>
+                            <td>EUR</td>
+                        </tr>
+                        <tr>
+                            <td>90000452</td>
+                            <td>Corrugate Material 11</td>
+                            <td>494.29</td>
+                            <td>517.17</td>
+                            <td>EUR</td>
+                            <td>1000EA</td>
+                            <td>5500066049</td>
+                            <td>00100</td>
+                            <td>00034993</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>AMIENS</td>
+                            <td>378</td>
+                            <td>190</td>
+                            <td>367</td>
+                            <td>AC </td>
+                            <td>White</td>
+                            <td>White</td>
+                            <td>3000</td>
+                            <td> 960 </td>
+                            <td> 48 </td>
+                            <td>20.00</td>
+                            <td>Flexo</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>N/A - No Feature</td>
+                            <td></td>
+                            <td>N/A - No Feature</td>
+                            <td></td>
+                            <td>B</td>
+                            <td>E</td>
+                            <td></td>
+                            <td>Supplier X Location A</td>
+                            <td>1</td>
+                            <td>Inliner</td>
+                            <td>Yes</td>
+                            <td>No</td>
+                            <td>Yes</td>
+                            <td>No</td>
+                            <td>WTLC</td>
+                            <td>120</td>
+                            <td>FL</td>
+                            <td>90</td>
+                            <td>FL</td>
+                            <td>90</td>
+                            <td>FL</td>
+                            <td>90</td>
+                            <td>FL</td>
+                            <td>120</td>
+                            <td></td>
+                            <td>1183</td>
+                            <td>570</td>
+                            <td>BE</td>
+                            <td>8%</td>
+                            <td>0.67</td>
+                            <td>France</td>
+                            <td>WTLC 120 / FL 90 / FL 90 / FL 90 / FL 120</td>
+                            <td></td>
+                            <td>65.9</td>
+                            <td>47.3</td>
+                            <td>35.0</td>
+                            <td>44.2</td>
+                            <td>46.7</td>
+                            <td>19.1</td>
+                            <td>174.2</td>
+                            <td>33.0</td>
+                            <td>216.5</td>
+                            <td>4.4</td>
+                            <td>253.9</td>
+                            <td>30.3</td>
+                            <td>58.8</td>
+                            <td>89.1</td>
+                            <td>2.97%</td>
+                            <td>1.50%</td>
+                            <td>1</td>
+                            <td>EUR</td>
+                        </tr>
+                        <tr>
+                            <td>90000453</td>
+                            <td>Corrugate Material 12</td>
+                            <td>494.29</td>
+                            <td>517.17</td>
+                            <td>EUR</td>
+                            <td>1000EA</td>
+                            <td>5500066049</td>
+                            <td>00110</td>
+                            <td>00034994</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>AMIENS</td>
+                            <td>378</td>
+                            <td>190</td>
+                            <td>367</td>
+                            <td>AC </td>
+                            <td>White</td>
+                            <td>White</td>
+                            <td>3000</td>
+                            <td> 960 </td>
+                            <td> 48 </td>
+                            <td>20.00</td>
+                            <td>Flexo</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>N/A - No Feature</td>
+                            <td></td>
+                            <td>N/A - No Feature</td>
+                            <td></td>
+                            <td>B</td>
+                            <td>E</td>
+                            <td></td>
+                            <td>Supplier X Location A</td>
+                            <td>1</td>
+                            <td>Inliner</td>
+                            <td>Yes</td>
+                            <td>No</td>
+                            <td>Yes</td>
+                            <td>No</td>
+                            <td>WTLC</td>
+                            <td>120</td>
+                            <td>FL</td>
+                            <td>90</td>
+                            <td>FL</td>
+                            <td>90</td>
+                            <td>FL</td>
+                            <td>90</td>
+                            <td>FL</td>
+                            <td>120</td>
+                            <td></td>
+                            <td>1183</td>
+                            <td>570</td>
+                            <td>BE</td>
+                            <td>8%</td>
+                            <td>0.67</td>
+                            <td>France</td>
+                            <td>WTLC 120 / FL 90 / FL 90 / FL 90 / FL 120</td>
+                            <td></td>
+                            <td>65.9</td>
+                            <td>47.3</td>
+                            <td>35.0</td>
+                            <td>44.2</td>
+                            <td>46.7</td>
+                            <td>19.1</td>
+                            <td>174.2</td>
+                            <td>33.0</td>
+                            <td>216.5</td>
+                            <td>4.4</td>
+                            <td>253.9</td>
+                            <td>30.3</td>
+                            <td>58.8</td>
+                            <td>89.1</td>
+                            <td>2.97%</td>
+                            <td>1.50%</td>
+                            <td>1</td>
+                            <td>EUR</td>
+                        </tr>
+                        <tr>
+                            <td>90000454</td>
+                            <td>Corrugate Material 13</td>
+                            <td>494.29</td>
+                            <td>517.17</td>
+                            <td>EUR</td>
+                            <td>1000EA</td>
+                            <td>5500066049</td>
+                            <td>00120</td>
+                            <td>00034995</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>AMIENS</td>
+                            <td>378</td>
+                            <td>190</td>
+                            <td>367</td>
+                            <td>AC </td>
+                            <td>White</td>
+                            <td>White</td>
+                            <td>3000</td>
+                            <td> 960 </td>
+                            <td> 48 </td>
+                            <td>20.00</td>
+                            <td>Flexo</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>N/A - No Feature</td>
+                            <td></td>
+                            <td>N/A - No Feature</td>
+                            <td></td>
+                            <td>B</td>
+                            <td>E</td>
+                            <td></td>
+                            <td>Supplier X Location A</td>
+                            <td>1</td>
+                            <td>Inliner</td>
+                            <td>Yes</td>
+                            <td>No</td>
+                            <td>Yes</td>
+                            <td>No</td>
+                            <td>WTLC</td>
+                            <td>120</td>
+                            <td>FL</td>
+                            <td>90</td>
+                            <td>FL</td>
+                            <td>90</td>
+                            <td>FL</td>
+                            <td>90</td>
+                            <td>FL</td>
+                            <td>120</td>
+                            <td></td>
+                            <td>1183</td>
+                            <td>570</td>
+                            <td>BE</td>
+                            <td>8%</td>
+                            <td>0.67</td>
+                            <td>France</td>
+                            <td>WTLC 120 / FL 90 / FL 90 / FL 90 / FL 120</td>
+                            <td></td>
+                            <td>65.9</td>
+                            <td>47.3</td>
+                            <td>35.0</td>
+                            <td>44.2</td>
+                            <td>46.7</td>
+                            <td>19.1</td>
+                            <td>174.2</td>
+                            <td>33.0</td>
+                            <td>216.5</td>
+                            <td>4.4</td>
+                            <td>253.9</td>
+                            <td>30.3</td>
+                            <td>58.8</td>
+                            <td>89.1</td>
+                            <td>2.97%</td>
+                            <td>1.50%</td>
+                            <td>1</td>
+                            <td>EUR</td>
+                        </tr>
+                        <tr>
+                            <td>90000455</td>
+                            <td>Corrugate Material 14</td>
+                            <td>494.29</td>
+                            <td>517.17</td>
+                            <td>EUR</td>
+                            <td>1000EA</td>
+                            <td>5500066049</td>
+                            <td>00130</td>
+                            <td>00034996</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>AMIENS</td>
+                            <td>378</td>
+                            <td>190</td>
+                            <td>367</td>
+                            <td>AC </td>
+                            <td>White</td>
+                            <td>White</td>
+                            <td>3000</td>
+                            <td> 960 </td>
+                            <td> 48 </td>
+                            <td>20.00</td>
+                            <td>Flexo</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>N/A - No Feature</td>
+                            <td></td>
+                            <td>N/A - No Feature</td>
+                            <td></td>
+                            <td>B</td>
+                            <td>E</td>
+                            <td></td>
+                            <td>Supplier X Location A</td>
+                            <td>1</td>
+                            <td>Inliner</td>
+                            <td>Yes</td>
+                            <td>No</td>
+                            <td>Yes</td>
+                            <td>No</td>
+                            <td>WTLC</td>
+                            <td>120</td>
+                            <td>FL</td>
+                            <td>90</td>
+                            <td>FL</td>
+                            <td>90</td>
+                            <td>FL</td>
+                            <td>90</td>
+                            <td>FL</td>
+                            <td>120</td>
+                            <td></td>
+                            <td>1183</td>
+                            <td>570</td>
+                            <td>BE</td>
+                            <td>8%</td>
+                            <td>0.67</td>
+                            <td>France</td>
+                            <td>WTLC 120 / FL 90 / FL 90 / FL 90 / FL 120</td>
+                            <td></td>
+                            <td>65.9</td>
+                            <td>47.3</td>
+                            <td>35.0</td>
+                            <td>44.2</td>
+                            <td>46.7</td>
+                            <td>19.1</td>
+                            <td>174.2</td>
+                            <td>33.0</td>
+                            <td>216.5</td>
+                            <td>4.4</td>
+                            <td>253.9</td>
+                            <td>30.3</td>
+                            <td>58.8</td>
+                            <td>89.1</td>
+                            <td>2.97%</td>
+                            <td>1.50%</td>
+                            <td>1</td>
+                            <td>EUR</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>

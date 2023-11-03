@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './LinearPricingModel.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowsLeftRightToLine } from '@fortawesome/free-solid-svg-icons';
@@ -28,7 +28,7 @@ const LinearPricingModel = () => {
 
     return (
         <section className="linear-pricing-model">
-            <h1>Linear Pricing Model</h1>
+            <div className="page-title"><h1>Linear Pricing Model</h1></div>
             <div className="table-wrapper">
                 <table>
                     <colgroup>

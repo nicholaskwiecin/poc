@@ -5,24 +5,11 @@ import database from '../database.json'
 import ModalPopUp from './ModalPopUp';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleQuestion } from '@fortawesome/free-solid-svg-icons';
-import { faSliders, faFilter, faSquareArrowUpRight } from '@fortawesome/free-solid-svg-icons';
+import { faSliders, faFilter } from '@fortawesome/free-solid-svg-icons';
 
 
 const CostElementMaintenance = () => {
-    const [records, setRecords] = useState(database.cost_element_records);
-    const [selectedRecordIds, setSelectedRecords] = useState([]);
-
-    // const navigate = useNavigate();
-    // const goToComparePage = navigate("/not-implemented");
-
-    const handleCheckboxChange = (event, id) => {
-        console.log("check event");
-        if (event.target.checked) {
-            setSelectedRecords([... selectedRecordIds, id]);
-        } else {
-            setSelectedRecords(selectedRecordIds.filter((recordId) => recordId !== id));
-        }
-    };
+    const [records, ] = useState(database.cost_element_records);
 
     return (
         <section className="library-container">

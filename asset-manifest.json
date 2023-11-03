@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "https://nicholaskwiecin.github.io/poc/static/css/main.508ed6df.css",
-    "main.js": "https://nicholaskwiecin.github.io/poc/static/js/main.fe8e07ff.js",
+    "main.css": "https://nicholaskwiecin.github.io/poc/static/css/main.8600d98f.css",
+    "main.js": "https://nicholaskwiecin.github.io/poc/static/js/main.1b0ee0c1.js",
     "static/js/787.d2006f3c.chunk.js": "https://nicholaskwiecin.github.io/poc/static/js/787.d2006f3c.chunk.js",
     "static/media/Montserrat-ExtraBold.ttf": "https://nicholaskwiecin.github.io/poc/static/media/Montserrat-ExtraBold.6c8b198832c88c649faa.ttf",
     "static/media/Montserrat-Bold.ttf": "https://nicholaskwiecin.github.io/poc/static/media/Montserrat-Bold.50f0257aa1e905f4bfaf.ttf",
@@ -13,12 +13,12 @@
     "static/media/header-logo.png": "https://nicholaskwiecin.github.io/poc/static/media/header-logo.ba6f34bc95b315c0c0a1.png",
     "static/media/P_G_Logo_RGB.svg": "https://nicholaskwiecin.github.io/poc/static/media/P_G_Logo_RGB.222ec4cd01b8a74a9338bee2a11f71b5.svg",
     "index.html": "https://nicholaskwiecin.github.io/poc/index.html",
-    "main.508ed6df.css.map": "https://nicholaskwiecin.github.io/poc/static/css/main.508ed6df.css.map",
-    "main.fe8e07ff.js.map": "https://nicholaskwiecin.github.io/poc/static/js/main.fe8e07ff.js.map",
+    "main.8600d98f.css.map": "https://nicholaskwiecin.github.io/poc/static/css/main.8600d98f.css.map",
+    "main.1b0ee0c1.js.map": "https://nicholaskwiecin.github.io/poc/static/js/main.1b0ee0c1.js.map",
     "787.d2006f3c.chunk.js.map": "https://nicholaskwiecin.github.io/poc/static/js/787.d2006f3c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.508ed6df.css",
-    "static/js/main.fe8e07ff.js"
+    "static/css/main.8600d98f.css",
+    "static/js/main.1b0ee0c1.js"
   ]
 }

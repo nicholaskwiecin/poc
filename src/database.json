@@ -198,7 +198,7 @@
                     "deletable": false,
                     "selectable": false,
                     "color": "97",
-                    "opacity": 100,
+                    "opacity": 80,
                     "data": {
                         "label": "Logistics",
                         "type": "category"

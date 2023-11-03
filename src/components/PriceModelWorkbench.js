@@ -57,12 +57,16 @@ const PriceModelWorkbench = () => {
 
   const applyColorsToCss = (nodes) => {
     nodes.forEach(node => {
-      const el = document.querySelector(`[data-id="${node.id}"]`);
-      const brightness = 75 - 130 + node.opacity;
-      el.style.backgroundColor = `hsl(${node.color}, 75%, ${brightness}%)`;
-      console.log(brightness);
-      if (brightness > 60) {
-        el.style.color = 'black';
+      if (node) {
+        const el = document.querySelector(`[data-id="${node.id}"]`);
+        if (el) {
+          const brightness = node.opacity - 55;
+          el.style.backgroundColor = `hsl(${node.color}, 75%, ${brightness}%)`;
+          console.log(brightness);
+          if (brightness > 60 || node.color == 97 && brightness > 40) {
+            el.style.color = 'black';
+          }
+        }
       }
     });
   }
@@ -70,14 +74,14 @@ const PriceModelWorkbench = () => {
   const recursiveOpacityColorSet = (nodes, edges, currentNode) => {
     const childEdges = edges.filter((edge) => edge.source === currentNode.id);
     const childNodes = childEdges.map((edge) => nodes.find((node) => edge.target === node.id));
-    if (childEdges.length == 0 || childNodes.length == 0){
+    if (childEdges.length == 0 || childNodes.length == 0) {
       return;
     }
     childNodes.forEach(child => {
-      if (child){
-      child.color = currentNode.color;
-      child.opacity = currentNode.opacity + 12;
-      recursiveOpacityColorSet(nodes, edges, child);
+      if (child) {
+        child.color = currentNode.color;
+        child.opacity = currentNode.opacity + 12;
+        recursiveOpacityColorSet(nodes, edges, child);
       }
     });
   }
@@ -93,14 +97,14 @@ const PriceModelWorkbench = () => {
 
   const saveNewModel = (nodes, edges) => {
     const newRecord = {
-        id: id,
-        description: title,
-        barId: '1234456',
-        barDescription: 'Sasol',
-        spendPool: 'Chemicals/Surfactants/LAB',
-        suppliers: 'SASOL (01523242)',
-        bu: 'Hair Care',
-        regions: 'ALL'
+      id: id,
+      description: title,
+      barId: '1234456',
+      barDescription: 'Sasol',
+      spendPool: 'Chemicals/Surfactants/LAB',
+      suppliers: 'SASOL (01523242)',
+      bu: 'Hair Care',
+      regions: 'ALL'
     };
     location.state.records.push(newRecord);
     database.price_model_graphs.push({ id: id, initial_nodes: nodes, initial_edges: edges });
@@ -183,6 +187,7 @@ const PriceModelWorkbench = () => {
   // This should be done via a custom event listener or a ref passed down to each child node
   // This is a temporary solution to get the rename functionality working
   useEffect(() => {
+    calculateOpacities(nodes, edges);
     window.addEventListener('nodeRename', onRenameNode);
     return () => { window.removeEventListener('nodeRename', onRenameNode) }
   }, [nodes, edges]);
@@ -267,7 +272,7 @@ const PriceModelWorkbench = () => {
           <div class="top-bar">
             <span className="page-title"><h2>Price Model Workbench</h2></span>
             <span><input id="description-input" value={title} onChange={event => { setTitle(event.target.value); }}></input></span>
-            
+
             <span className="spacer"></span>
           </div>
           <ReactFlow
@@ -287,7 +292,7 @@ const PriceModelWorkbench = () => {
             nodeTypes={nodeTypes}
             fitView
           >
-			      <Controls />
+            <Controls />
             <Background />
           </ReactFlow>
         </div>

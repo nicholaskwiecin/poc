@@ -35,6 +35,7 @@
                     "draggable": false,
                     "deletable": false,
                     "selectable": false,
+                    "color": "#0000FF",
                     "data": {
                         "label": "Total Materials",
                         "type": "category"
@@ -98,6 +99,7 @@
                     "draggable": false,
                     "deletable": false,
                     "selectable": false,
+                    "color": "#FFA500",
                     "data": {
                         "label": "Conversion and Fees",
                         "type": "category"
@@ -181,6 +183,7 @@
                     "draggable": false,
                     "deletable": false,
                     "selectable": false,
+                    "color": "#00FF00",
                     "data": {
                         "label": "Logistics",
                         "type": "category"

@@ -55,6 +55,11 @@ const PriceModelWorkbench = () => {
     record.description = title;
   }
 
+
+  const calculateOpacities = (nodes, edges) => {
+    nodes.find((node) => node.id === '3_category').data.opacity = 1;
+  }
+
   const saveNewModel = (nodes, edges) => {
     const newRecord = {
         id: id,

@@ -9,14 +9,10 @@ import { faSliders, faFilter, faSquareArrowUpRight } from '@fortawesome/free-sol
 
 
 const PriceModelLibrary = () => {
-    const [records, setRecords] = useState(database.price_model_records);
+    const [records, ] = useState(database.price_model_records);
     const [selectedRecordIds, setSelectedRecords] = useState([]);
 
-    // const navigate = useNavigate();
-    // const goToComparePage = navigate("/not-implemented");
-
     const handleCheckboxChange = (event, id) => {
-        console.log("check event");
         if (event.target.checked) {
             setSelectedRecords([... selectedRecordIds, id]);
         } else {

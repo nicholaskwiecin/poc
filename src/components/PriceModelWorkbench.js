@@ -62,7 +62,7 @@ const PriceModelWorkbench = () => {
         if (el) {
           const brightness = node.brightness - 55;
           el.style.backgroundColor = `hsl(${node.color}, 75%, ${brightness}%)`;
-          if (brightness > 60 || node.color == 97 && brightness > 40) {
+          if (brightness > 60 || node.color === 97 && brightness > 40) {
             el.style.color = 'black';
           }
         }
@@ -73,7 +73,7 @@ const PriceModelWorkbench = () => {
   const recursiveBrightnessColorSet = (nodes, edges, currentNode) => {
     const childEdges = edges.filter((edge) => edge.source === currentNode.id);
     const childNodes = childEdges.map((edge) => nodes.find((node) => edge.target === node.id));
-    if (childEdges.length == 0 || childNodes.length == 0) {
+    if (childEdges.length === 0 || childNodes.length === 0) {
       return;
     }
     childNodes.forEach(child => {
@@ -86,7 +86,7 @@ const PriceModelWorkbench = () => {
   }
 
   const calculateBrightness = (nodes, edges) => {
-    const rootNodes = nodes.filter((node) => node.id === '3_category' || node.id == "1_category" || node.id == "2_category");
+    const rootNodes = nodes.filter((node) => node.id === '3_category' || node.id === "1_category" || node.id === "2_category");
     rootNodes.forEach(node => {
       recursiveBrightnessColorSet(nodes, edges, node);
     });

@@ -1,26 +1,24 @@
 import React, { useState, useCallback } from 'react';
-import { Link } from 'react-router-dom';
 import './ReferenceDataAdmin.scss';
 import database from '../database.json'
 import ModalPopUp from './ModalPopUp';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleQuestion } from '@fortawesome/free-solid-svg-icons';
-import { faSliders, faFilter, faSquareArrowUpRight } from '@fortawesome/free-solid-svg-icons';
+import { faSliders, faFilter } from '@fortawesome/free-solid-svg-icons';
 
 
 const ReferenceDataAdmin = () => {
     const [records, setRecords] = useState(database.reference_data_records);
-    const [selectedRecordIds, setSelectedRecords] = useState([]);
 
     // Change the value of a given input record
     const onInputValueChange = useCallback((event, node, key) => {
-    setRecords(records.map((mapRecord) => {
-      if (mapRecord.id === node.id) {
-        mapRecord.attributeValue = event.target.value;
-      }
-      return mapRecord;
-    }));
-  });
+        setRecords(records.map((mapRecord) => {
+        if (mapRecord.id === node.id) {
+            mapRecord.attributeValue = event.target.value;
+        }
+        return mapRecord;
+        }));
+    });
 
     return (
         <section className="library-container">

@@ -132,9 +132,11 @@ const PriceModelLibrary = () => {
                     </tbody>
                 </table>
                 <div>
-                    <button id="compare-button" className={selectedRecordIds.length > 1 ? 'active-button' : 'inactive-button'}>
-                        Compare Selected Models
-                    </button>
+                    <Link to='/not-implemented'>
+                        <button id="compare-button" className={selectedRecordIds.length > 1 ? 'active-button' : 'inactive-button'}>
+                            Compare Selected Models
+                        </button>
+                    </Link>
                     <Link to='/price-model-workbench' state={{records: records, isAdd: true}}>
                         <button id="add-button" className={'active-button'} >
                             Add New Model

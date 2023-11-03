@@ -90,7 +90,6 @@ const CostElementMaintenance = () => {
                 <ModalPopUp trigger={<FontAwesomeIcon className="fa-lg info-icon" icon={faCircleQuestion} />}>
                     <h1 className="title">FAQs</h1>
                     <p className="body">
-                        To compare or copy a model, use the checkboxes in the first column to select.<br /><br />
                         Note that this is a prototype, so any added or modified models will not persist across sessions.
                     </p>
                 </ModalPopUp>

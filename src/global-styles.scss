@@ -76,4 +76,8 @@ button {
     background-color: gray;
     border-color: gray;
     cursor: not-allowed;
+
+    &:hover {
+      cursor: not-allowed;
+    }
 }

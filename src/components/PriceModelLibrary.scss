@@ -45,9 +45,6 @@
         margin-top: 5rem;
     }
 
-    #compare-button {
-    }
-
     button {
         color: white;
         margin-top: 20px;
@@ -60,6 +57,10 @@
 
         &:hover {
             cursor: pointer;
+        }
+
+        &.inactive-button {
+            cursor: not-allowed;
         }
     }
 

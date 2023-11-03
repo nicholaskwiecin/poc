@@ -141,7 +141,9 @@ const PriceModelLibrary = () => {
                         </button>
                     </Link>
                     <Link to={'/price-model-workbench/' + selectedRecordIds[0]} state={{records: records, isAdd: true}}>
-                        <button id="duplicate-button" className={selectedRecordIds.length === 1 ? 'active-button' : 'inactive-button'}>
+                        <button id="duplicate-button" 
+                            className={selectedRecordIds.length === 1 ? 'active-button' : 'inactive-button'} 
+                            disabled={selectedRecordIds.length === 1 ? false : true}>
                             Duplicate Selected Model
                         </button>
                     </Link>

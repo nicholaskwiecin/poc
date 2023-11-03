@@ -3261,6 +3261,8 @@
                 "draggable": false,
                 "deletable": false,
                 "selectable": false,
+                "color": "217",
+                "brightness": 100,
                 "data": {
                     "label": "Total Materials",
                     "type": "category"
@@ -3273,6 +3275,8 @@
                     "y": 200
                 },
                 "draggable": false,
+                "color": "#000000",
+                "brightness": 100,
                 "deletable": false,
                 "selectable": true,
                 "data": {
@@ -3288,6 +3292,8 @@
                     "y": 200
                 },
                 "draggable": false,
+                "color": "#000000",
+                "brightness": 100,
                 "deletable": false,
                 "selectable": true,
                 "data": {
@@ -3302,6 +3308,8 @@
                     "x": 0,
                     "y": 100
                 },
+                "color": "25",
+                "brightness": 100,
                 "draggable": false,
                 "deletable": false,
                 "selectable": false,
@@ -3317,6 +3325,8 @@
                     "y": 200
                 },
                 "draggable": false,
+                "color": "#000000",
+                "brightness": 100,
                 "deletable": false,
                 "selectable": true,
                 "data": {
@@ -3332,6 +3342,8 @@
                     "y": 200
                 },
                 "draggable": false,
+                "color": "#000000",
+                "brightness": 100,
                 "deletable": false,
                 "selectable": true,
                 "data": {
@@ -3347,6 +3359,8 @@
                     "y": 200
                 },
                 "draggable": false,
+                "color": "#000000",
+                "brightness": 100,
                 "deletable": false,
                 "selectable": true,
                 "data": {
@@ -3361,6 +3375,8 @@
                     "x": 400,
                     "y": 100
                 },
+                "color": "97",
+                "brightness": 80,
                 "draggable": false,
                 "deletable": false,
                 "selectable": false,
@@ -3376,6 +3392,8 @@
                     "y": 200
                 },
                 "draggable": false,
+                "color": "#000000",
+                "brightness": 100,
                 "deletable": false,
                 "selectable": true,
                 "data": {
@@ -3391,6 +3409,8 @@
                     "y": 200
                 },
                 "draggable": false,
+                "color": "#000000",
+                "brightness": 100,
                 "deletable": false,
                 "selectable": true,
                 "data": {

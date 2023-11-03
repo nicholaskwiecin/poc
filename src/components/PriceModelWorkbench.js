@@ -55,10 +55,41 @@ const PriceModelWorkbench = () => {
     record.description = title;
   }
 
+  const applyColorsToCss = (nodes) => {
+    nodes.forEach(node => {
+      const el = document.querySelector(`[data-id="${node.id}"]`);
+      const brightness = 75 - 130 + node.opacity;
+      el.style.backgroundColor = `hsl(${node.color}, 75%, ${brightness}%)`;
+      console.log(brightness);
+      if (brightness > 60) {
+        el.style.color = 'black';
+      }
+    });
+  }
+
+  const recursiveOpacityColorSet = (nodes, edges, currentNode) => {
+    const childEdges = edges.filter((edge) => edge.source === currentNode.id);
+    const childNodes = childEdges.map((edge) => nodes.find((node) => edge.target === node.id));
+    if (childEdges.length == 0 || childNodes.length == 0){
+      return;
+    }
+    childNodes.forEach(child => {
+      if (child){
+      child.color = currentNode.color;
+      child.opacity = currentNode.opacity + 12;
+      recursiveOpacityColorSet(nodes, edges, child);
+      }
+    });
+  }
 
   const calculateOpacities = (nodes, edges) => {
-    nodes.find((node) => node.id === '3_category').data.opacity = 1;
+    const rootNodes = nodes.filter((node) => node.id === '3_category' || node.id == "1_category" || node.id == "2_category");
+    rootNodes.forEach(node => {
+      recursiveOpacityColorSet(nodes, edges, node);
+    });
+    applyColorsToCss(nodes);
   }
+
 
   const saveNewModel = (nodes, edges) => {
     const newRecord = {
@@ -99,7 +130,11 @@ const PriceModelWorkbench = () => {
     }));
   });
 
-  const onConnect = useCallback((params) => setEdges((eds) => addEdge(params, eds)), []);
+  const onConnect = useCallback(
+    (params) => {
+      setEdges((eds) => addEdge(params, eds));
+      calculateOpacities(nodes, edges);
+    }, []);
 
   const onDragOver = useCallback((event) => {
     event.preventDefault();
@@ -192,6 +227,7 @@ const PriceModelWorkbench = () => {
           usageUnit: 'Percent',
         },
       });
+
 
       // Add child inputs to the cost element
       for (const [index, child] of element.child_inputs.entries()) {

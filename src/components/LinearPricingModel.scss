@@ -14,20 +14,54 @@
 
         thead {
             background-color: $primary-blue;
-            color: white;
             font-weight: bold;
 
             tr, tr:hover {
                 background-color: $primary-blue;
                 color: white;
-            }
 
-            td {
-                text-align: center;
+                td {
+                    text-align: center;
+                }
+    
+                span {
+                    margin-right: 15px;
+                }
+    
+                button {
+                    margin: 0;
+                    padding: 0 5px;
+                    background-color: $primary-blue-light;
+                    border: none;
+    
+                    &:hover {
+                        background-color: $secondary-blue-dark;
+                    }
+                }
+    
+                .input-output {
+                    font-weight: normal;
+                }
+    
+                .gray {
+                    background-color: gray;
+                }
+    
+                .gold {
+                    background-color: goldenrod;
+                }
+
+                .red {
+                    background-color: indianred;
+                }
+
+                .green {
+                    background-color: darkseagreen;
+                }
             }
         }
 
-        td {
+        tbody td {
             min-width: 50px;
         }
     }

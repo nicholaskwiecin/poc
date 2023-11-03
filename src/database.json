@@ -457,7 +457,7 @@
                         "unit": "KG",
                         "usageUnit": "Percent"
                     },
-                    "selected": true,
+                    "selected": false,
                     "positionAbsolute": {
                         "x": -300,
                         "y": 300
@@ -538,8 +538,8 @@
                     "id": "ohddm_input_fees_sample",
                     "type": "cost_element",
                     "position": {
-                        "x": 160,
-                        "y": 300
+                        "x": 240,
+                        "y": 380
                     },
                     "data": {
                         "label": "Admin",
@@ -548,8 +548,8 @@
                     },
                     "selected": false,
                     "positionAbsolute": {
-                        "x": 160,
-                        "y": 300
+                        "x": 240,
+                        "y": 380
                     },
                     "dragging": false
                 },
@@ -559,8 +559,8 @@
                     "id": "90e9c_input_fees_sample",
                     "type": "cost_element",
                     "position": {
-                        "x": 160,
-                        "y": 380
+                        "x": 240,
+                        "y": 440
                     },
                     "data": {
                         "label": "Service",
@@ -569,8 +569,8 @@
                     },
                     "selected": false,
                     "positionAbsolute": {
-                        "x": 160,
-                        "y": 380
+                        "x": 240,
+                        "y": 440
                     },
                     "dragging": false
                 },
@@ -580,8 +580,8 @@
                     "id": "kdi7t_input_fees_sample",
                     "type": "cost_element",
                     "position": {
-                        "x": 160,
-                        "y": 440
+                        "x": 240,
+                        "y": 500
                     },
                     "data": {
                         "label": "Etc",
@@ -591,8 +591,8 @@
                     "selected": false,
                     "dragging": false,
                     "positionAbsolute": {
-                        "x": 160,
-                        "y": 440
+                        "x": 240,
+                        "y": 500
                     }
                 },
                 {

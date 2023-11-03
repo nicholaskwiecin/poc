@@ -224,8 +224,9 @@ const PriceModelWorkbench = () => {
       <ReactFlowProvider>
         <div className="reactflow-wrapper center-panel" ref={reactFlowWrapper}>
           <div class="top-bar">
-            <span><input id="description-input" value={title} onChange={event => { setTitle(event.target.value); }}></input></span>
             <span className="page-title"><h2>Price Model Workbench</h2></span>
+            <span><input id="description-input" value={title} onChange={event => { setTitle(event.target.value); }}></input></span>
+            
             <span className="spacer"></span>
           </div>
           <ReactFlow
@@ -257,14 +258,9 @@ const PriceModelWorkbench = () => {
         </div>
         <div className="bottom-panel">
           <FormulaBar selectedFormula={selectedFormula} />
-          {/* <Link to={{
-            path: "/price-model-library",
-            state: {test: "test"}}} id="save-button" >
-            <button className="active-button">Save</button>
-          </Link> */}
           <div class="action-buttons">
             <Link to="/price-model-library" id="save-button">
-              <button className="active-button" onClick={onSave(nodes, edges)}>Save</button>
+              <button className="active-button" onClick={() => onSave(nodes, edges)}>Save</button>
             </Link>
             <Link to="/linear-pricing-model" id="price-model-button">
               <button className="active-button">Linear Pricing Model</button>

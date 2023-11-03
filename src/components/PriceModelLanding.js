@@ -17,7 +17,7 @@ const PriceModelLanding = () => {
         <Link to='/not-implemented'>
           <div className="nav-card" id="missing-data">Missing Reference Data</div>
         </Link>
-        <Link to='/not-implemented'>
+        <Link to='/cost-element-maintenance'>
           <div className="nav-card">Cost Element Maintenance</div>
         </Link>
         <Link to='/not-implemented'>

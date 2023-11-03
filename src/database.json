@@ -12,7 +12,7 @@
                         "y": -50
                     },
                     "color": "#000000",
-                    "opacity": 100,
+                    "brightness": 100,
                     "type": "input",
                     "draggable": false,
                     "deletable": false,
@@ -38,7 +38,7 @@
                     "deletable": false,
                     "selectable": false,
                     "color": "217",
-                    "opacity": 100,
+                    "brightness": 100,
                     "data": {
                         "label": "Total Materials",
                         "type": "category"
@@ -60,7 +60,7 @@
                     "deletable": false,
                     "selectable": true,
                     "color": "#FFFFFF",
-                    "opacity": 100,
+                    "brightness": 100,
                     "data": {
                         "label": "Raw Materials",
                         "description": "Raw Material = Sum of (%INPUTS%)",
@@ -82,7 +82,7 @@
                     },
                     "draggable": false,
                     "color": "#FFFFFF",
-                    "opacity": 100,
+                    "brightness": 100,
                     "deletable": false,
                     "selectable": true,
                     "data": {
@@ -107,7 +107,7 @@
                     "deletable": false,
                     "selectable": false,
                     "color": "25",
-                    "opacity": 100,
+                    "brightness": 100,
                     "data": {
                         "label": "Conversion and Fees",
                         "type": "category"
@@ -127,7 +127,7 @@
                     },
                     "draggable": false,
                     "color": "#FFFFFF",
-                    "opacity": 100,
+                    "brightness": 100,
                     "deletable": false,
                     "selectable": true,
                     "data": {
@@ -150,7 +150,7 @@
                     },
                     "draggable": false,
                     "color": "#FFFFFF",
-                    "opacity": 100,
+                    "brightness": 100,
                     "deletable": false,
                     "selectable": true,
                     "data": {
@@ -173,7 +173,7 @@
                     },
                     "draggable": false,
                     "color": "#FFFFFF",
-                    "opacity": 100,
+                    "brightness": 100,
                     "deletable": false,
                     "selectable": true,
                     "data": {
@@ -198,7 +198,7 @@
                     "deletable": false,
                     "selectable": false,
                     "color": "97",
-                    "opacity": 80,
+                    "brightness": 80,
                     "data": {
                         "label": "Logistics",
                         "type": "category"
@@ -218,7 +218,7 @@
                     },
                     "draggable": false,
                     "color": "#FFFFFF",
-                    "opacity": 100,
+                    "brightness": 100,
                     "deletable": false,
                     "selectable": true,
                     "data": {
@@ -242,7 +242,7 @@
                     },
                     "draggable": false,
                     "color": "#FFFFFF",
-                    "opacity": 100,
+                    "brightness": 100,
                     "deletable": false,
                     "selectable": true,
                     "data": {
@@ -1089,6 +1089,8 @@
                         "x": 0,
                         "y": -50
                     },
+                    "color": "#000000",
+                    "brightness": 100,
                     "type": "input",
                     "draggable": false,
                     "deletable": false,
@@ -1113,6 +1115,8 @@
                     "draggable": false,
                     "deletable": false,
                     "selectable": false,
+                    "color": "217",
+                    "brightness": 100,
                     "data": {
                         "label": "Total Materials",
                         "type": "category"
@@ -1133,6 +1137,8 @@
                     "draggable": false,
                     "deletable": false,
                     "selectable": true,
+                    "color": "#FFFFFF",
+                    "brightness": 100,
                     "data": {
                         "label": "Raw Materials",
                         "description": "Raw Material = Sum of (%INPUTS%)",
@@ -1153,6 +1159,8 @@
                         "y": 200
                     },
                     "draggable": false,
+                    "color": "#FFFFFF",
+                    "brightness": 100,
                     "deletable": false,
                     "selectable": true,
                     "data": {
@@ -1176,6 +1184,8 @@
                     "draggable": false,
                     "deletable": false,
                     "selectable": false,
+                    "color": "25",
+                    "brightness": 100,
                     "data": {
                         "label": "Conversion and Fees",
                         "type": "category"
@@ -1194,6 +1204,8 @@
                         "y": 200
                     },
                     "draggable": false,
+                    "color": "#FFFFFF",
+                    "brightness": 100,
                     "deletable": false,
                     "selectable": true,
                     "data": {
@@ -1215,6 +1227,8 @@
                         "y": 200
                     },
                     "draggable": false,
+                    "color": "#FFFFFF",
+                    "brightness": 100,
                     "deletable": false,
                     "selectable": true,
                     "data": {
@@ -1236,6 +1250,8 @@
                         "y": 200
                     },
                     "draggable": false,
+                    "color": "#FFFFFF",
+                    "brightness": 100,
                     "deletable": false,
                     "selectable": true,
                     "data": {
@@ -1259,6 +1275,8 @@
                     "draggable": false,
                     "deletable": false,
                     "selectable": false,
+                    "color": "97",
+                    "brightness": 80,
                     "data": {
                         "label": "Logistics",
                         "type": "category"
@@ -1277,6 +1295,8 @@
                         "y": 200
                     },
                     "draggable": false,
+                    "color": "#FFFFFF",
+                    "brightness": 100,
                     "deletable": false,
                     "selectable": true,
                     "data": {
@@ -1299,6 +1319,8 @@
                         "y": 200
                     },
                     "draggable": false,
+                    "color": "#FFFFFF",
+                    "brightness": 100,
                     "deletable": false,
                     "selectable": true,
                     "data": {
@@ -2145,6 +2167,8 @@
                         "x": 0,
                         "y": -50
                     },
+                    "color": "#000000",
+                    "brightness": 100,
                     "type": "input",
                     "draggable": false,
                     "deletable": false,
@@ -2169,6 +2193,8 @@
                     "draggable": false,
                     "deletable": false,
                     "selectable": false,
+                    "color": "217",
+                    "brightness": 100,
                     "data": {
                         "label": "Total Materials",
                         "type": "category"
@@ -2189,6 +2215,8 @@
                     "draggable": false,
                     "deletable": false,
                     "selectable": true,
+                    "color": "#FFFFFF",
+                    "brightness": 100,
                     "data": {
                         "label": "Raw Materials",
                         "description": "Raw Material = Sum of (%INPUTS%)",
@@ -2209,6 +2237,8 @@
                         "y": 200
                     },
                     "draggable": false,
+                    "color": "#FFFFFF",
+                    "brightness": 100,
                     "deletable": false,
                     "selectable": true,
                     "data": {
@@ -2232,6 +2262,8 @@
                     "draggable": false,
                     "deletable": false,
                     "selectable": false,
+                    "color": "25",
+                    "brightness": 100,
                     "data": {
                         "label": "Conversion and Fees",
                         "type": "category"
@@ -2250,6 +2282,8 @@
                         "y": 200
                     },
                     "draggable": false,
+                    "color": "#FFFFFF",
+                    "brightness": 100,
                     "deletable": false,
                     "selectable": true,
                     "data": {
@@ -2271,6 +2305,8 @@
                         "y": 200
                     },
                     "draggable": false,
+                    "color": "#FFFFFF",
+                    "brightness": 100,
                     "deletable": false,
                     "selectable": true,
                     "data": {
@@ -2292,6 +2328,8 @@
                         "y": 200
                     },
                     "draggable": false,
+                    "color": "#FFFFFF",
+                    "brightness": 100,
                     "deletable": false,
                     "selectable": true,
                     "data": {
@@ -2315,6 +2353,8 @@
                     "draggable": false,
                     "deletable": false,
                     "selectable": false,
+                    "color": "97",
+                    "brightness": 80,
                     "data": {
                         "label": "Logistics",
                         "type": "category"
@@ -2333,6 +2373,8 @@
                         "y": 200
                     },
                     "draggable": false,
+                    "color": "#FFFFFF",
+                    "brightness": 100,
                     "deletable": false,
                     "selectable": true,
                     "data": {
@@ -2355,6 +2397,8 @@
                         "y": 200
                     },
                     "draggable": false,
+                    "color": "#FFFFFF",
+                    "brightness": 100,
                     "deletable": false,
                     "selectable": true,
                     "data": {
@@ -3608,32 +3652,32 @@
     ],
     "reference_data_records": [
         {
-            "id":"99991111",
+            "id": "99991111",
             "material": "99991111",
             "description": "Material 1",
             "attribute": "Size",
-            "attributeValue": "3"            
+            "attributeValue": "3"
         },
         {
-            "id":"99992222",
+            "id": "99992222",
             "material": "99992222",
             "description": "Material 2",
             "attribute": "Size",
-            "attributeValue": "4"            
+            "attributeValue": "4"
         },
         {
-            "id":"99993333",
+            "id": "99993333",
             "material": "99993333",
             "description": "Material 3",
             "attribute": "Size",
-            "attributeValue": ""            
+            "attributeValue": ""
         },
         {
-            "id":"99994444",
+            "id": "99994444",
             "material": "99994444",
             "description": "Material 4",
             "attribute": "Size",
-            "attributeValue": "6"            
+            "attributeValue": "6"
         }
     ],
     "costing_panel_tables": [

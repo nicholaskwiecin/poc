@@ -60,7 +60,7 @@ const PriceModelWorkbench = () => {
       if (node) {
         const el = document.querySelector(`[data-id="${node.id}"]`);
         if (el) {
-          const brightness = node.opacity - 55;
+          const brightness = node.brightness - 55;
           el.style.backgroundColor = `hsl(${node.color}, 75%, ${brightness}%)`;
           console.log(brightness);
           if (brightness > 60 || node.color == 97 && brightness > 40) {
@@ -71,7 +71,7 @@ const PriceModelWorkbench = () => {
     });
   }
 
-  const recursiveOpacityColorSet = (nodes, edges, currentNode) => {
+  const recursiveBrightnessColorSet = (nodes, edges, currentNode) => {
     const childEdges = edges.filter((edge) => edge.source === currentNode.id);
     const childNodes = childEdges.map((edge) => nodes.find((node) => edge.target === node.id));
     if (childEdges.length == 0 || childNodes.length == 0) {
@@ -80,16 +80,16 @@ const PriceModelWorkbench = () => {
     childNodes.forEach(child => {
       if (child) {
         child.color = currentNode.color;
-        child.opacity = currentNode.opacity + 12;
-        recursiveOpacityColorSet(nodes, edges, child);
+        child.brightness = currentNode.brightness + 12;
+        recursiveBrightnessColorSet(nodes, edges, child);
       }
     });
   }
 
-  const calculateOpacities = (nodes, edges) => {
+  const calculateBrightness = (nodes, edges) => {
     const rootNodes = nodes.filter((node) => node.id === '3_category' || node.id == "1_category" || node.id == "2_category");
     rootNodes.forEach(node => {
-      recursiveOpacityColorSet(nodes, edges, node);
+      recursiveBrightnessColorSet(nodes, edges, node);
     });
     applyColorsToCss(nodes);
   }
@@ -137,7 +137,7 @@ const PriceModelWorkbench = () => {
   const onConnect = useCallback(
     (params) => {
       setEdges((eds) => addEdge(params, eds));
-      calculateOpacities(nodes, edges);
+      calculateBrightness(nodes, edges);
     }, []);
 
   const onDragOver = useCallback((event) => {
@@ -187,7 +187,7 @@ const PriceModelWorkbench = () => {
   // This should be done via a custom event listener or a ref passed down to each child node
   // This is a temporary solution to get the rename functionality working
   useEffect(() => {
-    calculateOpacities(nodes, edges);
+    calculateBrightness(nodes, edges);
     window.addEventListener('nodeRename', onRenameNode);
     return () => { window.removeEventListener('nodeRename', onRenameNode) }
   }, [nodes, edges]);

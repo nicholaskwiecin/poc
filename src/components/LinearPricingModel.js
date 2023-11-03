@@ -11,9 +11,11 @@ const LinearPricingModel = () => {
             if (element.style.visibility === 'collapse') {
                 element.style.visibility = 'visible';
                 element.style.fontSize = 'inherit';
+                if (element.tagName === 'SPAN') element.style.display = 'inline-block'; // fix alignment
             } else {
                 element.style.visibility = 'collapse';
                 element.style.fontSize = '0';
+                if (element.tagName === 'SPAN') element.style.display = 'none'; // fix alignment
             }
         });
     };

@@ -62,7 +62,6 @@ const PriceModelWorkbench = () => {
         if (el) {
           const brightness = node.brightness - 55;
           el.style.backgroundColor = `hsl(${node.color}, 75%, ${brightness}%)`;
-          console.log(brightness);
           if (brightness > 60 || node.color == 97 && brightness > 40) {
             el.style.color = 'black';
           }
@@ -174,7 +173,6 @@ const PriceModelWorkbench = () => {
 
 
   const onRenameNode = (event) => {
-    console.log(event);
     setNodes(nodes.map((node) => {
       if (node.id === event.detail.nodeId) {
         node.data.label = event.detail.label;

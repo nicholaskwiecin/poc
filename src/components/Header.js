@@ -8,7 +8,7 @@ import { faUserCircle, faBell, faGear, faQuestion } from '@fortawesome/free-soli
 
 const Header = () => (
     <header id="global-header">
-        <Link to=''>
+        <Link to='/'>
             <img src={logo} id="header-logo" alt="P&G logo"></img>
         </Link>
         <img src={background} id="header-background" alt="background image"></img>

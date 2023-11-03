@@ -1,7 +1,9 @@
-.App { // address overflow bug
+.App { 
+    // address overflow bug
     width: 99%;
-}
 
-main {
-    height: 100vh;
+    main {
+        // account for header and footer
+        height: calc(100vh - 98px);
+    }
 }

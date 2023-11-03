@@ -1106,90 +1106,454 @@
                     "id": "1_formula",
                     "position": {
                         "x": -500,
-                        "y": 300
+                        "y": 200
+                    },
+                    "draggable": false,
+                    "deletable": false,
+                    "selectable": true,
+                    "data": {
+                        "label": "Raw Materials",
+                        "description": "Raw Material = Sum of (%INPUTS%)",
+                        "type": "formula_sum"
+                    },
+                    "selected": false,
+                    "positionAbsolute": {
+                        "x": -500,
+                        "y": 200
                     }
                 },
                 {
                     "width": 110,
                     "height": 37,
-                    "id": "scrap01",
+                    "id": "2_formula",
+                    "position": {
+                        "x": -300,
+                        "y": 200
+                    },
+                    "draggable": false,
+                    "deletable": false,
+                    "selectable": true,
+                    "data": {
+                        "label": "Packaging",
+                        "description": "Raw Material = Sum of (%INPUTS%)",
+                        "type": "formula_sum"
+                    },
+                    "positionAbsolute": {
+                        "x": -300,
+                        "y": 200
+                    }
+                },
+                {
+                    "width": 110,
+                    "height": 52,
+                    "id": "2_category",
+                    "position": {
+                        "x": 0,
+                        "y": 100
+                    },
+                    "draggable": false,
+                    "deletable": false,
+                    "selectable": false,
+                    "data": {
+                        "label": "Conversion and Fees",
+                        "type": "category"
+                    },
+                    "positionAbsolute": {
+                        "x": 0,
+                        "y": 100
+                    }
+                },
+                {
+                    "width": 110,
+                    "height": 37,
+                    "id": "3_formula",
+                    "position": {
+                        "x": -150,
+                        "y": 200
+                    },
+                    "draggable": false,
+                    "deletable": false,
+                    "selectable": true,
+                    "data": {
+                        "label": "Manufacturing",
+                        "description": "Raw Material = Sum of (%INPUTS%)",
+                        "type": "formula_sum"
+                    },
+                    "positionAbsolute": {
+                        "x": -150,
+                        "y": 200
+                    }
+                },
+                {
+                    "width": 110,
+                    "height": 37,
+                    "id": "4_formula",
+                    "position": {
+                        "x": 0,
+                        "y": 200
+                    },
+                    "draggable": false,
+                    "deletable": false,
+                    "selectable": true,
+                    "data": {
+                        "label": "Labor",
+                        "description": "Raw Material = Sum of (%INPUTS%)",
+                        "type": "formula_sum"
+                    },
+                    "positionAbsolute": {
+                        "x": 0,
+                        "y": 200
+                    }
+                },
+                {
+                    "width": 110,
+                    "height": 37,
+                    "id": "5_formula",
+                    "position": {
+                        "x": 150,
+                        "y": 200
+                    },
+                    "draggable": false,
+                    "deletable": false,
+                    "selectable": true,
+                    "data": {
+                        "label": "Fees",
+                        "description": "Raw Material = Sum of (%INPUTS%)",
+                        "type": "formula_sum"
+                    },
+                    "positionAbsolute": {
+                        "x": 150,
+                        "y": 200
+                    }
+                },
+                {
+                    "width": 110,
+                    "height": 37,
+                    "id": "3_category",
+                    "position": {
+                        "x": 400,
+                        "y": 100
+                    },
+                    "draggable": false,
+                    "deletable": false,
+                    "selectable": false,
+                    "data": {
+                        "label": "Logistics",
+                        "type": "category"
+                    },
+                    "positionAbsolute": {
+                        "x": 400,
+                        "y": 100
+                    }
+                },
+                {
+                    "width": 110,
+                    "height": 37,
+                    "id": "6_formula",
+                    "position": {
+                        "x": 500,
+                        "y": 200
+                    },
+                    "draggable": false,
+                    "deletable": false,
+                    "selectable": true,
+                    "data": {
+                        "label": "Transportation",
+                        "description": "Raw Material = Sum of (%INPUTS%)",
+                        "type": "formula_sum"
+                    },
+                    "selected": false,
+                    "positionAbsolute": {
+                        "x": 500,
+                        "y": 200
+                    }
+                },
+                {
+                    "width": 110,
+                    "height": 37,
+                    "id": "7_formula",
+                    "position": {
+                        "x": 300,
+                        "y": 200
+                    },
+                    "draggable": false,
+                    "deletable": false,
+                    "selectable": true,
+                    "data": {
+                        "label": "Warehousing",
+                        "description": "Raw Material = Sum of (%INPUTS%)",
+                        "type": "formula_sum"
+                    },
+                    "selected": false,
+                    "positionAbsolute": {
+                        "x": 300,
+                        "y": 200
+                    }
+                },
+                {
+                    "width": 110,
+                    "height": 37,
+                    "id": "l3va6f_input_feedstock",
                     "type": "cost_element",
                     "position": {
-                        "x": -550,
-                        "y": 320
+                        "x": -660,
+                        "y": 300
                     },
                     "data": {
-                        "label": "Scrap",
-                        "type": "input_lane",
+                        "label": "Feedstock 1",
+                        "type": "input_feedstock",
                         "costPerUnit": 0,
                         "vendorId": 0,
                         "usage": 0,
-                        "materialID": 20209839,
+                        "materialID": 99202746,
                         "unit": "KG",
                         "usageUnit": "Percent"
                     },
                     "selected": false,
-                    "dragging": false,
                     "positionAbsolute": {
-                        "x": -500,
+                        "x": -660,
                         "y": 300
-                    }
+                    },
+                    "dragging": false
                 },
                 {
                     "width": 110,
                     "height": 37,
-                    "id": "lfiei_input_lane_sample",
+                    "id": "l3va6f_input_feedstock_scrap",
                     "type": "cost_element",
                     "position": {
-                        "x": 560,
-                        "y": 350
+                        "x": -560,
+                        "y": 380
                     },
                     "data": {
-                        "label": "Sample",
-                        "type": "input_child_sample",
+                        "label": "Scrap",
+                        "type": "input_child_scrap",
                         "costPerUnit": 0
                     },
                     "selected": false,
                     "dragging": false,
                     "positionAbsolute": {
-                        "x": -400,
-                        "y": 340
+                        "x": -560,
+                        "y": 380
                     }
                 },
                 {
                     "width": 110,
                     "height": 37,
-                    "id": "82cab_input_equipment",
+                    "id": "l3va6f_input_feedstock_inbound_fees",
                     "type": "cost_element",
                     "position": {
-                        "x": -150,
-                        "y": 280
+                        "x": -560,
+                        "y": 440
                     },
                     "data": {
-                        "label": "Equipment",
-                        "type": "input_equipment",
-                        "costPerUnit": 0,
-                        "vendorId": 0,
-                        "usage": 0,
-                        "materialID": 1666568,
-                        "unit": "KG",
-                        "usageUnit": "Percent"
+                        "label": "Inbound Fees",
+                        "type": "input_child_inbound_fees",
+                        "costPerUnit": 0
                     },
                     "selected": false,
                     "dragging": false,
                     "positionAbsolute": {
-                        "x": 40,
-                        "y": 280
+                        "x": -560,
+                        "y": 440
+                    }
+                },
+                {
+                    "width": 110,
+                    "height": 52,
+                    "id": "l3va6f_input_feedstock_inbound_logistics",
+                    "type": "cost_element",
+                    "position": {
+                        "x": -560,
+                        "y": 500
+                    },
+                    "data": {
+                        "label": "Inbound Logistics",
+                        "type": "input_child_inbound_logistics",
+                        "costPerUnit": 0
+                    },
+                    "selected": false,
+                    "dragging": false,
+                    "positionAbsolute": {
+                        "x": -560,
+                        "y": 500
                     }
                 },
                 {
                     "width": 110,
                     "height": 37,
-                    "id": "82cab_input_equipment_amortization",
+                    "id": "kxm9e_input_feedstock",
                     "type": "cost_element",
                     "position": {
-                        "x": -90,
-                        "y": 340
+                        "x": -540,
+                        "y": 300
+                    },
+                    "data": {
+                        "label": "Feedstock 2",
+                        "type": "input_feedstock",
+                        "costPerUnit": 0,
+                        "vendorId": 0,
+                        "usage": 0,
+                        "materialID": 10709186,
+                        "unit": "KG",
+                        "usageUnit": "Percent"
+                    },
+                    "selected": false,
+                    "positionAbsolute": {
+                        "x": -540,
+                        "y": 300
+                    },
+                    "dragging": false
+                },
+                {
+                    "width": 110,
+                    "height": 37,
+                    "id": "ztum3l_input_feedstock",
+                    "type": "cost_element",
+                    "position": {
+                        "x": -420,
+                        "y": 300
+                    },
+                    "data": {
+                        "label": "Feedstock 1",
+                        "type": "input_feedstock",
+                        "costPerUnit": 0,
+                        "vendorId": 0,
+                        "usage": 0,
+                        "materialID": 62646622,
+                        "unit": "KG",
+                        "usageUnit": "Percent"
+                    },
+                    "selected": false,
+                    "positionAbsolute": {
+                        "x": -420,
+                        "y": 300
+                    },
+                    "dragging": false
+                },
+                {
+                    "width": 110,
+                    "height": 37,
+                    "id": "ztum3l_input_feedstock_scrap",
+                    "type": "cost_element",
+                    "position": {
+                        "x": -320,
+                        "y": 380
+                    },
+                    "data": {
+                        "label": "Scrap",
+                        "type": "input_child_scrap",
+                        "costPerUnit": 0
+                    },
+                    "selected": false,
+                    "positionAbsolute": {
+                        "x": -320,
+                        "y": 380
+                    },
+                    "dragging": false
+                },
+                {
+                    "width": 110,
+                    "height": 37,
+                    "id": "ztum3l_input_feedstock_inbound_fees",
+                    "type": "cost_element",
+                    "position": {
+                        "x": -320,
+                        "y": 440
+                    },
+                    "data": {
+                        "label": "Inbound Fees",
+                        "type": "input_child_inbound_fees",
+                        "costPerUnit": 0
+                    },
+                    "selected": false,
+                    "positionAbsolute": {
+                        "x": -320,
+                        "y": 440
+                    },
+                    "dragging": false
+                },
+                {
+                    "width": 110,
+                    "height": 52,
+                    "id": "ztum3l_input_feedstock_inbound_logistics",
+                    "type": "cost_element",
+                    "position": {
+                        "x": -320,
+                        "y": 500
+                    },
+                    "data": {
+                        "label": "Inbound Logistics",
+                        "type": "input_child_inbound_logistics",
+                        "costPerUnit": 0
+                    },
+                    "selected": false,
+                    "positionAbsolute": {
+                        "x": -320,
+                        "y": 500
+                    },
+                    "dragging": false
+                },
+                {
+                    "width": 110,
+                    "height": 37,
+                    "id": "3cexy_input_feedstock",
+                    "type": "cost_element",
+                    "position": {
+                        "x": -300,
+                        "y": 300
+                    },
+                    "data": {
+                        "label": "Feedstock 2",
+                        "type": "input_feedstock",
+                        "costPerUnit": 0,
+                        "vendorId": 0,
+                        "usage": 0,
+                        "materialID": 61836477,
+                        "unit": "KG",
+                        "usageUnit": "Percent"
+                    },
+                    "selected": false,
+                    "positionAbsolute": {
+                        "x": -300,
+                        "y": 300
+                    },
+                    "dragging": false
+                },
+                {
+                    "width": 110,
+                    "height": 37,
+                    "id": "3v9byj_input_equipment",
+                    "type": "cost_element",
+                    "position": {
+                        "x": -160,
+                        "y": 300
+                    },
+                    "data": {
+                        "label": "Feedstock 2",
+                        "type": "input_lane",
+                        "costPerUnit": 0,
+                        "vendorId": 0,
+                        "usage": 0,
+                        "materialID": 14222501,
+                        "unit": "KG",
+                        "usageUnit": "Percent"
+                    },
+                    "selected": false,
+                    "positionAbsolute": {
+                        "x": -160,
+                        "y": 300
+                    },
+                    "dragging": false
+                },
+                {
+                    "width": 110,
+                    "height": 37,
+                    "id": "3v9byj_input_equipment_amortization",
+                    "type": "cost_element",
+                    "position": {
+                        "x": -80,
+                        "y": 380
                     },
                     "data": {
                         "label": "Amortization",
@@ -1198,19 +1562,19 @@
                     },
                     "selected": false,
                     "positionAbsolute": {
-                        "x": 160,
-                        "y": 320
+                        "x": -80,
+                        "y": 380
                     },
                     "dragging": false
                 },
                 {
                     "width": 110,
                     "height": 37,
-                    "id": "82cab_input_equipment_energy",
+                    "id": "3v9byj_input_equipment_energy",
                     "type": "cost_element",
                     "position": {
-                        "x": -90,
-                        "y": 400
+                        "x": -80,
+                        "y": 440
                     },
                     "data": {
                         "label": "Energy",
@@ -1219,8 +1583,218 @@
                     },
                     "selected": false,
                     "positionAbsolute": {
-                        "x": 160,
+                        "x": -80,
+                        "y": 440
+                    },
+                    "dragging": false
+                },
+                {
+                    "width": 110,
+                    "height": 37,
+                    "id": "ohddm_input_fees_sample",
+                    "type": "cost_element",
+                    "position": {
+                        "x": 240,
                         "y": 380
+                    },
+                    "data": {
+                        "label": "Admin",
+                        "type": "input_child_sample",
+                        "costPerUnit": 0
+                    },
+                    "selected": false,
+                    "positionAbsolute": {
+                        "x": 240,
+                        "y": 380
+                    },
+                    "dragging": false
+                },
+                {
+                    "width": 110,
+                    "height": 37,
+                    "id": "90e9c_input_fees_sample",
+                    "type": "cost_element",
+                    "position": {
+                        "x": 240,
+                        "y": 440
+                    },
+                    "data": {
+                        "label": "Service",
+                        "type": "input_child_sample",
+                        "costPerUnit": 0
+                    },
+                    "selected": false,
+                    "positionAbsolute": {
+                        "x": 240,
+                        "y": 440
+                    },
+                    "dragging": false
+                },
+                {
+                    "width": 110,
+                    "height": 37,
+                    "id": "kdi7t_input_fees_sample",
+                    "type": "cost_element",
+                    "position": {
+                        "x": 240,
+                        "y": 500
+                    },
+                    "data": {
+                        "label": "Etc",
+                        "type": "input_child_sample",
+                        "costPerUnit": 0
+                    },
+                    "selected": false,
+                    "dragging": false,
+                    "positionAbsolute": {
+                        "x": 240,
+                        "y": 500
+                    }
+                },
+                {
+                    "width": 110,
+                    "height": 52,
+                    "id": "b1aww_input_lane",
+                    "type": "cost_element",
+                    "position": {
+                        "x": 700,
+                        "y": 300
+                    },
+                    "data": {
+                        "label": "Customs & Duties",
+                        "type": "input_lane",
+                        "costPerUnit": 0,
+                        "vendorId": 0,
+                        "usage": 0,
+                        "materialID": 11335513,
+                        "unit": "KG",
+                        "usageUnit": "Percent"
+                    },
+                    "selected": false,
+                    "dragging": false,
+                    "positionAbsolute": {
+                        "x": 700,
+                        "y": 300
+                    },
+                    "dragging": false
+                },
+                {
+                    "width": 110,
+                    "height": 37,
+                    "id": "7jgza_input_lane",
+                    "type": "cost_element",
+                    "position": {
+                        "x": 560,
+                        "y": 300
+                    },
+                    "data": {
+                        "label": "Lane Costs",
+                        "type": "input_lane",
+                        "costPerUnit": 0,
+                        "vendorId": 0,
+                        "usage": 0,
+                        "materialID": 683320,
+                        "unit": "KG",
+                        "usageUnit": "Percent"
+                    },
+                    "selected": false,
+                    "positionAbsolute": {
+                        "x": 560,
+                        "y": 300
+                    },
+                    "dragging": false
+                },
+                {
+                    "width": 110,
+                    "height": 37,
+                    "id": "c2u4v_input_lane_sample",
+                    "type": "cost_element",
+                    "position": {
+                        "x": 660,
+                        "y": 380
+                    },
+                    "data": {
+                        "label": "Lane / Mode 1",
+                        "type": "input_child_sample",
+                        "costPerUnit": 0
+                    },
+                    "selected": false,
+                    "dragging": false,
+                    "positionAbsolute": {
+                        "x": 660,
+                        "y": 380
+                    }
+                },
+                {
+                    "width": 110,
+                    "height": 37,
+                    "id": "qurtqj_input_lane_sample",
+                    "type": "cost_element",
+                    "position": {
+                        "x": 660,
+                        "y": 440
+                    },
+                    "data": {
+                        "label": "Lane / Mode 2",
+                        "type": "input_child_sample",
+                        "costPerUnit": 0
+                    },
+                    "selected": false,
+                    "dragging": false,
+                    "positionAbsolute": {
+                        "x": 660,
+                        "y": 440
+                    }
+                },
+                {
+                    "width": 110,
+                    "height": 52,
+                    "id": "p13y4_input_warehousing",
+                    "type": "cost_element",
+                    "position": {
+                        "x": 300,
+                        "y": 300
+                    },
+                    "data": {
+                        "label": "Transportation to WH",
+                        "type": "input_warehousing",
+                        "costPerUnit": 0,
+                        "vendorId": 0,
+                        "usage": 0,
+                        "materialID": 71807293,
+                        "unit": "KG",
+                        "usageUnit": "Percent"
+                    },
+                    "selected": false,
+                    "positionAbsolute": {
+                        "x": 300,
+                        "y": 300
+                    },
+                    "dragging": false
+                },
+                {
+                    "width": 110,
+                    "height": 52,
+                    "id": "56wa8_input_warehousing",
+                    "type": "cost_element",
+                    "position": {
+                        "x": 420,
+                        "y": 300
+                    },
+                    "data": {
+                        "label": "Warehousing Costs",
+                        "type": "input_warehousing",
+                        "costPerUnit": 0,
+                        "vendorId": 0,
+                        "usage": 0,
+                        "materialID": 80131570,
+                        "unit": "KG",
+                        "usageUnit": "Percent"
+                    },
+                    "selected": false,
+                    "positionAbsolute": {
+                        "x": 420,
+                        "y": 300
                     },
                     "dragging": false
                 }
@@ -1287,49 +1861,1310 @@
                     "target": "7_formula"
                 },
                 {
-                    "id": "lfiei_input_lane-lfiei_input_lane_sample",
-                    "source": "lfiei_input_lane",
+                    "id": "pmh0j_input_warehousing-pmh0j_input_warehousing_sample",
+                    "source": "pmh0j_input_warehousing",
                     "deletable": false,
-                    "target": "lfiei_input_lane_sample"
+                    "target": "pmh0j_input_warehousing_sample"
+                },
+                {
+                    "id": "l3va6f_input_feedstock-l3va6f_input_feedstock_scrap",
+                    "source": "l3va6f_input_feedstock",
+                    "deletable": false,
+                    "target": "l3va6f_input_feedstock_scrap"
+                },
+                {
+                    "id": "l3va6f_input_feedstock-l3va6f_input_feedstock_inbound_fees",
+                    "source": "l3va6f_input_feedstock",
+                    "deletable": false,
+                    "target": "l3va6f_input_feedstock_inbound_fees"
+                },
+                {
+                    "id": "l3va6f_input_feedstock-l3va6f_input_feedstock_inbound_logistics",
+                    "source": "l3va6f_input_feedstock",
+                    "deletable": false,
+                    "target": "l3va6f_input_feedstock_inbound_logistics"
+                },
+                {
+                    "id": "kxm9e_input_feedstock-kxm9e_input_feedstock_scrap",
+                    "source": "kxm9e_input_feedstock",
+                    "deletable": false,
+                    "target": "kxm9e_input_feedstock_scrap"
+                },
+                {
+                    "id": "kxm9e_input_feedstock-kxm9e_input_feedstock_inbound_fees",
+                    "source": "kxm9e_input_feedstock",
+                    "deletable": false,
+                    "target": "kxm9e_input_feedstock_inbound_fees"
+                },
+                {
+                    "id": "kxm9e_input_feedstock-kxm9e_input_feedstock_inbound_logistics",
+                    "source": "kxm9e_input_feedstock",
+                    "deletable": false,
+                    "target": "kxm9e_input_feedstock_inbound_logistics",
+                    "selected": false
+                },
+                {
+                    "source": "1_formula",
+                    "sourceHandle": null,
+                    "target": "l3va6f_input_feedstock",
+                    "targetHandle": null,
+                    "id": "reactflow__edge-1_formula-l3va6f_input_feedstock"
+                },
+                {
+                    "source": "1_formula",
+                    "sourceHandle": null,
+                    "target": "kxm9e_input_feedstock",
+                    "targetHandle": null,
+                    "id": "reactflow__edge-1_formula-kxm9e_input_feedstock"
+                },
+                {
+                    "id": "ztum3l_input_feedstock-ztum3l_input_feedstock_scrap",
+                    "source": "ztum3l_input_feedstock",
+                    "deletable": false,
+                    "target": "ztum3l_input_feedstock_scrap"
+                },
+                {
+                    "id": "ztum3l_input_feedstock-ztum3l_input_feedstock_inbound_fees",
+                    "source": "ztum3l_input_feedstock",
+                    "deletable": false,
+                    "target": "ztum3l_input_feedstock_inbound_fees"
+                },
+                {
+                    "id": "ztum3l_input_feedstock-ztum3l_input_feedstock_inbound_logistics",
+                    "source": "ztum3l_input_feedstock",
+                    "deletable": false,
+                    "target": "ztum3l_input_feedstock_inbound_logistics"
+                },
+                {
+                    "source": "2_formula",
+                    "sourceHandle": null,
+                    "target": "ztum3l_input_feedstock",
+                    "targetHandle": null,
+                    "id": "reactflow__edge-2_formula-ztum3l_input_feedstock"
+                },
+                {
+                    "id": "3cexy_input_feedstock-3cexy_input_feedstock_scrap",
+                    "source": "3cexy_input_feedstock",
+                    "deletable": false,
+                    "target": "3cexy_input_feedstock_scrap"
+                },
+                {
+                    "id": "3cexy_input_feedstock-3cexy_input_feedstock_inbound_fees",
+                    "source": "3cexy_input_feedstock",
+                    "deletable": false,
+                    "target": "3cexy_input_feedstock_inbound_fees"
+                },
+                {
+                    "id": "3cexy_input_feedstock-3cexy_input_feedstock_inbound_logistics",
+                    "source": "3cexy_input_feedstock",
+                    "deletable": false,
+                    "target": "3cexy_input_feedstock_inbound_logistics"
+                },
+                {
+                    "id": "3v9byj_input_equipment-3v9byj_input_equipment_amortization",
+                    "source": "3v9byj_input_equipment",
+                    "deletable": false,
+                    "target": "3v9byj_input_equipment_amortization"
+                },
+                {
+                    "id": "3v9byj_input_equipment-3v9byj_input_equipment_energy",
+                    "source": "3v9byj_input_equipment",
+                    "deletable": false,
+                    "target": "3v9byj_input_equipment_energy"
+                },
+                {
+                    "source": "2_formula",
+                    "sourceHandle": null,
+                    "target": "3cexy_input_feedstock",
+                    "targetHandle": null,
+                    "id": "reactflow__edge-2_formula-3cexy_input_feedstock"
+                },
+                {
+                    "id": "urllk_input_fees-urllk_input_fees_sample",
+                    "source": "urllk_input_fees",
+                    "deletable": false,
+                    "target": "urllk_input_fees_sample"
+                },
+                {
+                    "id": "ohddm_input_fees-ohddm_input_fees_sample",
+                    "source": "ohddm_input_fees",
+                    "deletable": false,
+                    "target": "ohddm_input_fees_sample"
+                },
+                {
+                    "id": "90e9c_input_fees-90e9c_input_fees_sample",
+                    "source": "90e9c_input_fees",
+                    "deletable": false,
+                    "target": "90e9c_input_fees_sample"
+                },
+                {
+                    "id": "kdi7t_input_fees-kdi7t_input_fees_sample",
+                    "source": "kdi7t_input_fees",
+                    "deletable": false,
+                    "target": "kdi7t_input_fees_sample"
+                },
+                {
+                    "source": "5_formula",
+                    "sourceHandle": null,
+                    "target": "ohddm_input_fees_sample",
+                    "targetHandle": null,
+                    "id": "reactflow__edge-5_formula-ohddm_input_fees_sample"
+                },
+                {
+                    "source": "5_formula",
+                    "sourceHandle": null,
+                    "target": "90e9c_input_fees_sample",
+                    "targetHandle": null,
+                    "id": "reactflow__edge-5_formula-90e9c_input_fees_sample"
+                },
+                {
+                    "source": "5_formula",
+                    "sourceHandle": null,
+                    "target": "kdi7t_input_fees_sample",
+                    "targetHandle": null,
+                    "id": "reactflow__edge-5_formula-kdi7t_input_fees_sample"
+                },
+                {
+                    "id": "b1aww_input_lane-b1aww_input_lane_sample",
+                    "source": "b1aww_input_lane",
+                    "deletable": false,
+                    "target": "b1aww_input_lane_sample",
+                    "selected": false
+                },
+                {
+                    "id": "7jgza_input_lane-7jgza_input_lane_sample",
+                    "source": "7jgza_input_lane",
+                    "deletable": false,
+                    "target": "7jgza_input_lane_sample"
                 },
                 {
                     "source": "6_formula",
                     "sourceHandle": null,
-                    "target": "lfiei_input_lane",
+                    "target": "b1aww_input_lane",
                     "targetHandle": null,
-                    "id": "reactflow__edge-1_formula-lfiei_input_lane"
+                    "id": "reactflow__edge-6_formula-b1aww_input_lane"
                 },
                 {
-                    "id": "82cab_input_equipment-82cab_input_equipment_amortization",
-                    "source": "82cab_input_equipment",
-                    "deletable": false,
-                    "target": "82cab_input_equipment_amortization"
+                    "source": "6_formula",
+                    "sourceHandle": null,
+                    "target": "7jgza_input_lane",
+                    "targetHandle": null,
+                    "id": "reactflow__edge-6_formula-7jgza_input_lane"
                 },
                 {
-                    "id": "82cab_input_equipment-82cab_input_equipment_energy",
-                    "source": "82cab_input_equipment",
+                    "id": "c2u4v_input_lane-c2u4v_input_lane_sample",
+                    "source": "c2u4v_input_lane",
                     "deletable": false,
-                    "target": "82cab_input_equipment_energy"
+                    "target": "c2u4v_input_lane_sample"
+                },
+                {
+                    "id": "qurtqj_input_lane-qurtqj_input_lane_sample",
+                    "source": "qurtqj_input_lane",
+                    "deletable": false,
+                    "target": "qurtqj_input_lane_sample"
+                },
+                {
+                    "source": "7jgza_input_lane",
+                    "sourceHandle": null,
+                    "target": "c2u4v_input_lane_sample",
+                    "targetHandle": null,
+                    "id": "reactflow__edge-7jgza_input_lane-c2u4v_input_lane_sample"
+                },
+                {
+                    "source": "7jgza_input_lane",
+                    "sourceHandle": null,
+                    "target": "qurtqj_input_lane_sample",
+                    "targetHandle": null,
+                    "id": "reactflow__edge-7jgza_input_lane-qurtqj_input_lane_sample"
+                },
+                {
+                    "id": "p13y4_input_warehousing-p13y4_input_warehousing_sample",
+                    "source": "p13y4_input_warehousing",
+                    "deletable": false,
+                    "target": "p13y4_input_warehousing_sample"
+                },
+                {
+                    "id": "56wa8_input_warehousing-56wa8_input_warehousing_sample",
+                    "source": "56wa8_input_warehousing",
+                    "deletable": false,
+                    "target": "56wa8_input_warehousing_sample"
+                },
+                {
+                    "source": "7_formula",
+                    "sourceHandle": null,
+                    "target": "p13y4_input_warehousing",
+                    "targetHandle": null,
+                    "id": "reactflow__edge-7_formula-p13y4_input_warehousing"
+                },
+                {
+                    "source": "7_formula",
+                    "sourceHandle": null,
+                    "target": "56wa8_input_warehousing",
+                    "targetHandle": null,
+                    "id": "reactflow__edge-7_formula-56wa8_input_warehousing"
                 },
                 {
                     "source": "3_formula",
                     "sourceHandle": null,
-                    "target": "82cab_input_equipment",
+                    "target": "3v9byj_input_equipment",
                     "targetHandle": null,
-                    "id": "reactflow__edge-5_formula-82cab_input_equipment"
+                    "id": "reactflow__edge-3_formula-3v9byj_input_equipment"
+                }
+            ]
+        },
+        {
+            "id": "PM-0000003",
+            "initial_nodes": [
+                {
+                    "width": 110,
+                    "height": 67,
+                    "id": "1_header",
+                    "position": {
+                        "x": 0,
+                        "y": -50
+                    },
+                    "type": "input",
+                    "draggable": false,
+                    "deletable": false,
+                    "selectable": false,
+                    "data": {
+                        "label": "Price Model Header / Total Invoice Price",
+                        "type": "header"
+                    },
+                    "positionAbsolute": {
+                        "x": 0,
+                        "y": -50
+                    }
                 },
                 {
-                    "id": "se24_input_fees-se24_input_fees_sample",
-                    "source": "se24_input_fees",
+                    "width": 110,
+                    "height": 37,
+                    "id": "1_category",
+                    "position": {
+                        "x": -400,
+                        "y": 100
+                    },
+                    "draggable": false,
                     "deletable": false,
-                    "target": "se24_input_fees_sample"
+                    "selectable": false,
+                    "data": {
+                        "label": "Total Materials",
+                        "type": "category"
+                    },
+                    "positionAbsolute": {
+                        "x": -400,
+                        "y": 100
+                    }
+                },
+                {
+                    "width": 110,
+                    "height": 37,
+                    "id": "1_formula",
+                    "position": {
+                        "x": -500,
+                        "y": 200
+                    },
+                    "draggable": false,
+                    "deletable": false,
+                    "selectable": true,
+                    "data": {
+                        "label": "Raw Materials",
+                        "description": "Raw Material = Sum of (%INPUTS%)",
+                        "type": "formula_sum"
+                    },
+                    "selected": false,
+                    "positionAbsolute": {
+                        "x": -500,
+                        "y": 200
+                    }
+                },
+                {
+                    "width": 110,
+                    "height": 37,
+                    "id": "2_formula",
+                    "position": {
+                        "x": -300,
+                        "y": 200
+                    },
+                    "draggable": false,
+                    "deletable": false,
+                    "selectable": true,
+                    "data": {
+                        "label": "Packaging",
+                        "description": "Raw Material = Sum of (%INPUTS%)",
+                        "type": "formula_sum"
+                    },
+                    "positionAbsolute": {
+                        "x": -300,
+                        "y": 200
+                    }
+                },
+                {
+                    "width": 110,
+                    "height": 52,
+                    "id": "2_category",
+                    "position": {
+                        "x": 0,
+                        "y": 100
+                    },
+                    "draggable": false,
+                    "deletable": false,
+                    "selectable": false,
+                    "data": {
+                        "label": "Conversion and Fees",
+                        "type": "category"
+                    },
+                    "positionAbsolute": {
+                        "x": 0,
+                        "y": 100
+                    }
+                },
+                {
+                    "width": 110,
+                    "height": 37,
+                    "id": "3_formula",
+                    "position": {
+                        "x": -150,
+                        "y": 200
+                    },
+                    "draggable": false,
+                    "deletable": false,
+                    "selectable": true,
+                    "data": {
+                        "label": "Manufacturing",
+                        "description": "Raw Material = Sum of (%INPUTS%)",
+                        "type": "formula_sum"
+                    },
+                    "positionAbsolute": {
+                        "x": -150,
+                        "y": 200
+                    }
+                },
+                {
+                    "width": 110,
+                    "height": 37,
+                    "id": "4_formula",
+                    "position": {
+                        "x": 0,
+                        "y": 200
+                    },
+                    "draggable": false,
+                    "deletable": false,
+                    "selectable": true,
+                    "data": {
+                        "label": "Labor",
+                        "description": "Raw Material = Sum of (%INPUTS%)",
+                        "type": "formula_sum"
+                    },
+                    "positionAbsolute": {
+                        "x": 0,
+                        "y": 200
+                    }
+                },
+                {
+                    "width": 110,
+                    "height": 37,
+                    "id": "5_formula",
+                    "position": {
+                        "x": 150,
+                        "y": 200
+                    },
+                    "draggable": false,
+                    "deletable": false,
+                    "selectable": true,
+                    "data": {
+                        "label": "Fees",
+                        "description": "Raw Material = Sum of (%INPUTS%)",
+                        "type": "formula_sum"
+                    },
+                    "positionAbsolute": {
+                        "x": 150,
+                        "y": 200
+                    }
+                },
+                {
+                    "width": 110,
+                    "height": 37,
+                    "id": "3_category",
+                    "position": {
+                        "x": 400,
+                        "y": 100
+                    },
+                    "draggable": false,
+                    "deletable": false,
+                    "selectable": false,
+                    "data": {
+                        "label": "Logistics",
+                        "type": "category"
+                    },
+                    "positionAbsolute": {
+                        "x": 400,
+                        "y": 100
+                    }
+                },
+                {
+                    "width": 110,
+                    "height": 37,
+                    "id": "6_formula",
+                    "position": {
+                        "x": 500,
+                        "y": 200
+                    },
+                    "draggable": false,
+                    "deletable": false,
+                    "selectable": true,
+                    "data": {
+                        "label": "Transportation",
+                        "description": "Raw Material = Sum of (%INPUTS%)",
+                        "type": "formula_sum"
+                    },
+                    "selected": false,
+                    "positionAbsolute": {
+                        "x": 500,
+                        "y": 200
+                    }
+                },
+                {
+                    "width": 110,
+                    "height": 37,
+                    "id": "7_formula",
+                    "position": {
+                        "x": 300,
+                        "y": 200
+                    },
+                    "draggable": false,
+                    "deletable": false,
+                    "selectable": true,
+                    "data": {
+                        "label": "Warehousing",
+                        "description": "Raw Material = Sum of (%INPUTS%)",
+                        "type": "formula_sum"
+                    },
+                    "selected": false,
+                    "positionAbsolute": {
+                        "x": 300,
+                        "y": 200
+                    }
+                },
+                {
+                    "width": 110,
+                    "height": 37,
+                    "id": "l3va6f_input_feedstock",
+                    "type": "cost_element",
+                    "position": {
+                        "x": -660,
+                        "y": 300
+                    },
+                    "data": {
+                        "label": "Feedstock 1",
+                        "type": "input_feedstock",
+                        "costPerUnit": 0,
+                        "vendorId": 0,
+                        "usage": 0,
+                        "materialID": 99202746,
+                        "unit": "KG",
+                        "usageUnit": "Percent"
+                    },
+                    "selected": false,
+                    "positionAbsolute": {
+                        "x": -660,
+                        "y": 300
+                    },
+                    "dragging": false
+                },
+                {
+                    "width": 110,
+                    "height": 37,
+                    "id": "l3va6f_input_feedstock_scrap",
+                    "type": "cost_element",
+                    "position": {
+                        "x": -560,
+                        "y": 380
+                    },
+                    "data": {
+                        "label": "Scrap",
+                        "type": "input_child_scrap",
+                        "costPerUnit": 0
+                    },
+                    "selected": false,
+                    "dragging": false,
+                    "positionAbsolute": {
+                        "x": -560,
+                        "y": 380
+                    }
+                },
+                {
+                    "width": 110,
+                    "height": 37,
+                    "id": "l3va6f_input_feedstock_inbound_fees",
+                    "type": "cost_element",
+                    "position": {
+                        "x": -560,
+                        "y": 440
+                    },
+                    "data": {
+                        "label": "Inbound Fees",
+                        "type": "input_child_inbound_fees",
+                        "costPerUnit": 0
+                    },
+                    "selected": false,
+                    "dragging": false,
+                    "positionAbsolute": {
+                        "x": -560,
+                        "y": 440
+                    }
+                },
+                {
+                    "width": 110,
+                    "height": 52,
+                    "id": "l3va6f_input_feedstock_inbound_logistics",
+                    "type": "cost_element",
+                    "position": {
+                        "x": -560,
+                        "y": 500
+                    },
+                    "data": {
+                        "label": "Inbound Logistics",
+                        "type": "input_child_inbound_logistics",
+                        "costPerUnit": 0
+                    },
+                    "selected": false,
+                    "dragging": false,
+                    "positionAbsolute": {
+                        "x": -560,
+                        "y": 500
+                    }
+                },
+                {
+                    "width": 110,
+                    "height": 37,
+                    "id": "kxm9e_input_feedstock",
+                    "type": "cost_element",
+                    "position": {
+                        "x": -540,
+                        "y": 300
+                    },
+                    "data": {
+                        "label": "Feedstock 2",
+                        "type": "input_feedstock",
+                        "costPerUnit": 0,
+                        "vendorId": 0,
+                        "usage": 0,
+                        "materialID": 10709186,
+                        "unit": "KG",
+                        "usageUnit": "Percent"
+                    },
+                    "selected": false,
+                    "positionAbsolute": {
+                        "x": -540,
+                        "y": 300
+                    },
+                    "dragging": false
+                },
+                {
+                    "width": 110,
+                    "height": 37,
+                    "id": "ztum3l_input_feedstock",
+                    "type": "cost_element",
+                    "position": {
+                        "x": -420,
+                        "y": 300
+                    },
+                    "data": {
+                        "label": "Feedstock 1",
+                        "type": "input_feedstock",
+                        "costPerUnit": 0,
+                        "vendorId": 0,
+                        "usage": 0,
+                        "materialID": 62646622,
+                        "unit": "KG",
+                        "usageUnit": "Percent"
+                    },
+                    "selected": false,
+                    "positionAbsolute": {
+                        "x": -420,
+                        "y": 300
+                    },
+                    "dragging": false
+                },
+                {
+                    "width": 110,
+                    "height": 37,
+                    "id": "ztum3l_input_feedstock_scrap",
+                    "type": "cost_element",
+                    "position": {
+                        "x": -320,
+                        "y": 380
+                    },
+                    "data": {
+                        "label": "Scrap",
+                        "type": "input_child_scrap",
+                        "costPerUnit": 0
+                    },
+                    "selected": false,
+                    "positionAbsolute": {
+                        "x": -320,
+                        "y": 380
+                    },
+                    "dragging": false
+                },
+                {
+                    "width": 110,
+                    "height": 37,
+                    "id": "ztum3l_input_feedstock_inbound_fees",
+                    "type": "cost_element",
+                    "position": {
+                        "x": -320,
+                        "y": 440
+                    },
+                    "data": {
+                        "label": "Inbound Fees",
+                        "type": "input_child_inbound_fees",
+                        "costPerUnit": 0
+                    },
+                    "selected": false,
+                    "positionAbsolute": {
+                        "x": -320,
+                        "y": 440
+                    },
+                    "dragging": false
+                },
+                {
+                    "width": 110,
+                    "height": 52,
+                    "id": "ztum3l_input_feedstock_inbound_logistics",
+                    "type": "cost_element",
+                    "position": {
+                        "x": -320,
+                        "y": 500
+                    },
+                    "data": {
+                        "label": "Inbound Logistics",
+                        "type": "input_child_inbound_logistics",
+                        "costPerUnit": 0
+                    },
+                    "selected": false,
+                    "positionAbsolute": {
+                        "x": -320,
+                        "y": 500
+                    },
+                    "dragging": false
+                },
+                {
+                    "width": 110,
+                    "height": 37,
+                    "id": "3cexy_input_feedstock",
+                    "type": "cost_element",
+                    "position": {
+                        "x": -300,
+                        "y": 300
+                    },
+                    "data": {
+                        "label": "Feedstock 2",
+                        "type": "input_feedstock",
+                        "costPerUnit": 0,
+                        "vendorId": 0,
+                        "usage": 0,
+                        "materialID": 61836477,
+                        "unit": "KG",
+                        "usageUnit": "Percent"
+                    },
+                    "selected": false,
+                    "positionAbsolute": {
+                        "x": -300,
+                        "y": 300
+                    },
+                    "dragging": false
+                },
+                {
+                    "width": 110,
+                    "height": 37,
+                    "id": "3v9byj_input_equipment",
+                    "type": "cost_element",
+                    "position": {
+                        "x": -160,
+                        "y": 300
+                    },
+                    "data": {
+                        "label": "Feedstock 2",
+                        "type": "input_lane",
+                        "costPerUnit": 0,
+                        "vendorId": 0,
+                        "usage": 0,
+                        "materialID": 14222501,
+                        "unit": "KG",
+                        "usageUnit": "Percent"
+                    },
+                    "selected": false,
+                    "positionAbsolute": {
+                        "x": -160,
+                        "y": 300
+                    },
+                    "dragging": false
+                },
+                {
+                    "width": 110,
+                    "height": 37,
+                    "id": "3v9byj_input_equipment_amortization",
+                    "type": "cost_element",
+                    "position": {
+                        "x": -80,
+                        "y": 380
+                    },
+                    "data": {
+                        "label": "Amortization",
+                        "type": "input_child_amortization",
+                        "costPerUnit": 0
+                    },
+                    "selected": false,
+                    "positionAbsolute": {
+                        "x": -80,
+                        "y": 380
+                    },
+                    "dragging": false
+                },
+                {
+                    "width": 110,
+                    "height": 37,
+                    "id": "3v9byj_input_equipment_energy",
+                    "type": "cost_element",
+                    "position": {
+                        "x": -80,
+                        "y": 440
+                    },
+                    "data": {
+                        "label": "Energy",
+                        "type": "input_child_energy",
+                        "costPerUnit": 0
+                    },
+                    "selected": false,
+                    "positionAbsolute": {
+                        "x": -80,
+                        "y": 440
+                    },
+                    "dragging": false
+                },
+                {
+                    "width": 110,
+                    "height": 37,
+                    "id": "ohddm_input_fees_sample",
+                    "type": "cost_element",
+                    "position": {
+                        "x": 240,
+                        "y": 380
+                    },
+                    "data": {
+                        "label": "Admin",
+                        "type": "input_child_sample",
+                        "costPerUnit": 0
+                    },
+                    "selected": false,
+                    "positionAbsolute": {
+                        "x": 240,
+                        "y": 380
+                    },
+                    "dragging": false
+                },
+                {
+                    "width": 110,
+                    "height": 37,
+                    "id": "90e9c_input_fees_sample",
+                    "type": "cost_element",
+                    "position": {
+                        "x": 240,
+                        "y": 440
+                    },
+                    "data": {
+                        "label": "Service",
+                        "type": "input_child_sample",
+                        "costPerUnit": 0
+                    },
+                    "selected": false,
+                    "positionAbsolute": {
+                        "x": 240,
+                        "y": 440
+                    },
+                    "dragging": false
+                },
+                {
+                    "width": 110,
+                    "height": 37,
+                    "id": "kdi7t_input_fees_sample",
+                    "type": "cost_element",
+                    "position": {
+                        "x": 240,
+                        "y": 500
+                    },
+                    "data": {
+                        "label": "Etc",
+                        "type": "input_child_sample",
+                        "costPerUnit": 0
+                    },
+                    "selected": false,
+                    "dragging": false,
+                    "positionAbsolute": {
+                        "x": 240,
+                        "y": 500
+                    }
+                },
+                {
+                    "width": 110,
+                    "height": 52,
+                    "id": "b1aww_input_lane",
+                    "type": "cost_element",
+                    "position": {
+                        "x": 700,
+                        "y": 300
+                    },
+                    "data": {
+                        "label": "Customs & Duties",
+                        "type": "input_lane",
+                        "costPerUnit": 0,
+                        "vendorId": 0,
+                        "usage": 0,
+                        "materialID": 11335513,
+                        "unit": "KG",
+                        "usageUnit": "Percent"
+                    },
+                    "selected": false,
+                    "dragging": false,
+                    "positionAbsolute": {
+                        "x": 700,
+                        "y": 300
+                    },
+                    "dragging": false
+                },
+                {
+                    "width": 110,
+                    "height": 37,
+                    "id": "7jgza_input_lane",
+                    "type": "cost_element",
+                    "position": {
+                        "x": 560,
+                        "y": 300
+                    },
+                    "data": {
+                        "label": "Lane Costs",
+                        "type": "input_lane",
+                        "costPerUnit": 0,
+                        "vendorId": 0,
+                        "usage": 0,
+                        "materialID": 683320,
+                        "unit": "KG",
+                        "usageUnit": "Percent"
+                    },
+                    "selected": false,
+                    "positionAbsolute": {
+                        "x": 560,
+                        "y": 300
+                    },
+                    "dragging": false
+                },
+                {
+                    "width": 110,
+                    "height": 37,
+                    "id": "c2u4v_input_lane_sample",
+                    "type": "cost_element",
+                    "position": {
+                        "x": 660,
+                        "y": 380
+                    },
+                    "data": {
+                        "label": "Lane / Mode 1",
+                        "type": "input_child_sample",
+                        "costPerUnit": 0
+                    },
+                    "selected": false,
+                    "dragging": false,
+                    "positionAbsolute": {
+                        "x": 660,
+                        "y": 380
+                    }
+                },
+                {
+                    "width": 110,
+                    "height": 37,
+                    "id": "qurtqj_input_lane_sample",
+                    "type": "cost_element",
+                    "position": {
+                        "x": 660,
+                        "y": 440
+                    },
+                    "data": {
+                        "label": "Lane / Mode 2",
+                        "type": "input_child_sample",
+                        "costPerUnit": 0
+                    },
+                    "selected": false,
+                    "dragging": false,
+                    "positionAbsolute": {
+                        "x": 660,
+                        "y": 440
+                    }
+                },
+                {
+                    "width": 110,
+                    "height": 52,
+                    "id": "p13y4_input_warehousing",
+                    "type": "cost_element",
+                    "position": {
+                        "x": 300,
+                        "y": 300
+                    },
+                    "data": {
+                        "label": "Transportation to WH",
+                        "type": "input_warehousing",
+                        "costPerUnit": 0,
+                        "vendorId": 0,
+                        "usage": 0,
+                        "materialID": 71807293,
+                        "unit": "KG",
+                        "usageUnit": "Percent"
+                    },
+                    "selected": false,
+                    "positionAbsolute": {
+                        "x": 300,
+                        "y": 300
+                    },
+                    "dragging": false
+                },
+                {
+                    "width": 110,
+                    "height": 52,
+                    "id": "56wa8_input_warehousing",
+                    "type": "cost_element",
+                    "position": {
+                        "x": 420,
+                        "y": 300
+                    },
+                    "data": {
+                        "label": "Warehousing Costs",
+                        "type": "input_warehousing",
+                        "costPerUnit": 0,
+                        "vendorId": 0,
+                        "usage": 0,
+                        "materialID": 80131570,
+                        "unit": "KG",
+                        "usageUnit": "Percent"
+                    },
+                    "selected": false,
+                    "positionAbsolute": {
+                        "x": 420,
+                        "y": 300
+                    },
+                    "dragging": false
+                }
+            ],
+            "initial_edges": [
+                {
+                    "id": "h1-1",
+                    "source": "1_header",
+                    "deletable": false,
+                    "target": "1_category"
+                },
+                {
+                    "id": "h1-2",
+                    "source": "1_header",
+                    "deletable": false,
+                    "target": "2_category"
+                },
+                {
+                    "id": "h1-3",
+                    "source": "1_header",
+                    "deletable": false,
+                    "target": "3_category"
+                },
+                {
+                    "id": "c1-1",
+                    "source": "1_category",
+                    "deletable": false,
+                    "target": "1_formula"
+                },
+                {
+                    "id": "c1-2",
+                    "source": "1_category",
+                    "deletable": false,
+                    "target": "2_formula"
+                },
+                {
+                    "id": "c2-3",
+                    "source": "2_category",
+                    "deletable": false,
+                    "target": "3_formula"
+                },
+                {
+                    "id": "c2-4",
+                    "source": "2_category",
+                    "deletable": false,
+                    "target": "4_formula"
+                },
+                {
+                    "id": "c2-5",
+                    "source": "2_category",
+                    "deletable": false,
+                    "target": "5_formula"
+                },
+                {
+                    "id": "c3-6",
+                    "source": "3_category",
+                    "deletable": false,
+                    "target": "6_formula"
+                },
+                {
+                    "id": "c3-7",
+                    "source": "3_category",
+                    "deletable": false,
+                    "target": "7_formula"
+                },
+                {
+                    "id": "pmh0j_input_warehousing-pmh0j_input_warehousing_sample",
+                    "source": "pmh0j_input_warehousing",
+                    "deletable": false,
+                    "target": "pmh0j_input_warehousing_sample"
+                },
+                {
+                    "id": "l3va6f_input_feedstock-l3va6f_input_feedstock_scrap",
+                    "source": "l3va6f_input_feedstock",
+                    "deletable": false,
+                    "target": "l3va6f_input_feedstock_scrap"
+                },
+                {
+                    "id": "l3va6f_input_feedstock-l3va6f_input_feedstock_inbound_fees",
+                    "source": "l3va6f_input_feedstock",
+                    "deletable": false,
+                    "target": "l3va6f_input_feedstock_inbound_fees"
+                },
+                {
+                    "id": "l3va6f_input_feedstock-l3va6f_input_feedstock_inbound_logistics",
+                    "source": "l3va6f_input_feedstock",
+                    "deletable": false,
+                    "target": "l3va6f_input_feedstock_inbound_logistics"
+                },
+                {
+                    "id": "kxm9e_input_feedstock-kxm9e_input_feedstock_scrap",
+                    "source": "kxm9e_input_feedstock",
+                    "deletable": false,
+                    "target": "kxm9e_input_feedstock_scrap"
+                },
+                {
+                    "id": "kxm9e_input_feedstock-kxm9e_input_feedstock_inbound_fees",
+                    "source": "kxm9e_input_feedstock",
+                    "deletable": false,
+                    "target": "kxm9e_input_feedstock_inbound_fees"
+                },
+                {
+                    "id": "kxm9e_input_feedstock-kxm9e_input_feedstock_inbound_logistics",
+                    "source": "kxm9e_input_feedstock",
+                    "deletable": false,
+                    "target": "kxm9e_input_feedstock_inbound_logistics",
+                    "selected": false
+                },
+                {
+                    "source": "1_formula",
+                    "sourceHandle": null,
+                    "target": "l3va6f_input_feedstock",
+                    "targetHandle": null,
+                    "id": "reactflow__edge-1_formula-l3va6f_input_feedstock"
+                },
+                {
+                    "source": "1_formula",
+                    "sourceHandle": null,
+                    "target": "kxm9e_input_feedstock",
+                    "targetHandle": null,
+                    "id": "reactflow__edge-1_formula-kxm9e_input_feedstock"
+                },
+                {
+                    "id": "ztum3l_input_feedstock-ztum3l_input_feedstock_scrap",
+                    "source": "ztum3l_input_feedstock",
+                    "deletable": false,
+                    "target": "ztum3l_input_feedstock_scrap"
+                },
+                {
+                    "id": "ztum3l_input_feedstock-ztum3l_input_feedstock_inbound_fees",
+                    "source": "ztum3l_input_feedstock",
+                    "deletable": false,
+                    "target": "ztum3l_input_feedstock_inbound_fees"
+                },
+                {
+                    "id": "ztum3l_input_feedstock-ztum3l_input_feedstock_inbound_logistics",
+                    "source": "ztum3l_input_feedstock",
+                    "deletable": false,
+                    "target": "ztum3l_input_feedstock_inbound_logistics"
+                },
+                {
+                    "source": "2_formula",
+                    "sourceHandle": null,
+                    "target": "ztum3l_input_feedstock",
+                    "targetHandle": null,
+                    "id": "reactflow__edge-2_formula-ztum3l_input_feedstock"
+                },
+                {
+                    "id": "3cexy_input_feedstock-3cexy_input_feedstock_scrap",
+                    "source": "3cexy_input_feedstock",
+                    "deletable": false,
+                    "target": "3cexy_input_feedstock_scrap"
+                },
+                {
+                    "id": "3cexy_input_feedstock-3cexy_input_feedstock_inbound_fees",
+                    "source": "3cexy_input_feedstock",
+                    "deletable": false,
+                    "target": "3cexy_input_feedstock_inbound_fees"
+                },
+                {
+                    "id": "3cexy_input_feedstock-3cexy_input_feedstock_inbound_logistics",
+                    "source": "3cexy_input_feedstock",
+                    "deletable": false,
+                    "target": "3cexy_input_feedstock_inbound_logistics"
+                },
+                {
+                    "id": "3v9byj_input_equipment-3v9byj_input_equipment_amortization",
+                    "source": "3v9byj_input_equipment",
+                    "deletable": false,
+                    "target": "3v9byj_input_equipment_amortization"
+                },
+                {
+                    "id": "3v9byj_input_equipment-3v9byj_input_equipment_energy",
+                    "source": "3v9byj_input_equipment",
+                    "deletable": false,
+                    "target": "3v9byj_input_equipment_energy"
+                },
+                {
+                    "source": "2_formula",
+                    "sourceHandle": null,
+                    "target": "3cexy_input_feedstock",
+                    "targetHandle": null,
+                    "id": "reactflow__edge-2_formula-3cexy_input_feedstock"
+                },
+                {
+                    "id": "urllk_input_fees-urllk_input_fees_sample",
+                    "source": "urllk_input_fees",
+                    "deletable": false,
+                    "target": "urllk_input_fees_sample"
+                },
+                {
+                    "id": "ohddm_input_fees-ohddm_input_fees_sample",
+                    "source": "ohddm_input_fees",
+                    "deletable": false,
+                    "target": "ohddm_input_fees_sample"
+                },
+                {
+                    "id": "90e9c_input_fees-90e9c_input_fees_sample",
+                    "source": "90e9c_input_fees",
+                    "deletable": false,
+                    "target": "90e9c_input_fees_sample"
+                },
+                {
+                    "id": "kdi7t_input_fees-kdi7t_input_fees_sample",
+                    "source": "kdi7t_input_fees",
+                    "deletable": false,
+                    "target": "kdi7t_input_fees_sample"
+                },
+                {
+                    "source": "5_formula",
+                    "sourceHandle": null,
+                    "target": "ohddm_input_fees_sample",
+                    "targetHandle": null,
+                    "id": "reactflow__edge-5_formula-ohddm_input_fees_sample"
+                },
+                {
+                    "source": "5_formula",
+                    "sourceHandle": null,
+                    "target": "90e9c_input_fees_sample",
+                    "targetHandle": null,
+                    "id": "reactflow__edge-5_formula-90e9c_input_fees_sample"
+                },
+                {
+                    "source": "5_formula",
+                    "sourceHandle": null,
+                    "target": "kdi7t_input_fees_sample",
+                    "targetHandle": null,
+                    "id": "reactflow__edge-5_formula-kdi7t_input_fees_sample"
+                },
+                {
+                    "id": "b1aww_input_lane-b1aww_input_lane_sample",
+                    "source": "b1aww_input_lane",
+                    "deletable": false,
+                    "target": "b1aww_input_lane_sample",
+                    "selected": false
+                },
+                {
+                    "id": "7jgza_input_lane-7jgza_input_lane_sample",
+                    "source": "7jgza_input_lane",
+                    "deletable": false,
+                    "target": "7jgza_input_lane_sample"
+                },
+                {
+                    "source": "6_formula",
+                    "sourceHandle": null,
+                    "target": "b1aww_input_lane",
+                    "targetHandle": null,
+                    "id": "reactflow__edge-6_formula-b1aww_input_lane"
+                },
+                {
+                    "source": "6_formula",
+                    "sourceHandle": null,
+                    "target": "7jgza_input_lane",
+                    "targetHandle": null,
+                    "id": "reactflow__edge-6_formula-7jgza_input_lane"
+                },
+                {
+                    "id": "c2u4v_input_lane-c2u4v_input_lane_sample",
+                    "source": "c2u4v_input_lane",
+                    "deletable": false,
+                    "target": "c2u4v_input_lane_sample"
+                },
+                {
+                    "id": "qurtqj_input_lane-qurtqj_input_lane_sample",
+                    "source": "qurtqj_input_lane",
+                    "deletable": false,
+                    "target": "qurtqj_input_lane_sample"
+                },
+                {
+                    "source": "7jgza_input_lane",
+                    "sourceHandle": null,
+                    "target": "c2u4v_input_lane_sample",
+                    "targetHandle": null,
+                    "id": "reactflow__edge-7jgza_input_lane-c2u4v_input_lane_sample"
+                },
+                {
+                    "source": "7jgza_input_lane",
+                    "sourceHandle": null,
+                    "target": "qurtqj_input_lane_sample",
+                    "targetHandle": null,
+                    "id": "reactflow__edge-7jgza_input_lane-qurtqj_input_lane_sample"
+                },
+                {
+                    "id": "p13y4_input_warehousing-p13y4_input_warehousing_sample",
+                    "source": "p13y4_input_warehousing",
+                    "deletable": false,
+                    "target": "p13y4_input_warehousing_sample"
+                },
+                {
+                    "id": "56wa8_input_warehousing-56wa8_input_warehousing_sample",
+                    "source": "56wa8_input_warehousing",
+                    "deletable": false,
+                    "target": "56wa8_input_warehousing_sample"
+                },
+                {
+                    "source": "7_formula",
+                    "sourceHandle": null,
+                    "target": "p13y4_input_warehousing",
+                    "targetHandle": null,
+                    "id": "reactflow__edge-7_formula-p13y4_input_warehousing"
+                },
+                {
+                    "source": "7_formula",
+                    "sourceHandle": null,
+                    "target": "56wa8_input_warehousing",
+                    "targetHandle": null,
+                    "id": "reactflow__edge-7_formula-56wa8_input_warehousing"
                 },
                 {
                     "source": "3_formula",
                     "sourceHandle": null,
-                    "target": "se24_input_fees",
+                    "target": "3v9byj_input_equipment",
                     "targetHandle": null,
-                    "id": "reactflow__edge-3_formula-se24_input_fees"
+                    "id": "reactflow__edge-3_formula-3v9byj_input_equipment"
                 }
             ]
         }

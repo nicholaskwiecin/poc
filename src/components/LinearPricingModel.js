@@ -1,101 +1,160 @@
 import React, { useState } from 'react';
 import './LinearPricingModel.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowsLeftRightToLine } from '@fortawesome/free-solid-svg-icons';
 
 
 const LinearPricingModel = () => {
+
+    const expandOrCollapseColGroup = (className) => {
+        document.querySelectorAll(`.${className}`).forEach(element => {
+            if (element.style.visibility === 'collapse') {
+                element.style.visibility = 'visible';
+                element.style.fontSize = 'inherit';
+            } else {
+                element.style.visibility = 'collapse';
+                element.style.fontSize = '0';
+            }
+        });
+    };
+
+    const ToggleButton = (props) => (
+        <button className='toggle-button' onClick={() => expandOrCollapseColGroup(props.colGroupClassName)}>
+            <FontAwesomeIcon icon={faArrowsLeftRightToLine} size="xl" />
+        </button>
+    );
 
     return (
         <section className="linear-pricing-model">
             <h1>Linear Pricing Model</h1>
             <div className="table-wrapper">
                 <table>
+                    <colgroup>
+                        <col span='17' className='secondary-information'></col>
+                        <col span='21' className='material-specifications'></col>
+                        <col span='18' className='supplier-inputs'></col>
+                        <col span='8' className='price-parameters'></col>
+                        <col span='7' className='board-paper'></col>
+                        <col span='9'></col>
+                        <col span='5' className='price-mechanism'></col>
+                    </colgroup>
                     <thead>
-                        <tr>
-                            <td>Input</td>
-                            <td>Input</td>
-                            <td>Output</td>
-                            <td>Output</td>
-                            <td>Input</td>
-                            <td>Input</td>
-                            <td>Input</td>
-                            <td>Input</td>
-                            <td>Input</td>
-                            <td>Input</td>
-                            <td>Input</td>
-                            <td>Input</td>
-                            <td>Input</td>
-                            <td>Input</td>
-                            <td>Input</td>
-                            <td>Input</td>
-                            <td>Input</td>
-                            <td></td>
-                            <td>Input</td>
-                            <td>Input</td>
-                            <td>Input</td>
-                            <td>Input</td>
-                            <td>Input</td>
-                            <td>Input</td>
-                            <td>Input</td>
-                            <td>Input</td>
-                            <td>Input</td>
-                            <td>Input</td>
-                            <td>Formula</td>
-                            <td>Input</td>
-                            <td>Input</td>
-                            <td>Input</td>
-                            <td>Input</td>
-                            <td>Input</td>
-                            <td>Input</td>
-                            <td>Input</td>
-                            <td>Input</td>
-                            <td>Input</td>
-                            <td></td>
-                            <td>Input</td>
-                            <td>Input</td>
-                            <td>Input</td>
-                            <td>Input</td>
-                            <td>Input</td>
-                            <td>Input</td>
-                            <td>Input</td>
-                            <td>Input</td>
-                            <td>Input</td>
-                            <td>Input</td>
-                            <td>Input</td>
-                            <td>Input</td>
-                            <td>Input</td>
-                            <td>Input</td>
-                            <td>Input</td>
-                            <td>Input</td>
-                            <td>Input</td>
-                            <td></td>
-                            <td>Formula</td>
-                            <td>Formula</td>
-                            <td>Formula</td>
-                            <td>Formula</td>
-                            <td>Formula</td>
-                            <td>Formula</td>
-                            <td>Formula</td>
-                            <td></td>
-                            <td>Output</td>
-                            <td>Output</td>
-                            <td>Output</td>
-                            <td>Output</td>
-                            <td>Output</td>
-                            <td>Output</td>
-                            <td>Output</td>
-                            <td>Output</td>
-                            <td>Output</td>
-                            <td>Output</td>
-                            <td>Output</td>
-                            <td>Output</td>
-                            <td>Output</td>
-                            <td>Output</td>
-                            <td>Output</td>
-                            <td>Output</td>
-                            <td>Output</td>
-                            <td>Output</td>
+                        <tr className='categories'>
+                            <th colSpan='18' className='gray'>
+                                <span className='secondary-information'>Secondary Information - SAP Data</span>
+                                <ToggleButton colGroupClassName='secondary-information'></ToggleButton>
+                            </th>
+                            <th colSpan='21' className='gold'>
+                                <span className='material-specifications'>Material Specifications</span>
+                                <ToggleButton colGroupClassName='material-specifications'></ToggleButton>
+                            </th>
+                            <th colSpan='18' className='red'>
+                                <span className='supplier-inputs'>Supplier Inputs - Specifications, Parameters</span>
+                                <ToggleButton colGroupClassName='supplier-inputs'></ToggleButton>
+                            </th>
+                            <th colSpan='8'>
+                                <span className='price-parameters'>Calculated Price Parameters</span>
+                                <ToggleButton colGroupClassName='price-parameters'></ToggleButton>
+                            </th>
+                            <th colSpan='7' className='green'>
+                                <span className='board-paper'>Board - Paper</span>
+                                <ToggleButton colGroupClassName='board-paper'></ToggleButton>
+                            </th>
+                            <th colSpan='9' className='green'></th>
+                            <th colSpan='5'>
+                                <span className='price-mechanism'>Price Mechanism</span>
+                                <ToggleButton colGroupClassName='price-mechanism'></ToggleButton>
+                            </th>
                         </tr>
-                        <tr>
+                        <tr className='input-output'>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td>Output</td>
+                            <td>Output</td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td></td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td>Formula</td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td></td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td>Input</td>
+                            <td></td>
+                            <td>Formula</td>
+                            <td>Formula</td>
+                            <td>Formula</td>
+                            <td>Formula</td>
+                            <td>Formula</td>
+                            <td>Formula</td>
+                            <td>Formula</td>
+                            <td></td>
+                            <td>Output</td>
+                            <td>Output</td>
+                            <td>Output</td>
+                            <td>Output</td>
+                            <td>Output</td>
+                            <td>Output</td>
+                            <td></td>
+                            <td>Output</td>
+                            <td>Output</td>
+                            <td>Output</td>
+                            <td>Output</td>
+                            <td>Output</td>
+                            <td>Output</td>
+                            <td>Output</td>
+                            <td>Output</td>
+                            <td></td>
+                            <td>Output</td>
+                            <td>Output</td>
+                            <td>Output</td>
+                            <td>Output</td>
+                            <td></td>
+                        </tr>
+                        <tr className='column-names'>
                             <td>GCAS #</td>
                             <td>SAP Material Description</td>
                             <td>Invoice Price</td>
@@ -167,6 +226,7 @@ const LinearPricingModel = () => {
                             <td>Board 4 (Currency/sqm)</td>
                             <td>Board 5 (Currency/sqm)</td>
                             <td>Scrap Cost</td>
+                            <td></td>
                             <td>Total Paper Costs</td>
                             <td>Total Printing Costs</td>
                             <td>Total Conversion Costs</td>
@@ -175,10 +235,12 @@ const LinearPricingModel = () => {
                             <td>Logistics Costs</td>
                             <td>Transport Costs</td>
                             <td>Total Transport & Logistics Costs</td>
+                            <td></td>
                             <td>YoY Discount</td>
                             <td>Additional Discount</td>
                             <td>FX Rate (Raw Mat / Local =)</td>
                             <td>Raw Material Currency</td>
+                            <td></td>
                         </tr>
                     </thead>
                     <tbody>
@@ -254,6 +316,7 @@ const LinearPricingModel = () => {
                             <td>44.2</td>
                             <td>46.7</td>
                             <td>19.1</td>
+                            <td></td>
                             <td>174.2</td>
                             <td>232.0</td>
                             <td>216.5</td>
@@ -262,10 +325,11 @@ const LinearPricingModel = () => {
                             <td>30.3</td>
                             <td>58.8</td>
                             <td>89.1</td>
+                            <td></td>
                             <td>2.97%</td>
                             <td>1.50%</td>
                             <td>1</td>
-                            <td>EUR</td>
+                            <td>EUR</td><td></td>
                         </tr>
                         <tr>
                             <td>90000443</td>
@@ -339,6 +403,7 @@ const LinearPricingModel = () => {
                             <td>44.2</td>
                             <td>46.7</td>
                             <td>19.1</td>
+                            <td></td>
                             <td>174.2</td>
                             <td>33.0</td>
                             <td>216.5</td>
@@ -347,10 +412,11 @@ const LinearPricingModel = () => {
                             <td>30.3</td>
                             <td>58.8</td>
                             <td>89.1</td>
+                            <td></td>
                             <td>2.97%</td>
                             <td>1.50%</td>
                             <td>1</td>
-                            <td>EUR</td>
+                            <td>EUR</td><td></td>
                         </tr>
                         <tr>
                             <td>90000444</td>
@@ -424,6 +490,7 @@ const LinearPricingModel = () => {
                             <td>44.2</td>
                             <td>46.7</td>
                             <td>19.1</td>
+                            <td></td>
                             <td>174.2</td>
                             <td>33.0</td>
                             <td>216.5</td>
@@ -432,10 +499,11 @@ const LinearPricingModel = () => {
                             <td>30.3</td>
                             <td>58.8</td>
                             <td>89.1</td>
+                            <td></td>
                             <td>2.97%</td>
                             <td>1.50%</td>
                             <td>1</td>
-                            <td>EUR</td>
+                            <td>EUR</td><td></td>
                         </tr>
                         <tr>
                             <td>90000445</td>
@@ -508,7 +576,7 @@ const LinearPricingModel = () => {
                             <td>35.0</td>
                             <td>44.2</td>
                             <td>46.7</td>
-                            <td>19.1</td>
+                            <td>19.1</td><td></td>
                             <td>174.2</td>
                             <td>33.0</td>
                             <td>216.5</td>
@@ -517,10 +585,11 @@ const LinearPricingModel = () => {
                             <td>30.3</td>
                             <td>58.8</td>
                             <td>89.1</td>
+                            <td></td>
                             <td>2.97%</td>
                             <td>1.50%</td>
                             <td>1</td>
-                            <td>EUR</td>
+                            <td>EUR</td><td></td>
                         </tr>
                         <tr>
                             <td>90000446</td>
@@ -593,7 +662,7 @@ const LinearPricingModel = () => {
                             <td>35.0</td>
                             <td>44.2</td>
                             <td>46.7</td>
-                            <td>19.1</td>
+                            <td>19.1</td><td></td>
                             <td>174.2</td>
                             <td>33.0</td>
                             <td>216.5</td>
@@ -602,10 +671,11 @@ const LinearPricingModel = () => {
                             <td>30.3</td>
                             <td>58.8</td>
                             <td>89.1</td>
+                            <td></td>
                             <td>2.97%</td>
                             <td>1.50%</td>
                             <td>1</td>
-                            <td>EUR</td>
+                            <td>EUR</td><td></td>
                         </tr>
                         <tr>
                             <td>90000447</td>
@@ -678,7 +748,7 @@ const LinearPricingModel = () => {
                             <td>35.0</td>
                             <td>44.2</td>
                             <td>46.7</td>
-                            <td>19.1</td>
+                            <td>19.1</td><td></td>
                             <td>174.2</td>
                             <td>33.0</td>
                             <td>216.5</td>
@@ -687,10 +757,11 @@ const LinearPricingModel = () => {
                             <td>30.3</td>
                             <td>58.8</td>
                             <td>89.1</td>
+                            <td></td>
                             <td>2.97%</td>
                             <td>1.50%</td>
                             <td>1</td>
-                            <td>EUR</td>
+                            <td>EUR</td><td></td>
                         </tr>
                         <tr>
                             <td>90000448</td>
@@ -763,7 +834,7 @@ const LinearPricingModel = () => {
                             <td>35.0</td>
                             <td>44.2</td>
                             <td>46.7</td>
-                            <td>19.1</td>
+                            <td>19.1</td><td></td>
                             <td>174.2</td>
                             <td>33.0</td>
                             <td>216.5</td>
@@ -772,10 +843,11 @@ const LinearPricingModel = () => {
                             <td>30.3</td>
                             <td>58.8</td>
                             <td>89.1</td>
+                            <td></td>
                             <td>2.97%</td>
                             <td>1.50%</td>
                             <td>1</td>
-                            <td>EUR</td>
+                            <td>EUR</td><td></td>
                         </tr>
                         <tr>
                             <td>90000449</td>
@@ -848,7 +920,7 @@ const LinearPricingModel = () => {
                             <td>35.0</td>
                             <td>44.2</td>
                             <td>46.7</td>
-                            <td>19.1</td>
+                            <td>19.1</td><td></td>
                             <td>174.2</td>
                             <td>33.0</td>
                             <td>216.5</td>
@@ -857,10 +929,11 @@ const LinearPricingModel = () => {
                             <td>30.3</td>
                             <td>58.8</td>
                             <td>89.1</td>
+                            <td></td>
                             <td>2.97%</td>
                             <td>1.50%</td>
                             <td>1</td>
-                            <td>EUR</td>
+                            <td>EUR</td><td></td>
                         </tr>
                         <tr>
                             <td>90000450</td>
@@ -933,7 +1006,7 @@ const LinearPricingModel = () => {
                             <td>35.0</td>
                             <td>44.2</td>
                             <td>46.7</td>
-                            <td>19.1</td>
+                            <td>19.1</td><td></td>
                             <td>174.2</td>
                             <td>33.0</td>
                             <td>216.5</td>
@@ -942,10 +1015,11 @@ const LinearPricingModel = () => {
                             <td>30.3</td>
                             <td>58.8</td>
                             <td>89.1</td>
+                            <td></td>
                             <td>2.97%</td>
                             <td>1.50%</td>
                             <td>1</td>
-                            <td>EUR</td>
+                            <td>EUR</td><td></td>
                         </tr>
                         <tr>
                             <td>90000451</td>
@@ -1018,7 +1092,7 @@ const LinearPricingModel = () => {
                             <td>35.0</td>
                             <td>44.2</td>
                             <td>46.7</td>
-                            <td>19.1</td>
+                            <td>19.1</td><td></td>
                             <td>174.2</td>
                             <td>33.0</td>
                             <td>216.5</td>
@@ -1027,10 +1101,11 @@ const LinearPricingModel = () => {
                             <td>30.3</td>
                             <td>58.8</td>
                             <td>89.1</td>
+                            <td></td>
                             <td>2.97%</td>
                             <td>1.50%</td>
                             <td>1</td>
-                            <td>EUR</td>
+                            <td>EUR</td><td></td>
                         </tr>
                         <tr>
                             <td>90000452</td>
@@ -1103,7 +1178,7 @@ const LinearPricingModel = () => {
                             <td>35.0</td>
                             <td>44.2</td>
                             <td>46.7</td>
-                            <td>19.1</td>
+                            <td>19.1</td><td></td>
                             <td>174.2</td>
                             <td>33.0</td>
                             <td>216.5</td>
@@ -1112,10 +1187,11 @@ const LinearPricingModel = () => {
                             <td>30.3</td>
                             <td>58.8</td>
                             <td>89.1</td>
+                            <td></td>
                             <td>2.97%</td>
                             <td>1.50%</td>
                             <td>1</td>
-                            <td>EUR</td>
+                            <td>EUR</td><td></td>
                         </tr>
                         <tr>
                             <td>90000453</td>
@@ -1188,7 +1264,7 @@ const LinearPricingModel = () => {
                             <td>35.0</td>
                             <td>44.2</td>
                             <td>46.7</td>
-                            <td>19.1</td>
+                            <td>19.1</td><td></td>
                             <td>174.2</td>
                             <td>33.0</td>
                             <td>216.5</td>
@@ -1197,10 +1273,11 @@ const LinearPricingModel = () => {
                             <td>30.3</td>
                             <td>58.8</td>
                             <td>89.1</td>
+                            <td></td>
                             <td>2.97%</td>
                             <td>1.50%</td>
                             <td>1</td>
-                            <td>EUR</td>
+                            <td>EUR</td><td></td>
                         </tr>
                         <tr>
                             <td>90000454</td>
@@ -1273,7 +1350,7 @@ const LinearPricingModel = () => {
                             <td>35.0</td>
                             <td>44.2</td>
                             <td>46.7</td>
-                            <td>19.1</td>
+                            <td>19.1</td><td></td>
                             <td>174.2</td>
                             <td>33.0</td>
                             <td>216.5</td>
@@ -1282,10 +1359,11 @@ const LinearPricingModel = () => {
                             <td>30.3</td>
                             <td>58.8</td>
                             <td>89.1</td>
+                            <td></td>
                             <td>2.97%</td>
                             <td>1.50%</td>
                             <td>1</td>
-                            <td>EUR</td>
+                            <td>EUR</td><td></td>
                         </tr>
                         <tr>
                             <td>90000455</td>
@@ -1358,7 +1436,7 @@ const LinearPricingModel = () => {
                             <td>35.0</td>
                             <td>44.2</td>
                             <td>46.7</td>
-                            <td>19.1</td>
+                            <td>19.1</td><td></td>
                             <td>174.2</td>
                             <td>33.0</td>
                             <td>216.5</td>
@@ -1367,10 +1445,11 @@ const LinearPricingModel = () => {
                             <td>30.3</td>
                             <td>58.8</td>
                             <td>89.1</td>
+                            <td></td>
                             <td>2.97%</td>
                             <td>1.50%</td>
                             <td>1</td>
-                            <td>EUR</td>
+                            <td>EUR</td><td></td>
                         </tr>
                     </tbody>
                 </table>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import './PriceModelLibrary.scss';
+import './CostElementMaintenance.scss';
 import database from '../database.json'
 import ModalPopUp from './ModalPopUp';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -8,8 +8,8 @@ import { faCircleQuestion } from '@fortawesome/free-solid-svg-icons';
 import { faSliders, faFilter, faSquareArrowUpRight } from '@fortawesome/free-solid-svg-icons';
 
 
-const PriceModelLibrary = () => {
-    const [records, setRecords] = useState(database.price_model_records);
+const CostElementMaintenance = () => {
+    const [records, setRecords] = useState(database.cost_element_records);
     const [selectedRecordIds, setSelectedRecords] = useState([]);
 
     // const navigate = useNavigate();
@@ -27,7 +27,7 @@ const PriceModelLibrary = () => {
     return (
         <section className="library-container">
             <div className="filter-panel">
-                <h2>Price Model Library</h2>
+                <h2>Cost Element Administration</h2>
                 <h3>Filter Panel</h3>
                 <div className="filters">
                     <div className="just-mine">
@@ -98,56 +98,31 @@ const PriceModelLibrary = () => {
                 <table className="price-model-table">
                     <thead>
                         <tr>
-                            <th>Select</th>
                             <th>ID</th>
                             <th>Description</th>
-                            <th>Contract / Bar ID</th>
-                            <th>Contract / Bar Description</th>
-                            <th>Spend Pool H/M/L</th>
-                            <th>Supplier(s)</th>
+                            <th>Price Models</th>
+                            <th>Category</th>
                             <th>BU</th>
                             <th>Region(s)</th>
-                            <th>Material Coverage</th>
                         </tr>
                     </thead>
                     <tbody>
                         {records.map((record) => {
                             return (
                                 <tr key={record.id}>
-                                    <td className="compare">
-                                        <input type="checkbox" onChange={ev => handleCheckboxChange(ev, record.id)} />
-                                    </td>
-                                    <td><Link to={'/price-model-workbench/' + record.id} state={{records: records, isAdd: false}}>{record.id}</Link></td>
+                                    <td><Link to={'/reference-data-admin'} state={{records: records, isAdd: false}}>{record.id}</Link></td>
                                     <td>{record.description}</td>
-                                    <td>{record.barId}</td>
-                                    <td>{record.barDescription}</td>
-                                    <td>{record.spendPool}</td>
-                                    <td>{record.suppliers}</td>
+                                    <td>{record.priceModels}</td>
+                                    <td>{record.category}</td>
                                     <td>{record.bu}</td>
                                     <td>{record.regions}</td>
-                                    <td><Link to='/not-implemented'>Click Here&nbsp;<FontAwesomeIcon icon={faSquareArrowUpRight} /></Link></td>
                                 </tr>
                             );
                         })}
                     </tbody>
                 </table>
-                <div>
-                    <button id="compare-button" className={selectedRecordIds.length > 1 ? 'active-button' : 'inactive-button'}>
-                        Compare Selected Models
-                    </button>
-                    <Link to='/price-model-workbench' state={{records: records, isAdd: true}}>
-                        <button id="add-button" className={'active-button'} >
-                            Add New Model
-                        </button>
-                    </Link>
-                    <Link to={'/price-model-workbench/' + selectedRecordIds[0]} state={{records: records, isAdd: true}}>
-                        <button id="duplicate-button" className={selectedRecordIds.length === 1 ? 'active-button' : 'inactive-button'}>
-                            Duplicate Selected Model
-                        </button>
-                    </Link>
-                </div>
             </div>
         </section>
     );
 };
-export default PriceModelLibrary;
+export default CostElementMaintenance;

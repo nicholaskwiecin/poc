@@ -224,8 +224,9 @@ const PriceModelWorkbench = () => {
       <ReactFlowProvider>
         <div className="reactflow-wrapper center-panel" ref={reactFlowWrapper}>
           <div class="top-bar">
-            <span><input id="description-input" value={title} onChange={event => { setTitle(event.target.value); }}></input></span>
             <span className="page-title"><h2>Price Model Workbench</h2></span>
+            <span><input id="description-input" value={title} onChange={event => { setTitle(event.target.value); }}></input></span>
+            
             <span className="spacer"></span>
           </div>
           <ReactFlow

@@ -18,7 +18,7 @@ import { useParams, useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 
-const defaultViewport = { x: 0, y: 0, zoom: .8 };
+const defaultViewport = { x: 0, y: 0, zoom: 1 };
 const options = { hideAttribution: true };
 const snapGrid = [20, 20];
 const nodeTypes = {
@@ -209,8 +209,8 @@ const PriceModelWorkbench = () => {
       }
 
       const position = reactFlowInstance.project({
-        x: event.clientX - reactFlowBounds.left,
-        y: event.clientY - reactFlowBounds.top,
+        x: event.clientX + - 35 - reactFlowBounds.left,
+        y: event.clientY -115- reactFlowBounds.top,
       });
       const newNodes = [];
       const newEdges = [];

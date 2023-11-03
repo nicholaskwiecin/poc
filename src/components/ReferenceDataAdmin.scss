@@ -1,0 +1,91 @@
+@import '../global-styles.scss';
+
+.library-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .filter-panel {
+        margin-top: 3rem;
+        padding: 1rem;
+        border: 2px solid $primary-blue;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h2 {
+            margin-top: 0rem;
+        }
+
+        .filters {
+            display: flex;
+            flex-direction: row;
+
+            & > div {
+                margin: 0 20px;
+                display: flex;
+                flex-direction: column;
+            }
+
+            label {
+                margin-right: 10px;
+                margin-bottom: 5px;
+
+                svg {
+                    margin-right: 5px;
+                }
+            }
+        }
+    }
+
+    .table-wrapper{
+        margin-left: 1rem;
+        margin-right: 1rem;
+        margin-top: 5rem;
+    }
+
+    #compare-button {
+    }
+
+    button {
+        color: white;
+        margin-top: 20px;
+        height: 40px;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 5px;
+        border-style: solid;
+        padding: 0 10px;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    #add-button, #duplicate-button {
+        margin-left: 20px;
+    }
+
+    .circle-question {
+        align-self: flex-start;
+        margin-bottom: 1rem;
+        color: $primary-blue;
+
+        .info-icon:hover {
+            color: $secondary-blue-dark;
+            cursor: pointer;
+        }
+    }
+
+    .compare {
+        text-align: center;
+
+        input {
+            cursor: pointer;
+        }
+    }
+}
+
+
+

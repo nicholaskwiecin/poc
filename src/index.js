@@ -9,8 +9,10 @@ import {
   useLocation,
 } from 'react-router-dom';
 import PriceModelLibrary from './components/PriceModelLibrary';
+import CostElementMaintenance from './components/CostElementMaintenance';
 import PriceModelWorkbench from './components/PriceModelWorkbench';
 import PriceModelLanding from './components/PriceModelLanding';
+import ReferenceDataAdmin from './components/ReferenceDataAdmin';
 import Login from './components/Login';
 import NotImplemented from './components/NotImplemented';
 import LinearPricingModel from './components/LinearPricingModel';
@@ -36,6 +38,14 @@ const router = createBrowserRouter([
       {
         path: 'price-model-workbench',
         element: <PriceModelWorkbench />,
+      },
+      {
+        path: 'reference-data-admin',
+        element: <ReferenceDataAdmin />,
+      },
+      {
+        path: 'cost-element-maintenance',
+        element: <CostElementMaintenance />,
       },
       {
         path: 'price-model-workbench/:id',

@@ -25,7 +25,8 @@ const ReferenceDataAdmin = () => {
     return (
         <section className="library-container">
             <div className="filter-panel">
-                <h2>Filter Panel</h2>
+                <h2>Reference Data Administration</h2>
+                <h3>Filter Panel</h3>
                 <div className="filters">
                     <div className="just-mine">
                         <label htmlFor="just-my-filter">

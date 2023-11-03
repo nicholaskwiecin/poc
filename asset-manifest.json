@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "https://nicholaskwiecin.github.io/poc/static/css/main.b4c736f1.css",
-    "main.js": "https://nicholaskwiecin.github.io/poc/static/js/main.4226032d.js",
+    "main.css": "https://nicholaskwiecin.github.io/poc/static/css/main.9909971d.css",
+    "main.js": "https://nicholaskwiecin.github.io/poc/static/js/main.0a037e76.js",
     "static/js/787.d2006f3c.chunk.js": "https://nicholaskwiecin.github.io/poc/static/js/787.d2006f3c.chunk.js",
     "static/media/Montserrat-ExtraBold.ttf": "https://nicholaskwiecin.github.io/poc/static/media/Montserrat-ExtraBold.6c8b198832c88c649faa.ttf",
     "static/media/Montserrat-Bold.ttf": "https://nicholaskwiecin.github.io/poc/static/media/Montserrat-Bold.50f0257aa1e905f4bfaf.ttf",
@@ -11,14 +11,14 @@
     "static/media/header-background.png": "https://nicholaskwiecin.github.io/poc/static/media/header-background.a904a03a4f473d0854fe.png",
     "static/media/login-panel-background.png": "https://nicholaskwiecin.github.io/poc/static/media/login-panel-background.755c57d355a2f8176e07.png",
     "static/media/header-logo.png": "https://nicholaskwiecin.github.io/poc/static/media/header-logo.ba6f34bc95b315c0c0a1.png",
-    "static/media/P_G_Logo_RGB.svg": "https://nicholaskwiecin.github.io/poc/static/media/P_G_Logo_RGB.818457af2471a3ebbe1f443176b31ffc.svg",
+    "static/media/P_G_Logo_RGB.svg": "https://nicholaskwiecin.github.io/poc/static/media/P_G_Logo_RGB.222ec4cd01b8a74a9338bee2a11f71b5.svg",
     "index.html": "https://nicholaskwiecin.github.io/poc/index.html",
-    "main.b4c736f1.css.map": "https://nicholaskwiecin.github.io/poc/static/css/main.b4c736f1.css.map",
-    "main.4226032d.js.map": "https://nicholaskwiecin.github.io/poc/static/js/main.4226032d.js.map",
+    "main.9909971d.css.map": "https://nicholaskwiecin.github.io/poc/static/css/main.9909971d.css.map",
+    "main.0a037e76.js.map": "https://nicholaskwiecin.github.io/poc/static/js/main.0a037e76.js.map",
     "787.d2006f3c.chunk.js.map": "https://nicholaskwiecin.github.io/poc/static/js/787.d2006f3c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b4c736f1.css",
-    "static/js/main.4226032d.js"
+    "static/css/main.9909971d.css",
+    "static/js/main.0a037e76.js"
   ]
 }
